@@ -2,6 +2,14 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Tennis 2026">
+<meta name="theme-color" content="#1e5631">
 <title>Summer of Tennis 2026</title>
 <style>
 :root { color-scheme: light; }
@@ -61,6 +69,27 @@ body {
 .cd-card .label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.7px; opacity: 0.8; }
 .cd-card .value { font-size: 17px; font-weight: 600; margin-top: 2px; }
 .cd-card .days { font-size: 12px; opacity: 0.85; margin-top: 2px; }
+.version-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 14px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255,255,255,0.15);
+  font-size: 11px;
+  opacity: 0.75;
+}
+.refresh-btn {
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.25);
+  color: white;
+  padding: 5px 12px;
+  border-radius: 14px;
+  font-size: 11px;
+  cursor: pointer;
+  font-family: inherit;
+}
+.refresh-btn:hover { background: rgba(255,255,255,0.25); }
 
 /* Tabs */
 .tabs {
@@ -493,6 +522,111 @@ tr:last-child td { border-bottom: none; }
 .day .complete-dot.full { background: #2d7a44; }
 .day .complete-dot.partial { background: #d4a93a; }
 .day .complete-dot.empty { background: transparent; border: 1.5px dashed #d8d5cc; }
+
+/* ====== MOBILE ====== */
+@media (max-width: 720px) {
+  body { font-size: 15px; }
+  .wrap { padding: 10px; }
+
+  /* Hero */
+  .hero { padding: 16px 18px; border-radius: 12px; }
+  .hero h1 { font-size: 22px; }
+  .hero .sub { font-size: 13px; }
+  .family-row { gap: 6px; margin-top: 8px; }
+  .fam-chip { font-size: 11px; padding: 3px 8px; }
+  .countdown-row { gap: 8px; margin-top: 12px; }
+  .cd-card { min-width: 0; flex: 1 1 calc(50% - 4px); padding: 8px 10px; }
+  .cd-card .label { font-size: 10px; }
+  .cd-card .value { font-size: 14px; }
+  .cd-card .days { font-size: 11px; }
+
+  /* Tabs */
+  .tabs { gap: 0; margin-bottom: 14px; }
+  .tab { padding: 12px 14px; font-size: 13px; min-height: 44px; }
+
+  /* Cards */
+  .card { padding: 14px 16px; border-radius: 10px; margin-bottom: 12px; }
+  .card h2 { font-size: 16px; margin-bottom: 10px; }
+  .card h3 { font-size: 14px; margin-top: 12px; }
+  .card p { font-size: 14px; }
+  .card ul, .card ol { margin-left: 18px; }
+  .card li { font-size: 14px; }
+
+  /* Momentum */
+  .momentum-card { padding: 14px 16px; }
+  .momentum-card h2 { font-size: 14px; flex-direction: column; align-items: flex-start; gap: 2px; }
+  .momentum-card h2 .sub { font-size: 10px; }
+  .momentum-header { flex-direction: column; align-items: flex-start; gap: 2px; }
+  .momentum-stats { font-size: 11px; }
+  .momentum-stats b { font-size: 13px; }
+  .streak-pill { margin-left: 0; margin-top: 3px; }
+  .progress-markers { font-size: 9px; }
+
+  /* Date nav */
+  .date-nav { gap: 6px; }
+  .date-nav button { padding: 10px 14px; font-size: 13px; min-height: 44px; flex: 1 1 auto; }
+  .date-nav .today-jump { flex-basis: 100%; order: 3; }
+  .date-nav .selected-indicator { flex-basis: 100%; text-align: left; order: 4; padding-left: 4px; }
+
+  /* Today block */
+  .today-block { padding: 16px 14px; }
+  .today-header { gap: 6px; }
+  .today-date { font-size: 17px; line-height: 1.3; }
+  .today-phase { font-size: 10px; padding: 3px 9px; }
+  .today-venue { font-size: 12px; margin-bottom: 10px; }
+  .today-blocks { grid-template-columns: 1fr; gap: 10px; }
+  .tblock { padding: 10px 12px; }
+  .tblock .tcontent { font-size: 13px; }
+
+  /* Check-in pills — touch-friendly */
+  .checkin-section { padding: 12px 14px; }
+  .checkin-row { flex-direction: column; gap: 6px; }
+  .checkin-name { min-width: 0; padding-top: 0; font-size: 14px; }
+  .checkin-pill { padding: 10px 14px; font-size: 13px; min-height: 40px; border-radius: 22px; }
+  .checkin-pill input { width: 16px; height: 16px; }
+
+  /* Week grid → stack to 1 column */
+  .week-grid { grid-template-columns: 1fr; gap: 6px; }
+  .day { display: flex; align-items: center; gap: 12px; padding: 12px 14px; min-height: 60px; }
+  .day .dow { font-size: 11px; min-width: 32px; flex-shrink: 0; }
+  .day .date { font-size: 18px; margin: 0; min-width: 28px; flex-shrink: 0; }
+  .day > div:not(.dow):not(.date) { flex: 1; }
+  .day .focus { font-size: 13px; }
+  .day .detail { font-size: 11px; }
+  .day .venue, .day .partners { font-size: 11px; margin-top: 2px; }
+  .day .complete-dot { margin-left: auto; float: none; }
+
+  /* Week nav */
+  .week-nav { flex-wrap: wrap; gap: 6px; }
+  .week-nav button { padding: 10px 14px; font-size: 13px; min-height: 44px; }
+  .week-nav .week-label { flex-basis: 100%; order: -1; text-align: center; padding: 4px 0; }
+
+  /* Tournament cards */
+  .tourn-card { padding: 14px 16px; }
+  .tourn-title { font-size: 15px; }
+  .tourn-meta { gap: 8px 14px; font-size: 12px; }
+  .tourn-section li { font-size: 12px; }
+
+  /* Venue grid */
+  .venue-grid { grid-template-columns: 1fr; gap: 10px; }
+  .venue-card { padding: 12px 14px; }
+
+  /* Drill grid */
+  .drill-grid { grid-template-columns: 1fr; gap: 10px; }
+  .drill { padding: 14px; }
+  .drill h3 { font-size: 14px; }
+  .drill p { font-size: 13px; }
+
+  /* Tables — scroll horizontally */
+  table { font-size: 12px; display: block; overflow-x: auto; white-space: nowrap; }
+  th, td { padding: 6px 8px; }
+}
+
+@media (max-width: 380px) {
+  .hero h1 { font-size: 20px; }
+  .cd-card { flex-basis: 100%; }
+  .fam-chip { font-size: 10px; }
+}
 </style>
 </head>
 <body>
@@ -508,6 +642,10 @@ tr:last-child td { border-bottom: none; }
     <div class="fam-chip">Teresa · 53</div>
   </div>
   <div class="countdown-row" id="countdownRow"></div>
+  <div class="version-row">
+    <span id="versionLabel">v.2026.05.25</span>
+    <button class="refresh-btn" onclick="forceReload()" title="Force fresh load">↻ Refresh</button>
+  </div>
 </div>
 
 <div class="tabs">
@@ -731,6 +869,22 @@ tr:last-child td { border-bottom: none; }
     <p>The "projected UTR" on the Today tab is a <b>motivational counter, not a prediction</b>. Real UTR only moves on rated singles match results. Each completed practice + each weights session adds <b>+0.015 projected UTR</b> for each kid — a notional rate that, if they hit the full plan through Aug 16, gets Charlie past 11.0 and Ren past 9.0 with room to spare. The point is to make daily consistency visible: a streak of zeroes shows up immediately; a strong week pushes the bar forward. Use it for momentum, not as a prediction of how Kalamazoo will go.</p>
     <h3>How to count a session</h3>
     <p>One practice = a real hitting block (90 min+ counts). Half-effort doesn't count. Weights = the actual lift session, not the warmup. If the kid wants to be honest with the counter, that's the integrity standard.</p>
+  </div>
+  <div class="card">
+    <h2>When you update the page — cache busting</h2>
+    <p>Static HTML files on GitHub Pages get cached aggressively by iOS Safari and by GitHub's CDN (up to ~10 min). When you redeploy, the kids might keep seeing the old version. Three layers of defense are built in:</p>
+    <ol>
+      <li><b>Cache-Control meta tags</b> in the HTML head tell the browser not to cache. Imperfect — Safari sometimes ignores them, but they help.</li>
+      <li><b>The "↻ Refresh" button</b> in the hero header (top right) reloads with a cache-busting query string. Tell the kids: <i>"if the plan looks out of date, tap the Refresh button in the green box."</i></li>
+      <li><b>Auto-refresh after 12 hours</b>: if a kid leaves the page open overnight and comes back, it auto-reloads with a cache buster the moment they focus it.</li>
+    </ol>
+    <p><b>When you redeploy, do this:</b></p>
+    <ul>
+      <li>After pushing the new file to GitHub, wait 60–90 seconds (CDN propagation).</li>
+      <li>On your own phone, pull-to-refresh the page. Confirm the version label at the top right of the hero shows the new date.</li>
+      <li>If kids report stale data: tell them to tap the ↻ Refresh button in the hero.</li>
+      <li><b>"Add to Home Screen" caveat:</b> iOS webapp icons cache the hardest. If the home-screen icon shows stale content, the cleanest fix is to delete the icon and re-add it from Safari. Rare — but worth knowing.</li>
+    </ul>
   </div>
   <div class="card">
     <h2>How to share this with the kids</h2>
@@ -1528,154 +1682,4 @@ function renderWeek() {
   const start = getWeekStart(TODAY, weekOffset);
   const end = new Date(start);
   end.setDate(end.getDate() + 6);
-  document.getElementById("weekLabel").textContent = `Week of ${fmtShort(start)} – ${fmtShort(end)}, 2026`;
-
-  const grid = document.getElementById("weekGrid");
-  grid.innerHTML = "";
-  for (let i = 0; i < 7; i++) {
-    const d = new Date(start);
-    d.setDate(d.getDate() + i);
-    const ds = fmtDate(d);
-    const block = blockForDate(d);
-    const isToday = ds === fmtDate(TODAY);
-    const isSelected = ds === selectedDate;
-    const cls = "day " + (block.type || "off") + (isToday ? " today" : "") + (isSelected ? " selected" : "");
-
-    // Completion dot: aggregate Charlie + Ren checked items vs available items
-    const dayItems = (completion[ds] || {});
-    let checked = 0, available = 0;
-    ["charlie", "ren"].forEach(kid => {
-      const items = itemsForBlock(block, kid);
-      available += items.length;
-      items.forEach(it => { if (((dayItems[kid] || {})[it.key])) checked++; });
-    });
-    let dot = "";
-    if (available > 0) {
-      if (checked === 0) dot = `<span class="complete-dot empty"></span>`;
-      else if (checked >= available) dot = `<span class="complete-dot full">✓</span>`;
-      else dot = `<span class="complete-dot partial">${checked}</span>`;
-    }
-
-    let inner = `<div class="dow">${dow(d)}${dot}</div><div class="date">${d.getDate()}</div>`;
-    if (block.type === "rest") {
-      inner += `<div class="focus">REST</div><div class="detail">${(block.detail || "").slice(0,60)}</div>`;
-    } else if (block.type === "tourn") {
-      inner += `<div class="focus">${(block.title || "Tournament").slice(0,40)}</div><div class="detail">${(block.detail || "").slice(0,60)}</div>`;
-    } else if (block.type === "clinic") {
-      inner += `<div class="focus">CLINIC</div><div class="detail">${(block.title || "").slice(0,55)}</div>`;
-    } else if (block.type === "train") {
-      inner += `<div class="focus">${block.focus}</div><div class="detail">${(block.drills || []).slice(0,2).join(" · ")}${block.weights ? "<br><span class=muted>+ weights</span>" : ""}</div>`;
-    } else {
-      inner += `<div class="focus">—</div>`;
-    }
-    if (block.venue) inner += `<div class="venue">${block.venue}</div>`;
-    if (block.partners) inner += `<div class="partners">${block.partners.join(" + ")}</div>`;
-    grid.innerHTML += `<div class="${cls}" onclick="selectDateAndFocus('${ds}')">${inner}</div>`;
-  }
-}
-
-function shiftWeek(delta) { weekOffset += delta; renderWeek(); }
-function goToCurrentWeek() { weekOffset = 0; renderWeek(); }
-
-// ====== TOURNAMENTS ======
-function renderTournaments() {
-  const list = document.getElementById("tournList");
-  list.innerHTML = TOURNAMENTS.map(t => {
-    const sd = parseDate(t.start), ed = parseDate(t.end);
-    const dateLabel = sd.getMonth() === ed.getMonth() ?
-      `${sd.toLocaleString('en-US',{month:'short'})} ${sd.getDate()}–${ed.getDate()}, 2026` :
-      `${fmtShort(sd)} – ${fmtShort(ed)}, 2026`;
-    const regDays = daysBetween(TODAY, parseDate(t.regClose));
-    let regFlag = "";
-    if (t.registered) regFlag = `<span class="reg-flag" style="background:#e8f0ea;color:#1e5631">Registered ✓</span>`;
-    else if (regDays < 0) regFlag = `<span class="reg-flag">Reg closed</span>`;
-    else if (regDays <= 5) regFlag = `<span class="reg-flag urgent">Closes ${regDays === 0 ? "today" : "in " + regDays + "d"}</span>`;
-    else regFlag = `<span class="reg-flag">Closes ${fmtShort(parseDate(t.regClose))}</span>`;
-
-    const hotelsHtml = t.hotels.length ? `<div class="tourn-section"><h4>Hotels</h4><ul>${t.hotels.map(h => `<li><b>${h.name}</b> — ${h.price}. <span class="muted">${h.note}</span></li>`).join("")}</ul></div>` : "";
-    const notesHtml = `<div class="tourn-section"><h4>Notes</h4><ul>${t.notes.map(n => `<li>${n}</li>`).join("")}</ul></div>`;
-    const planHtml = `<div class="tourn-section"><h4>The plan</h4><p style="font-size:13px">${t.plan}</p></div>`;
-
-    return `
-      <div class="tourn-card ${t.level.toLowerCase()}">
-        <div class="tourn-header">
-          <div>
-            <div class="tourn-title">T${t.id} · ${t.name}</div>
-            <div class="muted" style="margin-top:2px">${t.venue}</div>
-          </div>
-          <div><span class="tourn-level ${t.level.toLowerCase()}">${t.levelLabel}</span></div>
-        </div>
-        <div class="tourn-meta">
-          <div><b>${dateLabel}</b></div>
-          <div>Surface: <b>${t.surface}</b></div>
-          <div>Entry: <b>$${t.fee}</b> ${regFlag}</div>
-          <div>Drive: <b>${t.drive.time}</b> · ${t.drive.miles} mi</div>
-        </div>
-        <div style="background:#f7f6f1;padding:10px 12px;border-radius:6px;font-size:13px;margin-bottom:8px"><b>Travel:</b> ${t.travel}</div>
-        ${hotelsHtml}
-        ${notesHtml}
-        ${planHtml}
-      </div>
-    `;
-  }).join("");
-
-  const urgent = TOURNAMENTS.find(t => {
-    if (t.registered) return false;
-    const days = daysBetween(TODAY, parseDate(t.regClose));
-    return days >= 0 && days <= 5;
-  });
-  const urgentEl = document.getElementById("urgentReg");
-  if (urgent) {
-    const days = daysBetween(TODAY, parseDate(urgent.regClose));
-    urgentEl.innerHTML = `<b>⚠ Registration deadline soon:</b> ${urgent.name} closes <b>${fmtShort(parseDate(urgent.regClose))}</b> — ${days === 0 ? "TODAY" : "in " + days + " day" + (days===1?"":"s")}.`;
-    urgentEl.style.display = "block";
-  } else {
-    urgentEl.style.display = "none";
-  }
-}
-
-// ====== DRILLS ======
-function renderDrills() {
-  ["fh","serve","pc","fit","match","net"].forEach(k => {
-    const el = document.getElementById("drills" + k.charAt(0).toUpperCase() + k.slice(1));
-    if (!el) return;
-    el.innerHTML = DRILLS[k].map(d => `
-      <div class="drill">
-        <div class="drill-cat ${k}">${({fh:"FH Weapon",serve:"Serve",pc:"Point Construction",fit:"Conditioning",match:"Match",net:"Net & Transition"})[k]}</div>
-        <h3>${d.name}</h3>
-        <p>${d.desc}</p>
-        <div class="duration">${d.duration}</div>
-      </div>
-    `).join("");
-  });
-}
-
-// ====== TABS ======
-document.querySelectorAll(".tab").forEach(btn => {
-  btn.addEventListener("click", () => {
-    document.querySelectorAll(".tab").forEach(b => b.classList.remove("active"));
-    document.querySelectorAll(".panel").forEach(p => p.classList.remove("active"));
-    btn.classList.add("active");
-    document.getElementById("panel-" + btn.dataset.tab).classList.add("active");
-    try { localStorage.setItem("sot2026_tab", btn.dataset.tab); } catch(e) {}
-  });
-});
-
-try {
-  const saved = localStorage.getItem("sot2026_tab");
-  if (saved) {
-    const btn = document.querySelector(`.tab[data-tab="${saved}"]`);
-    if (btn) btn.click();
-  }
-} catch(e) {}
-
-renderCountdown();
-renderMomentum();
-renderToday();
-renderWeek();
-renderTournaments();
-renderDrills();
-</script>
-
-</body>
-</html>
+  document.getElementById("weekLabel").textCon
