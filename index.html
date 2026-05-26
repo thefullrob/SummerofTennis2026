@@ -12,1674 +12,724 @@
 <meta name="theme-color" content="#1e5631">
 <title>Summer of Tennis 2026</title>
 <style>
-:root { color-scheme: light; }
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  background: #fafaf7;
-  color: #1a1a1a;
-  line-height: 1.55;
-  font-size: 15px;
+:root{color-scheme:light}*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:#fafaf7;color:#1a1a1a;line-height:1.55;font-size:15px;-webkit-text-size-adjust:100%}
+.wrap{max-width:1100px;margin:0 auto;padding:20px}
+a{color:#1a5fbf;text-decoration:none}a:hover{text-decoration:underline}
+a.link-ext::after,a.link-map::after{content:" ↗";font-size:.85em;opacity:.7}
+.tourn-title a{color:inherit}.tourn-title a:hover{color:#1a5fbf}
+.hero{position:relative;background:linear-gradient(135deg,#1e5631,#2d7a44);color:white;padding:24px 28px;border-radius:14px;margin-bottom:20px;box-shadow:0 4px 14px rgba(30,86,49,.18);overflow:hidden}
+.hero h1{font-size:28px;font-weight:700;margin-bottom:4px}
+.hero .sub{opacity:.85;font-size:14px}
+.hero .deco{position:absolute;top:8px;right:12px;opacity:.85;pointer-events:none}
+.hero .deco .ball{animation:bounce 2.4s ease-in-out infinite;transform-origin:center}
+@keyframes bounce{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-6px) rotate(15deg)}}
+.family-row{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap;font-size:12px;opacity:.92}
+.fam-chip{background:rgba(255,255,255,.14);padding:4px 10px;border-radius:12px;border:1px solid rgba(255,255,255,.22)}
+.countdown-row{display:flex;gap:12px;margin-top:14px;flex-wrap:wrap}
+.cd-card{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.22);padding:9px 13px;border-radius:10px;min-width:150px}
+.cd-card .label{font-size:10px;text-transform:uppercase;letter-spacing:.7px;opacity:.85}
+.cd-card .value{font-size:15px;font-weight:600;margin-top:2px}
+.cd-card .days{font-size:11px;opacity:.85;margin-top:2px}
+.version-row{display:flex;justify-content:space-between;align-items:center;margin-top:14px;padding-top:10px;border-top:1px solid rgba(255,255,255,.18);font-size:11px;opacity:.85}
+.refresh-btn{background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.28);color:white;padding:6px 14px;border-radius:14px;font-size:11px;cursor:pointer;font-family:inherit}
+.refresh-btn:hover{background:rgba(255,255,255,.28)}
+.tabs{display:flex;gap:4px;border-bottom:2px solid #e5e3dc;margin-bottom:20px;overflow-x:auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{background:none;border:none;padding:11px 18px;font-size:14px;font-weight:500;color:#6b6b6b;cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px;white-space:nowrap;font-family:inherit}
+.tab:hover{color:#1e5631}.tab.active{color:#1e5631;border-bottom-color:#1e5631;font-weight:600}
+.panel{display:none}.panel.active{display:block}
+.card{background:white;border:1px solid #e8e6df;border-radius:12px;padding:20px 22px;margin-bottom:16px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.card h2{font-size:18px;font-weight:700;color:#1e5631;margin-bottom:12px}
+.card h3{font-size:15px;font-weight:600;color:#2d2d2d;margin-top:14px;margin-bottom:6px}
+.card p{margin-bottom:8px}.card ul,.card ol{margin-left:22px;margin-bottom:8px}.card li{margin-bottom:4px}
+.momentum-card{background:white;border:1px solid #e8e6df;border-radius:12px;padding:18px 22px;margin-bottom:16px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.momentum-card .mh{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:15px;font-weight:700;color:#1e5631}
+.momentum-card .mh .sub{font-size:11px;color:#888;font-weight:500;text-transform:none}
+.momentum-row{margin-bottom:14px}.momentum-row:last-child{margin-bottom:0}
+.momentum-header{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px;font-size:13px;gap:8px;flex-wrap:wrap}
+.momentum-name{font-weight:600;color:#1a1a1a;display:flex;align-items:center;gap:6px}
+.momentum-stats{color:#555;font-size:12px}.momentum-stats b{color:#1e5631;font-size:14px}
+.progress-track{background:#f0efe7;border-radius:6px;height:12px;overflow:hidden}
+.progress-fill{background:linear-gradient(90deg,#2d7a44,#4ea065);height:100%;border-radius:6px;transition:width .4s ease}
+.progress-fill.ren{background:linear-gradient(90deg,#4a7ab8,#6d97cc)}
+.progress-markers{display:flex;justify-content:space-between;font-size:10px;color:#888;margin-top:3px}
+.streak-pill{display:inline-block;background:#fff4d4;color:#7a5400;padding:2px 9px;border-radius:12px;font-size:11px;font-weight:600}
+.streak-pill.hot{background:#fbe3dc;color:#8d2e1d}
+.kid-icon{width:18px;height:18px;vertical-align:middle}
+.date-nav{display:flex;align-items:center;gap:8px;margin-bottom:14px;flex-wrap:wrap}
+.date-nav button{background:white;border:1px solid #d8d5cc;border-radius:8px;padding:8px 14px;cursor:pointer;font-family:inherit;font-size:13px;font-weight:500}
+.date-nav button:hover{background:#f0efe7}
+.date-nav .today-jump{background:#1e5631;color:white;border-color:#1e5631}.date-nav .today-jump:hover{background:#2d7a44}
+.date-nav .selected-indicator{flex:1;text-align:right;font-size:12px;color:#888}
+.today-block{background:white;border:2px solid #1e5631;border-radius:14px;padding:24px;margin-bottom:20px}
+.today-header{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.today-date{font-size:20px;font-weight:700;color:#1e5631}
+.today-phase{background:#e8f0ea;color:#1e5631;padding:4px 12px;border-radius:20px;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.5px}
+.today-venue{font-size:13px;color:#555;margin-bottom:12px}.today-venue b{color:#1a1a1a}
+.today-blocks{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:10px}
+.tblock{background:#f7f6f1;border-left:4px solid #2d7a44;padding:12px 14px;border-radius:6px}
+.tblock .ttitle{font-size:11px;text-transform:uppercase;letter-spacing:.6px;color:#6b6b6b;font-weight:600;margin-bottom:4px}
+.tblock .tcontent{font-size:14px}
+.tblock.rest{border-left-color:#b89855;background:#faf5e8}
+.tblock.tourn{border-left-color:#c14d35;background:#faece8}
+.tblock.clinic{border-left-color:#4a7ab8;background:#ecf2f9}
+.checkin-section{background:#f7f6f1;border-radius:10px;padding:14px 16px;margin-top:16px}
+.checkin-section h3{font-size:12px;text-transform:uppercase;letter-spacing:.5px;color:#555;margin-bottom:10px;font-weight:600}
+.checkin-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:10px;align-items:flex-start}
+.checkin-row:last-child{margin-bottom:0}
+.checkin-name{font-weight:600;font-size:13px;min-width:72px;padding-top:8px;color:#1a1a1a}
+.checkin-items{display:flex;gap:6px;flex-wrap:wrap;flex:1}
+.checkin-pill{display:inline-flex;align-items:center;gap:6px;background:white;border:2px solid #e8e6df;padding:8px 14px;border-radius:20px;cursor:pointer;font-size:13px;font-weight:500;user-select:none;min-height:38px}
+.checkin-pill:hover{border-color:#2d7a44}
+.checkin-pill input{margin:0;width:16px;height:16px;accent-color:#2d7a44;cursor:pointer}
+.checkin-pill.checked{background:#2d7a44;color:white;border-color:#2d7a44}
+.utr-bump{font-size:10px;opacity:.75;margin-left:2px}
+.trackers-section{background:#fff8e8;border:1px solid #f1e4b8;border-radius:10px;padding:14px 16px;margin-top:16px}
+.trackers-section>h3{font-size:12px;text-transform:uppercase;letter-spacing:.5px;color:#7a5400;margin-bottom:10px;font-weight:700}
+.tracker-card{background:white;border:1px solid #f1e4b8;border-radius:8px;padding:12px 14px;margin-bottom:8px}
+.tracker-card:last-child{margin-bottom:0}
+.tracker-name{font-size:13px;font-weight:600;color:#1a1a1a;margin-bottom:2px}
+.tracker-goal{font-size:11px;color:#888;margin-bottom:8px}
+.tracker-row{display:flex;gap:8px;align-items:center;margin-bottom:6px;flex-wrap:wrap}
+.tracker-row:last-child{margin-bottom:0}
+.tracker-label{font-weight:600;font-size:12px;min-width:60px;color:#1a1a1a}
+.tracker-input{width:80px;padding:8px 10px;border:1px solid #d8d5cc;border-radius:6px;font-size:14px;font-family:inherit;text-align:center}
+.tracker-input:focus{outline:none;border-color:#2d7a44}
+.tracker-save{background:#2d7a44;color:white;border:none;padding:8px 14px;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;font-family:inherit}
+.tracker-save:hover{background:#1e5631}.tracker-save.saved{background:#888}
+.tracker-history{font-size:11px;color:#555;flex:1;min-width:140px}
+.tracker-history b{color:#1a1a1a}
+.tracker-trend{display:inline-block;margin-left:4px;font-weight:700}
+.tracker-trend.up{color:#2d7a44}.tracker-trend.down{color:#c14d35}
+.week-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
+.day{background:white;border:1px solid #e8e6df;border-radius:8px;padding:10px;min-height:110px;font-size:12px;cursor:pointer}
+.day:hover{transform:translateY(-1px);box-shadow:0 2px 6px rgba(0,0,0,.08)}
+.day.today{border-color:#1e5631;border-width:2px;background:#f6faf6}
+.day.rest{background:#faf5e8}.day.tourn{background:#faece8;border-color:#c14d35}.day.clinic{background:#ecf2f9}
+.day.selected{border-color:#4a7ab8!important;border-width:2px!important;box-shadow:0 0 0 3px rgba(74,122,184,.18)}
+.day .dow{font-size:10px;text-transform:uppercase;color:#888;letter-spacing:.5px;font-weight:600;display:flex;justify-content:space-between;align-items:center}
+.day .date{font-size:15px;font-weight:700;margin:2px 0 6px}
+.day .focus{color:#1e5631;font-weight:600;font-size:11px}
+.day .detail{color:#555;font-size:11px;margin-top:3px}
+.day .venue{color:#999;font-size:10px;margin-top:4px;font-style:italic}
+.day .partners{color:#2d7a44;font-size:10px;margin-top:2px;font-weight:500}
+.complete-dot{width:16px;height:16px;border-radius:50%;font-size:11px;line-height:16px;text-align:center;color:white;font-weight:700;display:inline-block}
+.complete-dot.full{background:#2d7a44}.complete-dot.partial{background:#d4a93a}.complete-dot.empty{background:transparent;border:1.5px dashed #cfcdc4}
+.week-nav{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.week-nav button{background:white;border:1px solid #d8d5cc;border-radius:8px;padding:8px 14px;cursor:pointer;font-family:inherit;font-size:13px;font-weight:500}
+.week-nav .week-label{font-weight:600;flex:1;font-size:14px}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:12px;margin-top:10px}
+.legend-item{display:flex;align-items:center;gap:5px}
+.legend-dot{width:12px;height:12px;border-radius:3px}
+.tourn-card{background:white;border:1px solid #e8e6df;border-radius:12px;padding:20px 22px;margin-bottom:14px;position:relative;overflow:hidden}
+.tourn-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:#2d7a44}
+.tourn-card.l1::before{background:#c14d35}.tourn-card.l2::before{background:#d18b2c}.tourn-card.l3::before{background:#4a7ab8}.tourn-card.l5::before{background:#6b6b6b}
+.tourn-header{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+.tourn-title{font-size:17px;font-weight:700;color:#1a1a1a}
+.tourn-level{background:#f0efe7;color:#555;padding:3px 10px;border-radius:12px;font-size:11px;font-weight:600}
+.tourn-level.l1{background:#fbe3dc;color:#8d2e1d}.tourn-level.l2{background:#fbecd0;color:#855218}.tourn-level.l3{background:#dbe7f5;color:#2c4a78}.tourn-level.l5{background:#e8e6df;color:#4a4a4a}
+.tourn-meta{display:flex;flex-wrap:wrap;gap:14px;font-size:13px;color:#555;margin-bottom:12px}.tourn-meta b{color:#1a1a1a}
+.tourn-section{margin-top:12px;padding-top:12px;border-top:1px solid #f0efe7}
+.tourn-section h4{font-size:12px;text-transform:uppercase;letter-spacing:.5px;color:#888;margin-bottom:6px;font-weight:600}
+.tourn-section ul{margin-left:18px}.tourn-section li{font-size:13px;margin-bottom:3px}
+.reg-flag{display:inline-block;background:#fff4d4;color:#7a5400;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;margin-left:6px}
+.reg-flag.urgent{background:#fbe3dc;color:#8d2e1d}
+.drill-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.drill{background:white;border:1px solid #e8e6df;border-radius:10px;padding:16px}
+.drill-cat{font-size:11px;text-transform:uppercase;letter-spacing:.5px;font-weight:600;margin-bottom:4px}
+.drill-cat.fh{color:#c14d35}.drill-cat.serve{color:#2c4a78}.drill-cat.pc{color:#855218}.drill-cat.fit{color:#1e5631}.drill-cat.match{color:#6e4a8d}.drill-cat.net{color:#1a7d77}
+.drill h3{font-size:15px;margin-bottom:6px}.drill p{font-size:13px;color:#444}.drill .duration{font-size:11px;color:#888;margin-top:6px;font-style:italic}
+.venue-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
+.venue-card{background:white;border:1px solid #e8e6df;border-radius:10px;padding:14px 16px}
+.venue-card h3{font-size:15px;color:#1e5631;margin-bottom:4px}.venue-card .vsub{font-size:12px;color:#888;margin-bottom:8px}.venue-card p{font-size:13px}
+table{width:100%;border-collapse:collapse;font-size:13px;margin-top:8px}
+th{text-align:left;padding:8px 10px;background:#f0efe7;font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.3px}
+td{padding:8px 10px;border-bottom:1px solid #f0efe7}tr:last-child td{border-bottom:none}
+.note{background:#fff8e8;border-left:4px solid #d4a93a;padding:10px 14px;border-radius:6px;font-size:13px;margin-bottom:12px}
+.note.urgent{background:#fbe3dc;border-color:#c14d35}.note.info{background:#e6f0f7;border-color:#4a7ab8}
+.tag{display:inline-block;background:#e8f0ea;color:#1e5631;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;margin-right:4px}
+.muted{color:#888;font-size:12px}
+@media (max-width:720px){
+.wrap{padding:10px}.hero{padding:16px 18px;border-radius:12px}.hero h1{font-size:22px}.hero .sub{font-size:13px}.hero .deco{transform:scale(.7);top:4px;right:6px}
+.family-row{gap:6px;margin-top:8px}.fam-chip{font-size:11px;padding:3px 8px}
+.countdown-row{gap:8px;margin-top:12px}.cd-card{min-width:0;flex:1 1 calc(50% - 4px);padding:8px 10px}.cd-card .label{font-size:10px}.cd-card .value{font-size:13px}.cd-card .days{font-size:11px}
+.tabs{gap:0;margin-bottom:14px}.tab{padding:12px 14px;font-size:13px;min-height:44px}
+.card{padding:14px 16px;border-radius:10px;margin-bottom:12px}.card h2{font-size:16px}.card p,.card li{font-size:14px}
+.momentum-card{padding:14px 16px}.momentum-card .mh{flex-direction:column;align-items:flex-start;gap:2px}.momentum-card .mh .sub{font-size:10px}
+.momentum-header{flex-direction:column;align-items:flex-start;gap:4px}.momentum-stats{font-size:11px}
+.date-nav{gap:6px}.date-nav button{padding:10px 14px;font-size:13px;min-height:44px;flex:1 1 auto}
+.date-nav .today-jump{flex-basis:100%;order:3}.date-nav .selected-indicator{flex-basis:100%;text-align:left;order:4;padding-left:4px}
+.today-block{padding:16px 14px}.today-date{font-size:17px;line-height:1.3}.today-phase{font-size:10px;padding:3px 9px}.today-venue{font-size:12px}
+.today-blocks{grid-template-columns:1fr;gap:10px}.tblock{padding:10px 12px}.tblock .tcontent{font-size:13px}
+.checkin-section{padding:12px 14px}.checkin-row{flex-direction:column;gap:6px}.checkin-name{min-width:0;padding-top:0;font-size:14px}
+.checkin-pill{padding:10px 14px;font-size:13px;min-height:42px;border-radius:22px}.checkin-pill input{width:18px;height:18px}
+.tracker-row{flex-direction:row;flex-wrap:wrap;align-items:center;gap:6px}.tracker-label{min-width:54px}
+.tracker-input{width:90px;padding:10px;font-size:16px;min-height:42px}
+.tracker-save{padding:10px 16px;min-height:42px}.tracker-history{width:100%;font-size:11px}
+.week-grid{grid-template-columns:1fr;gap:6px}.day{display:flex;align-items:center;gap:12px;padding:12px 14px;min-height:60px}
+.day .dow{font-size:11px;min-width:32px;flex-shrink:0;flex-direction:column;align-items:flex-start;gap:4px}
+.day .date{font-size:18px;margin:0;min-width:28px;flex-shrink:0}
+.day>div:not(.dow):not(.date){flex:1}.day .focus{font-size:13px}.day .detail{font-size:11px}
+.week-nav{flex-wrap:wrap;gap:6px}.week-nav button{padding:10px 14px;font-size:13px;min-height:44px}.week-nav .week-label{flex-basis:100%;order:-1;text-align:center;padding:4px 0}
+.tourn-card{padding:14px 16px}.tourn-title{font-size:15px}.tourn-meta{gap:8px 14px;font-size:12px}.tourn-section li{font-size:12px}
+.venue-grid{grid-template-columns:1fr;gap:10px}.drill-grid{grid-template-columns:1fr;gap:10px}
+table{font-size:12px;display:block;overflow-x:auto;white-space:nowrap}th,td{padding:6px 8px}
 }
-.wrap { max-width: 1100px; margin: 0 auto; padding: 20px; }
-
-/* Header */
-.hero {
-  background: linear-gradient(135deg, #1e5631 0%, #2d7a44 100%);
-  color: white;
-  padding: 24px 28px;
-  border-radius: 14px;
-  margin-bottom: 20px;
-  box-shadow: 0 4px 14px rgba(30,86,49,0.18);
-}
-.hero h1 {
-  font-size: 28px;
-  letter-spacing: -0.5px;
-  font-weight: 700;
-  margin-bottom: 4px;
-}
-.hero .sub { opacity: 0.85; font-size: 14px; }
-.family-row {
-  display: flex;
-  gap: 14px;
-  margin-top: 10px;
-  flex-wrap: wrap;
-  font-size: 12px;
-  opacity: 0.85;
-}
-.fam-chip {
-  background: rgba(255,255,255,0.12);
-  padding: 4px 10px;
-  border-radius: 12px;
-  border: 1px solid rgba(255,255,255,0.18);
-}
-.countdown-row {
-  display: flex;
-  gap: 18px;
-  margin-top: 16px;
-  flex-wrap: wrap;
-}
-.cd-card {
-  background: rgba(255,255,255,0.14);
-  border: 1px solid rgba(255,255,255,0.18);
-  padding: 10px 14px;
-  border-radius: 10px;
-  min-width: 160px;
-}
-.cd-card .label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.7px; opacity: 0.8; }
-.cd-card .value { font-size: 17px; font-weight: 600; margin-top: 2px; }
-.cd-card .days { font-size: 12px; opacity: 0.85; margin-top: 2px; }
-.version-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 14px;
-  padding-top: 10px;
-  border-top: 1px solid rgba(255,255,255,0.15);
-  font-size: 11px;
-  opacity: 0.75;
-}
-.refresh-btn {
-  background: rgba(255,255,255,0.15);
-  border: 1px solid rgba(255,255,255,0.25);
-  color: white;
-  padding: 5px 12px;
-  border-radius: 14px;
-  font-size: 11px;
-  cursor: pointer;
-  font-family: inherit;
-}
-.refresh-btn:hover { background: rgba(255,255,255,0.25); }
-
-/* Tabs */
-.tabs {
-  display: flex;
-  gap: 4px;
-  border-bottom: 2px solid #e5e3dc;
-  margin-bottom: 20px;
-  overflow-x: auto;
-  scrollbar-width: none;
-}
-.tabs::-webkit-scrollbar { display: none; }
-.tab {
-  background: none;
-  border: none;
-  padding: 11px 18px;
-  font-size: 14px;
-  font-weight: 500;
-  color: #6b6b6b;
-  cursor: pointer;
-  border-bottom: 3px solid transparent;
-  margin-bottom: -2px;
-  white-space: nowrap;
-  font-family: inherit;
-  transition: color 0.15s;
-}
-.tab:hover { color: #1e5631; }
-.tab.active { color: #1e5631; border-bottom-color: #1e5631; font-weight: 600; }
-
-/* Panels */
-.panel { display: none; }
-.panel.active { display: block; }
-
-/* Cards */
-.card {
-  background: white;
-  border: 1px solid #e8e6df;
-  border-radius: 12px;
-  padding: 20px 22px;
-  margin-bottom: 16px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
-}
-.card h2 {
-  font-size: 18px;
-  font-weight: 700;
-  color: #1e5631;
-  margin-bottom: 12px;
-  letter-spacing: -0.3px;
-}
-.card h3 {
-  font-size: 15px;
-  font-weight: 600;
-  color: #2d2d2d;
-  margin-top: 14px;
-  margin-bottom: 6px;
-}
-.card p { margin-bottom: 8px; }
-.card ul, .card ol { margin-left: 22px; margin-bottom: 8px; }
-.card li { margin-bottom: 4px; }
-
-/* Today block */
-.today-block {
-  background: white;
-  border: 2px solid #1e5631;
-  border-radius: 14px;
-  padding: 24px;
-  margin-bottom: 20px;
-}
-.today-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
-.today-date { font-size: 22px; font-weight: 700; color: #1e5631; }
-.today-phase {
-  background: #e8f0ea;
-  color: #1e5631;
-  padding: 4px 12px;
-  border-radius: 20px;
-  font-size: 12px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-.today-venue {
-  font-size: 13px;
-  color: #555;
-  margin-bottom: 12px;
-}
-.today-venue b { color: #1a1a1a; }
-.today-blocks {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 14px;
-  margin-top: 10px;
-}
-.tblock {
-  background: #f7f6f1;
-  border-left: 4px solid #2d7a44;
-  padding: 12px 14px;
-  border-radius: 6px;
-}
-.tblock .ttitle { font-size: 11px; text-transform: uppercase; letter-spacing: 0.6px; color: #6b6b6b; font-weight: 600; margin-bottom: 4px; }
-.tblock .tcontent { font-size: 14px; }
-.tblock.rest { border-left-color: #b89855; background: #faf5e8; }
-.tblock.tourn { border-left-color: #c14d35; background: #faece8; }
-.tblock.clinic { border-left-color: #4a7ab8; background: #ecf2f9; }
-
-/* Week grid */
-.week-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; }
-@media (max-width: 720px) { .week-grid { grid-template-columns: 1fr; } }
-.day {
-  background: white;
-  border: 1px solid #e8e6df;
-  border-radius: 8px;
-  padding: 10px;
-  min-height: 130px;
-  font-size: 12px;
-}
-.day.today { border-color: #1e5631; border-width: 2px; background: #f6faf6; }
-.day.rest { background: #faf5e8; }
-.day.tourn { background: #faece8; border-color: #c14d35; }
-.day.clinic { background: #ecf2f9; }
-.day .dow { font-size: 10px; text-transform: uppercase; color: #888; letter-spacing: 0.5px; font-weight: 600; }
-.day .date { font-size: 15px; font-weight: 700; margin: 2px 0 6px; }
-.day .focus { color: #1e5631; font-weight: 600; font-size: 11px; }
-.day .detail { color: #555; font-size: 11px; margin-top: 3px; }
-.day .venue { color: #999; font-size: 10px; margin-top: 4px; font-style: italic; }
-.day .partners { color: #2d7a44; font-size: 10px; margin-top: 2px; font-weight: 500; }
-
-/* Tournament cards */
-.tourn-card {
-  background: white;
-  border: 1px solid #e8e6df;
-  border-radius: 12px;
-  padding: 20px 22px;
-  margin-bottom: 14px;
-  position: relative;
-  overflow: hidden;
-}
-.tourn-card::before {
-  content: "";
-  position: absolute;
-  left: 0; top: 0; bottom: 0; width: 5px;
-  background: #2d7a44;
-}
-.tourn-card.l1::before { background: #c14d35; }
-.tourn-card.l2::before { background: #d18b2c; }
-.tourn-card.l3::before { background: #4a7ab8; }
-.tourn-card.l5::before { background: #6b6b6b; }
-.tourn-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; flex-wrap: wrap; margin-bottom: 10px; }
-.tourn-title { font-size: 17px; font-weight: 700; color: #1a1a1a; }
-.tourn-level {
-  background: #f0efe7;
-  color: #555;
-  padding: 3px 10px;
-  border-radius: 12px;
-  font-size: 11px;
-  font-weight: 600;
-}
-.tourn-level.l1 { background: #fbe3dc; color: #8d2e1d; }
-.tourn-level.l2 { background: #fbecd0; color: #855218; }
-.tourn-level.l3 { background: #dbe7f5; color: #2c4a78; }
-.tourn-level.l5 { background: #e8e6df; color: #4a4a4a; }
-.tourn-meta { display: flex; flex-wrap: wrap; gap: 14px; font-size: 13px; color: #555; margin-bottom: 12px; }
-.tourn-meta b { color: #1a1a1a; }
-.tourn-section { margin-top: 12px; padding-top: 12px; border-top: 1px solid #f0efe7; }
-.tourn-section h4 { font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; color: #888; margin-bottom: 6px; font-weight: 600; }
-.tourn-section ul { margin-left: 18px; }
-.tourn-section li { font-size: 13px; margin-bottom: 3px; }
-.reg-flag {
-  display: inline-block;
-  background: #fff4d4;
-  color: #7a5400;
-  padding: 2px 8px;
-  border-radius: 10px;
-  font-size: 11px;
-  font-weight: 600;
-  margin-left: 6px;
-}
-.reg-flag.urgent { background: #fbe3dc; color: #8d2e1d; }
-
-/* Drill cards */
-.drill-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; }
-.drill {
-  background: white;
-  border: 1px solid #e8e6df;
-  border-radius: 10px;
-  padding: 16px;
-}
-.drill-cat { font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600; margin-bottom: 4px; }
-.drill-cat.fh { color: #c14d35; }
-.drill-cat.serve { color: #2c4a78; }
-.drill-cat.pc { color: #855218; }
-.drill-cat.fit { color: #1e5631; }
-.drill-cat.match { color: #6e4a8d; }
-.drill-cat.net { color: #1a7d77; }
-.drill h3 { font-size: 15px; margin-bottom: 6px; }
-.drill p { font-size: 13px; color: #444; }
-.drill .duration { font-size: 11px; color: #888; margin-top: 6px; font-style: italic; }
-
-/* Tables */
-table { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 8px; }
-th { text-align: left; padding: 8px 10px; background: #f0efe7; font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: 0.3px; }
-td { padding: 8px 10px; border-bottom: 1px solid #f0efe7; }
-tr:last-child td { border-bottom: none; }
-
-/* Venue cards */
-.venue-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap: 12px; }
-.venue-card {
-  background: white;
-  border: 1px solid #e8e6df;
-  border-radius: 10px;
-  padding: 14px 16px;
-}
-.venue-card h3 { font-size: 15px; color: #1e5631; margin-bottom: 4px; }
-.venue-card .vsub { font-size: 12px; color: #888; margin-bottom: 8px; }
-.venue-card p { font-size: 13px; }
-
-/* Misc */
-.note {
-  background: #fff8e8;
-  border-left: 4px solid #d4a93a;
-  padding: 10px 14px;
-  border-radius: 6px;
-  font-size: 13px;
-  margin-bottom: 12px;
-}
-.note.urgent { background: #fbe3dc; border-color: #c14d35; }
-.note.info { background: #e6f0f7; border-color: #4a7ab8; }
-.tag { display: inline-block; background: #e8f0ea; color: #1e5631; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 600; margin-right: 4px; }
-.muted { color: #888; font-size: 12px; }
-
-/* Week navigation */
-.week-nav { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
-.week-nav button {
-  background: white;
-  border: 1px solid #d8d5cc;
-  border-radius: 8px;
-  padding: 8px 14px;
-  cursor: pointer;
-  font-family: inherit;
-  font-size: 13px;
-  font-weight: 500;
-}
-.week-nav button:hover { background: #f0efe7; }
-.week-nav .week-label { font-weight: 600; flex: 1; font-size: 14px; }
-
-.legend { display: flex; flex-wrap: wrap; gap: 12px; font-size: 12px; margin-top: 10px; }
-.legend-item { display: flex; align-items: center; gap: 5px; }
-.legend-dot { width: 12px; height: 12px; border-radius: 3px; }
-
-/* Momentum / progress */
-.momentum-card {
-  background: white;
-  border: 1px solid #e8e6df;
-  border-radius: 12px;
-  padding: 18px 22px;
-  margin-bottom: 16px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
-}
-.momentum-card h2 {
-  font-size: 15px;
-  font-weight: 700;
-  color: #1e5631;
-  margin-bottom: 12px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.momentum-card h2 .sub { font-size: 11px; color: #888; font-weight: 500; text-transform: none; letter-spacing: 0; }
-.momentum-row {
-  margin-bottom: 14px;
-}
-.momentum-row:last-child { margin-bottom: 0; }
-.momentum-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  margin-bottom: 4px;
-  font-size: 13px;
-}
-.momentum-name { font-weight: 600; color: #1a1a1a; }
-.momentum-stats { color: #555; font-size: 12px; }
-.momentum-stats b { color: #1e5631; font-size: 14px; }
-.progress-track {
-  background: #f0efe7;
-  border-radius: 6px;
-  height: 12px;
-  position: relative;
-  overflow: hidden;
-}
-.progress-fill {
-  background: linear-gradient(90deg, #2d7a44, #4ea065);
-  height: 100%;
-  border-radius: 6px;
-  transition: width 0.4s ease;
-}
-.progress-fill.ren { background: linear-gradient(90deg, #4a7ab8, #6d97cc); }
-.progress-markers {
-  display: flex;
-  justify-content: space-between;
-  font-size: 10px;
-  color: #888;
-  margin-top: 3px;
-}
-.streak-pill {
-  display: inline-block;
-  background: #fff4d4;
-  color: #7a5400;
-  padding: 2px 9px;
-  border-radius: 12px;
-  font-size: 11px;
-  font-weight: 600;
-  margin-left: 6px;
-}
-.streak-pill.hot { background: #fbe3dc; color: #8d2e1d; }
-
-/* Date nav */
-.date-nav {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 14px;
-  flex-wrap: wrap;
-}
-.date-nav button {
-  background: white;
-  border: 1px solid #d8d5cc;
-  border-radius: 8px;
-  padding: 6px 12px;
-  cursor: pointer;
-  font-family: inherit;
-  font-size: 12px;
-  font-weight: 500;
-}
-.date-nav button:hover { background: #f0efe7; }
-.date-nav .today-jump {
-  background: #1e5631;
-  color: white;
-  border-color: #1e5631;
-}
-.date-nav .today-jump:hover { background: #2d7a44; }
-.date-nav .selected-indicator {
-  flex: 1;
-  text-align: right;
-  font-size: 12px;
-  color: #888;
-}
-
-/* Check-in section */
-.checkin-section {
-  background: #f7f6f1;
-  border-radius: 10px;
-  padding: 14px 16px;
-  margin-top: 16px;
-}
-.checkin-section h3 {
-  font-size: 13px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  color: #555;
-  margin-bottom: 10px;
-  font-weight: 600;
-}
-.checkin-row {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-bottom: 10px;
-}
-.checkin-row:last-child { margin-bottom: 0; }
-.checkin-name {
-  font-weight: 600;
-  font-size: 13px;
-  min-width: 72px;
-  padding-top: 6px;
-  color: #1a1a1a;
-}
-.checkin-items {
-  display: flex;
-  gap: 6px;
-  flex-wrap: wrap;
-  flex: 1;
-}
-.checkin-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: white;
-  border: 2px solid #e8e6df;
-  padding: 6px 12px;
-  border-radius: 18px;
-  cursor: pointer;
-  font-size: 12px;
-  font-weight: 500;
-  transition: all 0.15s;
-  user-select: none;
-}
-.checkin-pill:hover { border-color: #2d7a44; }
-.checkin-pill input {
-  margin: 0;
-  width: 14px;
-  height: 14px;
-  accent-color: #2d7a44;
-  cursor: pointer;
-}
-.checkin-pill.checked {
-  background: #2d7a44;
-  color: white;
-  border-color: #2d7a44;
-}
-.checkin-pill.checked input { accent-color: white; }
-.utr-bump {
-  font-size: 10px;
-  opacity: 0.7;
-  margin-left: 2px;
-}
-
-/* Day cell click + completion */
-.day { cursor: pointer; transition: transform 0.1s, box-shadow 0.1s; }
-.day:hover { transform: translateY(-1px); box-shadow: 0 2px 6px rgba(0,0,0,0.08); }
-.day.selected { border-color: #4a7ab8 !important; border-width: 2px !important; box-shadow: 0 0 0 3px rgba(74,122,184,0.18); }
-.day .complete-dot {
-  float: right;
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  font-size: 10px;
-  line-height: 14px;
-  text-align: center;
-  color: white;
-  font-weight: 700;
-}
-.day .complete-dot.full { background: #2d7a44; }
-.day .complete-dot.partial { background: #d4a93a; }
-.day .complete-dot.empty { background: transparent; border: 1.5px dashed #d8d5cc; }
-
-/* ====== MOBILE ====== */
-@media (max-width: 720px) {
-  body { font-size: 15px; }
-  .wrap { padding: 10px; }
-
-  /* Hero */
-  .hero { padding: 16px 18px; border-radius: 12px; }
-  .hero h1 { font-size: 22px; }
-  .hero .sub { font-size: 13px; }
-  .family-row { gap: 6px; margin-top: 8px; }
-  .fam-chip { font-size: 11px; padding: 3px 8px; }
-  .countdown-row { gap: 8px; margin-top: 12px; }
-  .cd-card { min-width: 0; flex: 1 1 calc(50% - 4px); padding: 8px 10px; }
-  .cd-card .label { font-size: 10px; }
-  .cd-card .value { font-size: 14px; }
-  .cd-card .days { font-size: 11px; }
-
-  /* Tabs */
-  .tabs { gap: 0; margin-bottom: 14px; }
-  .tab { padding: 12px 14px; font-size: 13px; min-height: 44px; }
-
-  /* Cards */
-  .card { padding: 14px 16px; border-radius: 10px; margin-bottom: 12px; }
-  .card h2 { font-size: 16px; margin-bottom: 10px; }
-  .card h3 { font-size: 14px; margin-top: 12px; }
-  .card p { font-size: 14px; }
-  .card ul, .card ol { margin-left: 18px; }
-  .card li { font-size: 14px; }
-
-  /* Momentum */
-  .momentum-card { padding: 14px 16px; }
-  .momentum-card h2 { font-size: 14px; flex-direction: column; align-items: flex-start; gap: 2px; }
-  .momentum-card h2 .sub { font-size: 10px; }
-  .momentum-header { flex-direction: column; align-items: flex-start; gap: 2px; }
-  .momentum-stats { font-size: 11px; }
-  .momentum-stats b { font-size: 13px; }
-  .streak-pill { margin-left: 0; margin-top: 3px; }
-  .progress-markers { font-size: 9px; }
-
-  /* Date nav */
-  .date-nav { gap: 6px; }
-  .date-nav button { padding: 10px 14px; font-size: 13px; min-height: 44px; flex: 1 1 auto; }
-  .date-nav .today-jump { flex-basis: 100%; order: 3; }
-  .date-nav .selected-indicator { flex-basis: 100%; text-align: left; order: 4; padding-left: 4px; }
-
-  /* Today block */
-  .today-block { padding: 16px 14px; }
-  .today-header { gap: 6px; }
-  .today-date { font-size: 17px; line-height: 1.3; }
-  .today-phase { font-size: 10px; padding: 3px 9px; }
-  .today-venue { font-size: 12px; margin-bottom: 10px; }
-  .today-blocks { grid-template-columns: 1fr; gap: 10px; }
-  .tblock { padding: 10px 12px; }
-  .tblock .tcontent { font-size: 13px; }
-
-  /* Check-in pills — touch-friendly */
-  .checkin-section { padding: 12px 14px; }
-  .checkin-row { flex-direction: column; gap: 6px; }
-  .checkin-name { min-width: 0; padding-top: 0; font-size: 14px; }
-  .checkin-pill { padding: 10px 14px; font-size: 13px; min-height: 40px; border-radius: 22px; }
-  .checkin-pill input { width: 16px; height: 16px; }
-
-  /* Week grid → stack to 1 column */
-  .week-grid { grid-template-columns: 1fr; gap: 6px; }
-  .day { display: flex; align-items: center; gap: 12px; padding: 12px 14px; min-height: 60px; }
-  .day .dow { font-size: 11px; min-width: 32px; flex-shrink: 0; }
-  .day .date { font-size: 18px; margin: 0; min-width: 28px; flex-shrink: 0; }
-  .day > div:not(.dow):not(.date) { flex: 1; }
-  .day .focus { font-size: 13px; }
-  .day .detail { font-size: 11px; }
-  .day .venue, .day .partners { font-size: 11px; margin-top: 2px; }
-  .day .complete-dot { margin-left: auto; float: none; }
-
-  /* Week nav */
-  .week-nav { flex-wrap: wrap; gap: 6px; }
-  .week-nav button { padding: 10px 14px; font-size: 13px; min-height: 44px; }
-  .week-nav .week-label { flex-basis: 100%; order: -1; text-align: center; padding: 4px 0; }
-
-  /* Tournament cards */
-  .tourn-card { padding: 14px 16px; }
-  .tourn-title { font-size: 15px; }
-  .tourn-meta { gap: 8px 14px; font-size: 12px; }
-  .tourn-section li { font-size: 12px; }
-
-  /* Venue grid */
-  .venue-grid { grid-template-columns: 1fr; gap: 10px; }
-  .venue-card { padding: 12px 14px; }
-
-  /* Drill grid */
-  .drill-grid { grid-template-columns: 1fr; gap: 10px; }
-  .drill { padding: 14px; }
-  .drill h3 { font-size: 14px; }
-  .drill p { font-size: 13px; }
-
-  /* Tables — scroll horizontally */
-  table { font-size: 12px; display: block; overflow-x: auto; white-space: nowrap; }
-  th, td { padding: 6px 8px; }
-}
-
-@media (max-width: 380px) {
-  .hero h1 { font-size: 20px; }
-  .cd-card { flex-basis: 100%; }
-  .fam-chip { font-size: 10px; }
-}
+@media (max-width:380px){.hero h1{font-size:20px}.cd-card{flex-basis:100%}}
 </style>
 </head>
 <body>
 <div class="wrap">
-
 <div class="hero">
-  <h1>Summer of Tennis 2026</h1>
-  <div class="sub">Avon, CT · May 25 – Aug 16</div>
-  <div class="family-row">
-    <div class="fam-chip">Charlie · 16 · UTR 9.67 → 11.0</div>
-    <div class="fam-chip">Ren · 19 · UTR 8.47 → ~9.0</div>
-    <div class="fam-chip">Robert · 50 · 5.0 NTRP coach &amp; hitter</div>
-    <div class="fam-chip">Teresa · 53</div>
-  </div>
-  <div class="countdown-row" id="countdownRow"></div>
-  <div class="version-row">
-    <span id="versionLabel">v.2026.05.25</span>
-    <button class="refresh-btn" onclick="forceReload()" title="Force fresh load">↻ Refresh</button>
-  </div>
+<svg class="deco" width="80" height="80" viewBox="0 0 100 100" aria-hidden="true">
+<g transform="translate(15,15) rotate(-25 35 35)">
+<ellipse cx="35" cy="28" rx="22" ry="26" fill="none" stroke="white" stroke-width="3" opacity=".9"/>
+<ellipse cx="35" cy="28" rx="18" ry="22" fill="rgba(255,255,255,.06)"/>
+<line x1="17" y1="28" x2="53" y2="28" stroke="white" stroke-width=".6" opacity=".65"/>
+<line x1="17" y1="20" x2="53" y2="20" stroke="white" stroke-width=".6" opacity=".65"/>
+<line x1="17" y1="36" x2="53" y2="36" stroke="white" stroke-width=".6" opacity=".65"/>
+<line x1="35" y1="6" x2="35" y2="50" stroke="white" stroke-width=".6" opacity=".65"/>
+<line x1="28" y1="6" x2="28" y2="50" stroke="white" stroke-width=".6" opacity=".65"/>
+<line x1="42" y1="6" x2="42" y2="50" stroke="white" stroke-width=".6" opacity=".65"/>
+<rect x="33" y="54" width="4" height="28" fill="white" opacity=".9" rx="1.5"/>
+<rect x="32" y="78" width="6" height="4" fill="white" opacity=".9" rx="1"/>
+</g>
+<g class="ball" transform="translate(70,60)">
+<circle r="9" fill="#dfe97a" stroke="#b8c356" stroke-width=".5"/>
+<path d="M -9 0 Q 0 -5 9 0" stroke="white" stroke-width="1.2" fill="none" opacity=".85"/>
+<path d="M -9 0 Q 0 5 9 0" stroke="white" stroke-width="1.2" fill="none" opacity=".85"/>
+</g>
+</svg>
+<h1>Summer of Tennis 2026</h1>
+<div class="sub">Avon, CT · May 25 – Aug 16</div>
+<div class="family-row">
+<div class="fam-chip">Charlie · 16 · UTR 9.67 → 11.0</div>
+<div class="fam-chip">Ren · 19 · UTR 8.47 → ~9.0</div>
+<div class="fam-chip">Robert · 50 · 5.0 NTRP</div>
+<div class="fam-chip">Teresa · 53</div>
 </div>
-
+<div class="countdown-row" id="countdownRow"></div>
+<div class="version-row">
+<span>v.2026.05.26</span>
+<button class="refresh-btn" onclick="forceReload()">↻ Refresh</button>
+</div>
+</div>
 <div class="tabs">
-  <button class="tab active" data-tab="today">Today</button>
-  <button class="tab" data-tab="week">This Week</button>
-  <button class="tab" data-tab="tournaments">Tournaments &amp; Travel</button>
-  <button class="tab" data-tab="venues">Courts</button>
-  <button class="tab" data-tab="drills">Drill Library</button>
-  <button class="tab" data-tab="ren">Ren's Plan</button>
-  <button class="tab" data-tab="methodology">Methodology</button>
+<button class="tab active" data-tab="today">Today</button>
+<button class="tab" data-tab="week">This Week</button>
+<button class="tab" data-tab="tournaments">Tournaments &amp; Travel</button>
+<button class="tab" data-tab="venues">Courts</button>
+<button class="tab" data-tab="drills">Drill Library</button>
+<button class="tab" data-tab="ren">Ren's Plan</button>
+<button class="tab" data-tab="methodology">Methodology</button>
 </div>
-
-<!-- TODAY -->
 <div class="panel active" id="panel-today">
-  <div class="momentum-card" id="momentumCard"></div>
-  <div class="date-nav">
-    <button onclick="shiftSelectedDate(-1)">← Prev day</button>
-    <button onclick="shiftSelectedDate(1)">Next day →</button>
-    <button class="today-jump" onclick="jumpToToday()">Jump to today</button>
-    <div class="selected-indicator" id="selectedIndicator"></div>
-  </div>
-  <div class="today-block" id="todayBlock"></div>
-  <div class="card">
-    <h2>Why this day looks the way it does</h2>
-    <div id="todayContext"></div>
-  </div>
+<div class="momentum-card" id="momentumCard"></div>
+<div class="date-nav">
+<button onclick="shiftSelectedDate(-1)">← Prev</button>
+<button onclick="shiftSelectedDate(1)">Next →</button>
+<button class="today-jump" onclick="jumpToToday()">Jump to today</button>
+<div class="selected-indicator" id="selectedIndicator"></div>
 </div>
-
-<!-- WEEK -->
+<div class="today-block" id="todayBlock"></div>
+<div class="card"><h2>Why this day looks the way it does</h2><div id="todayContext"></div></div>
+</div>
 <div class="panel" id="panel-week">
-  <div class="week-nav">
-    <button onclick="shiftWeek(-1)">← Previous</button>
-    <div class="week-label" id="weekLabel"></div>
-    <button onclick="shiftWeek(1)">Next →</button>
-    <button onclick="goToCurrentWeek()">This week</button>
-  </div>
-  <div class="week-grid" id="weekGrid"></div>
-  <div class="legend">
-    <div class="legend-item"><div class="legend-dot" style="background:#fff;border:1px solid #ccc"></div>Training day</div>
-    <div class="legend-item"><div class="legend-dot" style="background:#ecf2f9"></div>Clinic day</div>
-    <div class="legend-item"><div class="legend-dot" style="background:#faf5e8"></div>Rest day</div>
-    <div class="legend-item"><div class="legend-dot" style="background:#faece8"></div>Tournament / travel</div>
-    <div class="legend-item"><div class="legend-dot" style="background:#f6faf6;border:2px solid #1e5631"></div>Today</div>
-  </div>
+<div class="week-nav">
+<button onclick="shiftWeek(-1)">← Previous</button>
+<div class="week-label" id="weekLabel"></div>
+<button onclick="shiftWeek(1)">Next →</button>
+<button onclick="goToCurrentWeek()">This week</button>
 </div>
-
-<!-- TOURNAMENTS -->
+<div class="week-grid" id="weekGrid"></div>
+<div class="legend">
+<div class="legend-item"><div class="legend-dot" style="background:#fff;border:1px solid #ccc"></div>Training</div>
+<div class="legend-item"><div class="legend-dot" style="background:#ecf2f9"></div>Clinic</div>
+<div class="legend-item"><div class="legend-dot" style="background:#faf5e8"></div>Rest</div>
+<div class="legend-item"><div class="legend-dot" style="background:#faece8"></div>Tournament</div>
+<div class="legend-item"><div class="legend-dot" style="background:#f6faf6;border:2px solid #1e5631"></div>Today</div>
+</div>
+<p class="muted" style="margin-top:10px">Tap any day to view its plan in the Today tab.</p>
+</div>
 <div class="panel" id="panel-tournaments">
-  <div class="note urgent" id="urgentReg"></div>
-  <div class="note info">
-    <b>Charlie's division plan (locked):</b> Boys 18 for T1 Bloomfield (registered) + T2 Babson. Boys 16 for everything else (T3 Cornell, T4 Delray, T5 PA Team Cup, T6 Battle of Sections, T7 Kalamazoo) — his national standing isn't high enough for B18 selection at the L1/L2 nationals.
-  </div>
-  <div id="tournList"></div>
+<div class="note urgent" id="urgentReg" style="display:none"></div>
+<div class="note info"><b>Charlie's division plan (locked):</b> Boys 18 for T1 Bloomfield (registered) + T2 Babson. Boys 16 for T3–T7 — national standing not high enough for B18 at L1/L2 nationals.</div>
+<div id="tournList"></div>
 </div>
-
-<!-- VENUES -->
 <div class="panel" id="panel-venues">
-  <div class="card">
-    <h2>Where you're playing this summer</h2>
-    <p>Default is always Sycamore Park outdoor in Avon. The clay tournaments (Bloomfield and Delray) need clay-specific prep, which is what Mill Pond and the Maine trip cover.</p>
-  </div>
-  <div class="venue-grid">
-    <div class="venue-card">
-      <h3>Sycamore Park — Avon, CT</h3>
-      <div class="vsub">Outdoor hard · Default home court · ~5 min from Foxcroft Run</div>
-      <p>Where Charlie + Ren + Robert do the bulk of training. Used for any block that isn't explicitly clay prep or a tournament.</p>
-    </div>
-    <div class="venue-card">
-      <h3>Mill Pond — Newington, CT</h3>
-      <div class="vsub">Outdoor clay · Clay prep venue · ~20 min south of Avon</div>
-      <p><b>1–2 sessions</b> before T1 Bloomfield (target: Sat May 30 + Thu Jun 4).<br><b>5–7 sessions</b> before T4 Delray (built into Jun 30 – Jul 4 clay-prep block plus catch-up sessions if Maine clay time is short).</p>
-    </div>
-    <div class="venue-card">
-      <h3>Juniper Point — Boothbay Harbor, ME</h3>
-      <div class="vsub">Red clay (family vacation rental) · Jun 21–26</div>
-      <p>Ren + Teresa drive up Sunday Jun 21. Charlie + Robert join when Babson wraps. The week becomes <b>clay-court training camp</b> for Delray — long-rally days, sliding mechanics, patience patterns. 90 min hitting + lake-swim recovery is a fine daily target.</p>
-    </div>
-    <div class="venue-card">
-      <h3>Bloomfield Tennis Club — Bloomfield, CT</h3>
-      <div class="vsub">Red clay (indoor hard if rain) · T1 venue · ~15 min from Avon</div>
-      <p>T1 tournament — Jun 5–7. No need to practice here in advance; do clay prep at Mill Pond instead.</p>
-    </div>
-    <div class="venue-card">
-      <h3>Babson + multi-site MA</h3>
-      <div class="vsub">Outdoor hard · T2 venue · Wellesley Hills MA</div>
-      <p>Gallagher Tennis Courts in Lexington, Newton South HS, Roxbury Latin. Be ready for 20–40 min drives between sites.</p>
-    </div>
-    <div class="venue-card">
-      <h3>Reis Tennis Center — Cornell U, Ithaca NY</h3>
-      <div class="vsub">Indoor hard (Wilson US Open XD) · T3 venue</div>
-      <p>Practice walk-on window: Fri Jun 26 from 4–8 PM. Use it.</p>
-    </div>
-    <div class="venue-card">
-      <h3>Delray / Boca / Palm Beach Gardens FL</h3>
-      <div class="vsub">Clay · T4 venue · multi-site</div>
-      <p>Wait for site assignment before booking hotel. Bring 4+ rackets; clay eats strings.</p>
-    </div>
-    <div class="venue-card">
-      <h3>Westtown School — West Chester PA</h3>
-      <div class="vsub">Outdoor hard · T5 venue</div>
-      <p>Secondary site at B Reed Henderson HS. Hot/humid late July.</p>
-    </div>
-    <div class="venue-card">
-      <h3>WMU + Kalamazoo College — Kalamazoo MI</h3>
-      <div class="vsub">Outdoor hard · T6 + T7 venues</div>
-      <p>T6 at Sorensen Courts (WMU). T7 at Stowe Stadium (Kalamazoo College). Practice courts at STOW. Single hotel stay Jul 31 – Aug 16 recommended.</p>
-    </div>
-  </div>
+<div class="card"><h2>Where you're playing this summer</h2><p>Default is Sycamore Park outdoor in Avon. Clay tournaments (Bloomfield, Delray) need clay-specific prep at Mill Pond and during the Maine trip. Tap any address to open in Maps.</p></div>
+<div class="venue-grid" id="venueList"></div>
 </div>
-
-<!-- DRILLS -->
 <div class="panel" id="panel-drills">
-  <div class="card">
-    <h2>How to use this library</h2>
-    <p>Each training day in the schedule points to one of these drill blocks. Pick the closest match by the focus tag — the schedule names the focus, this page tells you how to run it. Aim for 6–8 quality reps per drill, not volume.</p>
-  </div>
-  <h2 style="margin-bottom:10px;color:#1e5631;">Forehand as a weapon</h2>
-  <div class="drill-grid" id="drillsFH"></div>
-  <h2 style="margin:18px 0 10px;color:#2c4a78;">1st serve %</h2>
-  <div class="drill-grid" id="drillsServe"></div>
-  <h2 style="margin:18px 0 10px;color:#855218;">Point construction</h2>
-  <div class="drill-grid" id="drillsPC"></div>
-  <h2 style="margin:18px 0 10px;color:#1e5631;">Footwork &amp; conditioning</h2>
-  <div class="drill-grid" id="drillsFit"></div>
-  <h2 style="margin:18px 0 10px;color:#1a7d77;">Net hands &amp; transition (Ren focus)</h2>
-  <p class="muted" style="margin-bottom:8px">Designed for Ren but useful for Charlie's net-game maintenance too.</p>
-  <div class="drill-grid" id="drillsNet"></div>
-  <h2 style="margin:18px 0 10px;color:#6e4a8d;">Match play / sets</h2>
-  <div class="drill-grid" id="drillsMatch"></div>
+<div class="card"><h2>How to use this library</h2><p>Each training day points to one of these drill blocks. Aim for 6–8 quality reps per drill, not volume.</p></div>
+<h2 style="margin-bottom:10px;color:#c14d35;">Forehand as a weapon</h2><div class="drill-grid" id="drillsFH"></div>
+<h2 style="margin:18px 0 10px;color:#2c4a78;">1st serve %</h2><div class="drill-grid" id="drillsServe"></div>
+<h2 style="margin:18px 0 10px;color:#855218;">Point construction</h2><div class="drill-grid" id="drillsPC"></div>
+<h2 style="margin:18px 0 10px;color:#1e5631;">Footwork &amp; conditioning</h2><div class="drill-grid" id="drillsFit"></div>
+<h2 style="margin:18px 0 10px;color:#6e4a8d;">Match play / sets</h2><div class="drill-grid" id="drillsMatch"></div>
+<h2 style="margin:18px 0 10px;color:#1a7d77;">Net hands &amp; transition (Ren focus)</h2>
+<p class="muted" style="margin-bottom:8px">Designed for Ren but useful for Charlie's net-game maintenance too.</p>
+<div class="drill-grid" id="drillsNet"></div>
 </div>
-
-<!-- REN -->
 <div class="panel" id="panel-ren">
-  <div class="card">
-    <h2>Ren's plan in one paragraph</h2>
-    <p>Ren (19, ex-Middlebury #3, UTR 8.47) has a strong base and college-match volume to draw from. With limited new-match opportunities this summer, the path to 9.0 runs through three things: <b>weapons sharpening</b> (squeezing more from her best shot), <b>quality hitting against Charlie</b> (he's a 9.67 — that's an above-college-level hitting partner), and <b>match-volume substitution</b> (sets played at home count for tactical sharpness even if they don't move UTR). She'll likely leave for Middlebury in late August, so the plan front-loads her opportunities for hitting with Charlie.</p>
-  </div>
-  <div class="card">
-    <h2>Ren's three focus areas this summer</h2>
-    <ol>
-      <li><b>Hands at the net</b> — soft volleys, drop volleys, angle volleys, swing volleys when the ball sits up. The specific bug to fix: <i>easy volleys missed in the net or wide while moving forward</i>. Most amateur volley misses come from over-swinging while still moving — the fix is "stop, then hit." Block-volley footwork drill is the foundation.</li>
-      <li><b>Transition decisions — when to come in</b> — knowing which ball is the approach ball and which one to stay back on. Quick rule of thumb: any ball she takes inside the baseline AND can hit aggressively = approach. Any ball that pulls her wide = stay back. The drill is forcing her to <i>call out loud</i> ("approach!" or "stay!") as she's moving — builds the decision before the execution.</li>
-      <li><b>Forehand weapon — maintenance only</b> — her FH is already her best shot. Don't over-drill it. One short FH block (20 min) per session is enough to keep it sharp. The training time freed up goes to net and transition.</li>
-    </ol>
-  </div>
-  <div class="card">
-    <h2>Weekly skeleton</h2>
-    <p>Mirrors Charlie's structure but with a different emphasis: net/transition work and match-play sets. On Charlie's clinic days (Wed, Thu) she hits with Robert at Sycamore Park.</p>
-    <ul>
-      <li><b>Mon</b>: Rest day or light footwork only</li>
-      <li><b>Tue</b>: 90 min hitting with Charlie + Robert (3-way rotation): 20 min FH maintenance + 40 min approach/volley drills + 30 min sets · 30 min footwork · weights</li>
-      <li><b>Wed</b>: Charlie at clinic. Ren hits with Robert 90 min: 60 min approach + first volley, 30 min serve-and-volley patterns</li>
-      <li><b>Thu</b>: 2 hr match play with Charlie before his 5:00 clinic. Constraint: Ren must come to net at least 4x per set · weights</li>
-      <li><b>Fri</b>: 90 min hitting with Charlie + Robert — short-ball recognition, approach + 2 volley sequences · 30 min footwork</li>
-      <li><b>Sat</b>: 2 hr — half drilling (net hands + decision drills), half sets · weights</li>
-      <li><b>Sun</b>: 90 min serve + return only with Charlie (no full rallies) — separation block. FH maintenance on her end (cross-court depth).</li>
-    </ul>
-    <h3>What pushes her toward 9.0</h3>
-    <ul>
-      <li><b>UTR-rated events</b>: Look for adult open / Flex League / NTRP 5.0–5.5 sectional events in CT/MA. These produce rated matches that count.</li>
-      <li><b>Travel opportunism</b>: If she joins the Kalamazoo trip (Aug 1–16), find an adult open in MI or IL that overlaps. WMU campus area has a strong adult tennis scene.</li>
-      <li><b>Quality of practice partners</b>: Hitting with Charlie ~3×/wk is a 9.67-level workout. Hitting with Robert (5.0 ≈ UTR 9.0–9.5) is also strong. She's getting better partners at home than most college players see in the summer.</li>
-      <li><b>Net game raises her ceiling</b>: 8.47 → 9.0 from the baseline alone is hard — you have to outhit better-baseliners. Adding a confident net game gives her a Plan B and shortens points she'd otherwise lose by attrition.</li>
-    </ul>
-  </div>
-  <div class="card">
-    <h2>The transition when Ren leaves for Middlebury (September)</h2>
-    <p>Middlebury preseason starts in September — she's home all summer plus most of August. That gives ~14 weeks together with Charlie before the handoff. After Ren leaves, Charlie loses his best home hitting partner, and Robert becomes the primary one. That's why Robert's 3x/week schedule matters now — to stay match-ready as the partner Charlie will rely on through fall.</p>
-  </div>
+<div class="card"><h2>Ren's plan in one paragraph</h2><p>Ren (19, ex-Middlebury #3, UTR 8.47). The path to 9.0 runs through <b>net hands</b> (fixing missed easy volleys while moving forward), <b>transition decisions</b> (when to come in), and <b>quality hitting against Charlie</b>. Her FH is already her weapon — keep sharp with one short block per session. She leaves for Middlebury in September.</p></div>
+<div class="card"><h2>Ren's three focus areas</h2><ol><li><b>Hands at the net</b> — soft volleys, drop volleys, angle volleys. Fix: missed easy volleys while moving forward. Block-volley footwork. "Stop, then hit."</li><li><b>Transition decisions</b> — any ball inside the baseline she can hit aggressively = approach. Call out loud ("approach!" or "stay!") as she's moving.</li><li><b>Forehand maintenance only</b> — already her weapon. 20 min/session. Freed time goes to net + transition.</li></ol></div>
+<div class="card"><h2>Weekly skeleton</h2><ul><li><b>Mon</b>: Rest or light footwork</li><li><b>Tue</b>: 90 min Charlie + Robert: 20 FH + 40 approach/volley + 30 sets · footwork · weights</li><li><b>Wed</b>: Charlie at clinic. 90 min with Robert: approach + first volley, serve-and-volley patterns</li><li><b>Thu</b>: 2 hr match play with Charlie AM (constraint: come to net 4+ times per set) · weights</li><li><b>Fri</b>: 90 min Charlie + Robert — short-ball recognition, approach + 2 volleys · footwork</li><li><b>Sat</b>: 2 hr — half drilling (net + decision), half sets · weights</li><li><b>Sun</b>: 90 min serve + return only with Charlie</li></ul></div>
+<div class="card"><h2>Transition when Ren leaves for Middlebury (September)</h2><p>Preseason in September. ~14 weeks together with Charlie before the handoff. After she leaves, Robert becomes Charlie's primary home hitting partner. That's why Robert's 3x/week schedule matters now.</p></div>
 </div>
-
-<!-- METHODOLOGY -->
 <div class="panel" id="panel-methodology">
-  <div class="card">
-    <h2>Who plays when</h2>
-    <p>Charlie trains 6 days/week (1 rest day, usually Monday). Ren trains the same skeleton. Robert hits 3x/week (typically Tue, Fri, Sat) — both to be a 5.0-level hitting partner and to stay sharp for after Ren leaves for Middlebury. On Charlie's clinic days (Wed, Thu for the next 2–3 weeks), the home plan adjusts.</p>
-    <table>
-      <thead><tr><th>Day</th><th>Charlie</th><th>Ren</th><th>Robert</th></tr></thead>
-      <tbody>
-        <tr><td>Mon</td><td>Rest</td><td>Rest / light</td><td>Off</td></tr>
-        <tr><td>Tue</td><td>2 hr + 30 min footwork</td><td>2 hr + 30 min footwork</td><td>Hits (1 of 3)</td></tr>
-        <tr><td>Wed</td><td>Clinic 4–6:30 (next 2–3 wks)</td><td>Hits w/ Robert</td><td>Hits w/ Ren</td></tr>
-        <tr><td>Thu</td><td>Home hit AM + clinic 5–6:30</td><td>Match play w/ Charlie AM</td><td>Off</td></tr>
-        <tr><td>Fri</td><td>2 hr + 30 min footwork</td><td>2 hr + 30 min footwork</td><td>Hits (2 of 3)</td></tr>
-        <tr><td>Sat</td><td>2 hr + weights</td><td>2 hr + weights</td><td>Hits (3 of 3)</td></tr>
-        <tr><td>Sun</td><td>90 min serve + patterns</td><td>90 min serve + return</td><td>Off</td></tr>
-      </tbody>
-    </table>
-    <p style="margin-top:12px"><b>Charlie's clinic note:</b> the 2.5-hr Wed clinic counts as full hitting; only add 30 min footwork that day, no extra drilling. The 1.5-hr Thu clinic is enough hitting; add 30 min serve practice + weights to fill out the day.</p>
-  </div>
-  <div class="card">
-    <h2>Periodization at a glance</h2>
-    <p>The summer breaks into phases that taper into each tournament and recover after. Two days before any tournament, hitting drops to 60–75 min at lower intensity (touch, serve+1, ball-toss patterns). The day after a tournament, training is movement only — no full court. Weights stop 72 hours before any tournament travel.</p>
-    <table>
-      <thead><tr><th>Phase</th><th>Window</th><th>Theme</th></tr></thead>
-      <tbody>
-        <tr><td>Foundation</td><td>May 25 – Jun 3</td><td>Technical reset on FH; serve-toss work; build pattern library. 1 Mill Pond clay session Sat May 30.</td></tr>
-        <tr><td>T1 block (Bloomfield)</td><td>Jun 4 – Jun 8</td><td>Taper at Mill Pond clay (Thu Jun 4). Play Fri–Sun. Recovery Mon.</td></tr>
-        <tr><td>Build-Babson</td><td>Jun 9 – Jun 18</td><td>Add intensity, sectionals-level drills. School ends Jun 17. Clinic still on Wed Jun 10 + Thu Jun 11.</td></tr>
-        <tr><td>T2 (Babson) + family Maine split</td><td>Jun 19 – Jun 26</td><td>Ren + Teresa drive to Maine Sun Jun 21. Charlie + Robert play out the Babson draw, then drive to Maine when eliminated. Maine = clay training camp on Juniper Point.</td></tr>
-        <tr><td>T3 (Cornell)</td><td>Jun 26 – Jun 29</td><td>Travel from Maine direct to Ithaca Fri Jun 26 (or back via Avon if needed). Practice walk-on 4–8 PM. Play Sat–Mon.</td></tr>
-        <tr><td>Clay prep (Mill Pond)</td><td>Jun 30 – Jul 4</td><td>Daily Mill Pond clay sessions. Long rallies, sliding mechanics, patience patterns. Fly Jul 4 PM.</td></tr>
-        <tr><td>T4 (Delray clay)</td><td>Jul 5 – Jul 12</td><td>Match week — light practice between rounds.</td></tr>
-        <tr><td>Rebuild</td><td>Jul 13 – Jul 22</td><td>Heaviest training block of summer.</td></tr>
-        <tr><td>T5 (Team Cup PA)</td><td>Jul 23 – Jul 27</td><td>Taper, drive Thu, play Fri–Sun.</td></tr>
-        <tr><td>Final sharpen</td><td>Jul 28 – Jul 31</td><td>Pattern review, mental rehearsal, fly Jul 31.</td></tr>
-        <tr><td>Kalamazoo block (T6 + T7)</td><td>Aug 1 – Aug 16</td><td>Battle of Sections (Aug 1–5), rest day Aug 6, then Nationals (Aug 7–16).</td></tr>
-      </tbody>
-    </table>
-  </div>
-  <div class="card">
-    <h2>UTR math: what 9.67 → 11.0 actually requires</h2>
-    <p>UTR moves on rated singles results, not training. Beating a 10.5 by 6-4 6-2 is worth roughly a 10.8 single-match rating. To pull a 12-match average UTR up by 1.33 points, you typically need 8–10 strong wins over 10.5+ opponents and the avoidance of bad losses (losing to a 9.0 caps your ceiling). Practical implication: <b>at L1 events Charlie's job is to compete — wins move him; losses to higher-ranked players don't hurt him much.</b> At L5/L3 events the job is to <b>not lose to anyone below 9.5</b>. That asymmetry should change his pre-match mindset by event level.</p>
-  </div>
-  <div class="card">
-    <h2>How weights interact with tennis</h2>
-    <p>3×/wk weights on <b>Tue / Thu / Sat</b> only — never on back-to-back days. Muscles need ~48 hours to recover between sessions or you're just digging a fatigue hole. Avoid heavy lower-body the day before competition or before serve-heavy sessions. Suggested split: <b>Tue</b> (full body, moderate), <b>Thu</b> (upper body + rotational core), <b>Sat</b> (lower body + plyo — but skip if it's a tournament Saturday). Sun, Mon, Wed, Fri are never weights days. When a tournament Saturday cancels Sat weights, do NOT shift them to Fri — just drop the session, recovery beats catch-up.</p>
-  </div>
-  <div class="card">
-    <h2>About the projected UTR (Momentum) number</h2>
-    <p>The "projected UTR" on the Today tab is a <b>motivational counter, not a prediction</b>. Real UTR only moves on rated singles match results. Each completed practice + each weights session adds <b>+0.015 projected UTR</b> for each kid — a notional rate that, if they hit the full plan through Aug 16, gets Charlie past 11.0 and Ren past 9.0 with room to spare. The point is to make daily consistency visible: a streak of zeroes shows up immediately; a strong week pushes the bar forward. Use it for momentum, not as a prediction of how Kalamazoo will go.</p>
-    <h3>How to count a session</h3>
-    <p>One practice = a real hitting block (90 min+ counts). Half-effort doesn't count. Weights = the actual lift session, not the warmup. If the kid wants to be honest with the counter, that's the integrity standard.</p>
-  </div>
-  <div class="card">
-    <h2>When you update the page — cache busting</h2>
-    <p>Static HTML files on GitHub Pages get cached aggressively by iOS Safari and by GitHub's CDN (up to ~10 min). When you redeploy, the kids might keep seeing the old version. Three layers of defense are built in:</p>
-    <ol>
-      <li><b>Cache-Control meta tags</b> in the HTML head tell the browser not to cache. Imperfect — Safari sometimes ignores them, but they help.</li>
-      <li><b>The "↻ Refresh" button</b> in the hero header (top right) reloads with a cache-busting query string. Tell the kids: <i>"if the plan looks out of date, tap the Refresh button in the green box."</i></li>
-      <li><b>Auto-refresh after 12 hours</b>: if a kid leaves the page open overnight and comes back, it auto-reloads with a cache buster the moment they focus it.</li>
-    </ol>
-    <p><b>When you redeploy, do this:</b></p>
-    <ul>
-      <li>After pushing the new file to GitHub, wait 60–90 seconds (CDN propagation).</li>
-      <li>On your own phone, pull-to-refresh the page. Confirm the version label at the top right of the hero shows the new date.</li>
-      <li>If kids report stale data: tell them to tap the ↻ Refresh button in the hero.</li>
-      <li><b>"Add to Home Screen" caveat:</b> iOS webapp icons cache the hardest. If the home-screen icon shows stale content, the cleanest fix is to delete the icon and re-add it from Safari. Rare — but worth knowing.</li>
-    </ul>
-  </div>
-  <div class="card">
-    <h2>How to share this with the kids</h2>
-    <p>This page is a single self-contained HTML file. To put it on the web so the kids can click a link, you have three good options ranked by ease:</p>
-    <ol>
-      <li><b>Netlify Drop</b> (~30 seconds, no account needed): go to <span class="tag">app.netlify.com/drop</span>, drag the HTML file onto the page. You get a URL like <code>radiant-otter-abc123.netlify.app</code> instantly. Bookmark it. Re-upload to update.</li>
-      <li><b>GitHub Pages</b> (~5 minutes, requires GitHub account, free): create a new repo, upload the HTML as <code>index.html</code>, go to Settings → Pages → set source to <code>main</code> branch root. URL becomes <code>yourusername.github.io/repo-name</code>. To update, push a new file version.</li>
-      <li><b>Cloudflare Pages</b> (~10 minutes, requires GitHub): same idea as GitHub Pages but Cloudflare hosts the site. Better speed if the kids check from outside the US. Free.</li>
-    </ol>
-    <p style="margin-top:8px"><b>Important about the check-offs:</b> the gamification state is stored in each browser's local storage. So Charlie checking things off on his phone and Ren checking things off on hers will produce <i>separate counters</i> on each device. The single shared URL is for viewing the plan; the personal progress lives on each kid's own device. That's fine for now — when you want a true shared counter, that needs a backend, which is a bigger project.</p>
-  </div>
+<div class="card"><h2>Who plays when</h2><p>Charlie trains 6 days/week. Ren same skeleton. Robert hits 3x/week (Tue, Fri, Sat). On clinic days (Wed, Thu), home plan adjusts.</p>
+<table><thead><tr><th>Day</th><th>Charlie</th><th>Ren</th><th>Robert</th></tr></thead><tbody>
+<tr><td>Mon</td><td>Rest</td><td>Rest / light</td><td>Off</td></tr>
+<tr><td>Tue</td><td>2 hr + 30 footwork</td><td>2 hr + 30 footwork</td><td>Hits (1/3)</td></tr>
+<tr><td>Wed</td><td>Clinic 4–6:30</td><td>Hits w/ Robert</td><td>Hits w/ Ren</td></tr>
+<tr><td>Thu</td><td>AM hit + clinic 5–6:30</td><td>Match play w/ Charlie AM</td><td>Off</td></tr>
+<tr><td>Fri</td><td>2 hr + 30 footwork</td><td>2 hr + 30 footwork</td><td>Hits (2/3)</td></tr>
+<tr><td>Sat</td><td>2 hr + weights</td><td>2 hr + weights</td><td>Hits (3/3)</td></tr>
+<tr><td>Sun</td><td>90 min serve + patterns</td><td>90 min serve + return</td><td>Off</td></tr>
+</tbody></table></div>
+<div class="card"><h2>Weights schedule rule</h2><p>3×/wk on <b>Tue / Thu / Sat</b> ONLY — never on back-to-back days. 48-hour gaps. Tue (full body), Thu (upper + rotational), Sat (lower + plyo, skip on tournament Saturdays). When a tournament cancels Sat, drop it — don't shift to Fri.</p></div>
+<div class="card"><h2>About the projected UTR (Momentum)</h2><p>The "projected UTR" is a <b>motivational counter, not a prediction</b>. Real UTR moves on rated match results. Each completed practice + each weights session = +0.015 projected UTR. If they hit the full plan, both kids cruise past their goals. Point: make daily consistency visible.</p></div>
+<div class="card"><h2>The Trackers — what they're for</h2><p>Three drills with explicit numeric goals get in-app trackers (visible on training/clinic days in the Today tab):</p><ul><li><b>Spot Serve Ladder</b> — total makes out of 100 (5 zones × 10 each × 2 sides). Goal: improve week over week.</li><li><b>First-Serve % Game</b> — average % across 4 service games. Goal: 65%+.</li><li><b>Toss Lock</b> — tosses landing on the spot, out of 50. Goal: 45+.</li></ul><p>Enter a number, tap Save. Last 3 entries show with ↑/↓ trend arrows. Data persists per device.</p></div>
+<div class="card"><h2>UTR math at L1 vs L5 events</h2><p>To pull a 12-match avg up 1.33 points: 8–10 strong wins over 10.5+ opponents AND avoid bad losses. <b>At L1: Charlie's job is to compete</b> — wins move him, losses to higher-ranked don't hurt. <b>At L5/L3: don't lose to anyone below 9.5.</b> Different mindset per level.</p></div>
+<div class="card"><h2>Cache busting (when you update the page)</h2><p>Three layers: meta tags in head, ↻ Refresh button (cache-busting query string), auto-reload after 12hrs backgrounded.</p><p>After pushing a new file: wait 60–90 sec for CDN, pull-to-refresh, verify version label updated. If kids report stale data, they tap ↻ Refresh. iOS "Add to Home Screen" caches hardest — if stuck, delete icon and re-add.</p></div>
+<div class="card"><h2>Sharing this</h2><p>Three hosting options: <b>Netlify Drop</b> (drag-and-drop, ~30 sec, no account), <b>GitHub Pages</b> (~5 min, free), <b>Cloudflare Pages</b> (faster CDN, via GitHub). Check-off and tracker state live per-device — same URL but progress is local to each phone.</p></div>
 </div>
-
 </div>
-
 <script>
-// ====== DATA ======
 const TOURNAMENTS = [
-  {
-    id: 1, level: "L5", levelLabel: "L5 Open",
-    name: "Bloomfield Boys 18 Singles (Flighted)",
-    venue: "Bloomfield Tennis Club, 45 Douglas St, Bloomfield, CT",
-    start: "2026-06-05", end: "2026-06-07",
-    fee: 93, regClose: "2026-05-28", registered: true,
-    surface: "Red clay (indoor hard if rain)",
-    div: "Boys 18s Singles ✓ registered",
-    drive: { from: "Avon, CT", time: "~15 min", miles: 10 },
-    travel: "Local — daily commute. No hotel.",
-    hotels: [],
-    lodging: "Drive each day. ~15 min from home.",
-    notes: [
-      "Earliest registration deadline — May 28 at 5:59 PM EDT.",
-      "Conflicts with the last week of school (Charlie's last day is June 17). May need a half-day or excused absence for early matches Friday June 5.",
-      "Red clay — same surface as Maine (Juniper Point) and Delray prep. Mill Pond sessions May 30 + Jun 4 are the clay tune-ups.",
-      "Selection by Combined National Standing List, not first-come."
-    ],
-    plan: "Drive each match. Pack lunch + extra shirts. Watch heat — June 5–7 in CT can run 80s+."
-  },
-  {
-    id: 2, level: "L3", levelLabel: "L3 Closed Sectional",
-    name: "USTA NE Summer Sectionals (Boys 18 Singles)",
-    venue: "Babson College, Wellesley Hills, MA",
-    start: "2026-06-20", end: "2026-06-24",
-    fee: 160, regClose: "2026-06-03",
-    surface: "Outdoor hard (multiple sites)",
-    div: "Boys 18s Singles (Charlie's entry)",
-    drive: { from: "Avon, CT", time: "~1 hr 45 min", miles: 110 },
-    travel: "Drive. Hotel for the duration. Family split: Ren + Teresa drive to Maine Sun Jun 21; Robert + Charlie stay through Babson then drive to Maine direct.",
-    hotels: [
-      { name: "Boston Marriott Newton (room block)", price: "$219/night", note: "Official tournament rate. Book by Jun 3." },
-      { name: "Hampton Inn Natick", price: "~$190/night", note: "Pool, ~10 min to Babson" },
-      { name: "Holiday Inn Express Norwood", price: "~$170/night", note: "Cheaper, 15 min south" }
-    ],
-    lodging: "Book flexible Sat–Wed for Charlie + Robert. Refundable rate — release nights as Charlie's draw resolves. Direct drive Babson → Boothbay is ~3.5 hrs.",
-    notes: [
-      "Tournament uses multiple sites (Gallagher Tennis Courts in Lexington, Newton South HS, Roxbury Latin). Be ready to drive 20–40 min between sites.",
-      "FAMILY SPLIT: Ren + Teresa drive direct Avon → Boothbay Sun Jun 21 (~5 hrs).",
-      "Player party + 1-Point Slam Fri night — register early, space limited to 64.",
-      "Order event t-shirt by Jun 7 for delivery before tournament."
-    ],
-    plan: "Charlie + Robert drive Fri Jun 19 PM to MA. Stay nightly through Charlie's elimination. Direct route to Boothbay after final match (~3.5 hr drive)."
-  },
-  {
-    id: 3, level: "L2", levelLabel: "L2 National",
-    name: "L2 Boys 16 — Ithaca, NY",
-    venue: "Reis Tennis Center, Cornell University, Ithaca NY",
-    start: "2026-06-27", end: "2026-06-29",
-    fee: 156, regClose: "2026-06-04",
-    surface: "Indoor hard (Wilson US Open XD)",
-    div: "Boys 16s Singles + Doubles",
-    drive: { from: "Avon, CT", time: "~4 hr 15 min from home / ~7 hr from Boothbay", miles: 270 },
-    travel: "Likely drive direct from Boothbay Maine Fri Jun 26 (~7 hrs) for 4–8 PM practice walk-on. Alternative: back through Avon Thu Jun 25.",
-    hotels: [
-      { name: "Best Western University Inn (room block)", price: "$179/night", note: "0.3 mi from venue. Free breakfast + shuttle. THE pick." },
-      { name: "Hilton Garden Inn Ithaca", price: "~$210/night", note: "Downtown, 10 min drive" },
-      { name: "Hampton Inn Ithaca", price: "~$180/night", note: "Near campus" }
-    ],
-    lodging: "Lock the Best Western University Inn room block ASAP after registration confirms. 3 nights Fri–Sun.",
-    notes: [
-      "Boys 16 event — Charlie eligible (born 12/17/2009).",
-      "FIC format feeds losers through Round of 16 — guaranteed multiple matches.",
-      "Practice courts available Fri Jun 26, 4–8 PM. Plan to arrive Friday afternoon.",
-      "Stringing on-site: $25/racket w/ own string."
-    ],
-    plan: "Decision point: drive Boothbay → Ithaca direct (~7 hrs) on Fri Jun 26 morning, or split (back through Avon Thu, then Ithaca Fri). Direct is more efficient; via-Avon allows gear reset."
-  },
-  {
-    id: 4, level: "L1", levelLabel: "L1 National",
-    name: "USTA Nat'l Clay Court Champs (B16 + B18)",
-    venue: "Delray Beach + Boca Raton + Palm Beach Gardens, FL",
-    start: "2026-07-05", end: "2026-07-12",
-    fee: 172, regClose: "2026-06-11",
-    surface: "Clay (Wilson Regular Duty)",
-    div: "Boys 16s Singles + Doubles (Charlie's entry)",
-    drive: { from: "Avon, CT", time: "~22 hr (don't)", miles: 1450 },
-    travel: "Fly. ~8 nights hotel. Rental car required (multi-site).",
-    hotels: [
-      { name: "Delray Beach Marriott", price: "$280–340/night", note: "Walking distance to Delray courts" },
-      { name: "Crane's Beach House (Delray)", price: "$220–280/night", note: "Boutique, close to courts" },
-      { name: "Hyatt Place Delray Beach", price: "$200–250/night", note: "Mid-tier, 5 min drive to venue" },
-      { name: "Courtyard Boynton Beach", price: "$170–210/night", note: "Cheaper, 15 min drive — only if main sites are Delray-centric" }
-    ],
-    lodging: "Multi-site event. Best base: Delray (matches may move to Boca/Palm Beach Gardens — both 20–40 min). Confirm site assignments before booking.",
-    notes: [
-      "192-player draws per division. Highest-prestige event of the summer outside Kalamazoo.",
-      "Charlie entering Boys 16s (national standing not high enough for B18 selection).",
-      "Wildcard applications by Jun 16. Mandatory waivers at check-in.",
-      "Doubles deadline Mon Jun 29 at noon — email partner to eyair@YellowTennisBall.com.",
-      "5–7 Mill Pond clay sessions before this event — that's the whole Jun 30 – Jul 4 block.",
-      "July 4 holiday — many clubs close early. Plan arrival accordingly."
-    ],
-    plan: "Fly BDL → PBI or FLL Sat Jul 4 afternoon. Rental car. Full 8-day stay. Bring 6+ rackets and extra strings — clay eats them."
-  },
-  {
-    id: 5, level: "L2", levelLabel: "L2 National Team",
-    name: "Northeast National Team Cup (16s)",
-    venue: "Westtown School, West Chester, PA",
-    start: "2026-07-24", end: "2026-07-26",
-    fee: 205, regClose: "2026-07-08",
-    surface: "Outdoor hard",
-    div: "Mixed 16s Team (waterfalled)",
-    drive: { from: "Avon, CT", time: "~3 hr 45 min", miles: 230 },
-    travel: "Drive. 3 nights hotel.",
-    hotels: [
-      { name: "Holiday Inn Express West Chester", price: "$150–180/night", note: "4.4 mi from venue — best location" },
-      { name: "Hampton Inn & Suites Chadds Ford", price: "$160–190/night", note: "5.9 mi from venue" },
-      { name: "Home2 Suites by Hilton Downingtown", price: "$170–200/night", note: "11.8 mi — only if other options book up" }
-    ],
-    lodging: "Holiday Inn Express West Chester is the closest and cheapest of the listed options.",
-    notes: [
-      "Team event — players waterfalled onto teams by WTN on Jul 20. Charlie won't know teammates until that date.",
-      "Each player plays 5 singles + 5 doubles (mixed/gender) — heavy match load over 3 days.",
-      "Restricted to Middle States / Eastern / New England / Mid-Atlantic sections only.",
-      "Selection by National Standing List published Jul 8.",
-      "Secondary site: B Reed Henderson HS."
-    ],
-    plan: "Drive Thu Jul 23 afternoon. Stay 3 nights, drive home Sun. Pack for hot/humid mid-Atlantic summer."
-  },
-  {
-    id: 6, level: "L1", levelLabel: "L1 National Team",
-    name: "USTA Battle of the Sections (B16 + B18)",
-    venue: "Sorensen Courts, Western Michigan University, Kalamazoo MI",
-    start: "2026-08-01", end: "2026-08-05",
-    fee: 208, regClose: "2026-07-09",
-    surface: "Outdoor hard",
-    div: "Boys 16 Team (Charlie's entry)",
-    drive: { from: "Avon, CT", time: "~13 hr (fly)", miles: 850 },
-    travel: "Fly into AZO (Kalamazoo), GRR (Grand Rapids, 1 hr), or DTW (Detroit, 2.5 hr). Combine trip with T7.",
-    hotels: [
-      { name: "Radisson Plaza Hotel (T7 host)", price: "$199–229/night", note: "Best if doing one continuous trip — book through Nationals dates too" },
-      { name: "Delta by Marriott Kalamazoo", price: "$141/night", note: "Cheapest in block, central" },
-      { name: "Holiday Inn & Suites Kalamazoo West", price: "$118–128/night", note: "Best value, ~10 min to courts" },
-      { name: "Courtyard by Marriott", price: "$159–179/night", note: "Reliable mid-tier" },
-      { name: "Homewood Suites / Home2 Suites", price: "$179–199/night", note: "Suites if longer stay matters" }
-    ],
-    lodging: "Strongly recommend ONE continuous hotel booking for T6 + T7 (Jul 31 – Aug 16). The Radisson Plaza is the T7 host hotel — natural choice if continuous.",
-    notes: [
-      "L1 college recruiting event — coaches will be on-site watching. Form to track which coaches attend.",
-      "Player registration & team practice Jul 31, 4–6 PM. Plan to fly in Jul 31 morning.",
-      "Hotel cutoff for block: Jul 11 — book early.",
-      "Each player plays 3 singles + 4 doubles across competition.",
-      "Ren may join trip — strong adult tennis around WMU campus, opportunity for her UTR-rated matches."
-    ],
-    plan: "Fly Jul 31 BDL → AZO or GRR. Rental car. Continuous stay through Aug 16 (T6+T7). Rest day Aug 6 between events."
-  },
-  {
-    id: 7, level: "L1", levelLabel: "L1 National",
-    name: "USTA Nationals — Kalamazoo (B16 + B18)",
-    venue: "Stowe Stadium, Kalamazoo College, Kalamazoo MI",
-    start: "2026-08-07", end: "2026-08-16",
-    fee: 156, regClose: "2026-07-16",
-    surface: "Outdoor hard (Stowe Stadium)",
-    div: "Boys 16s Singles + Doubles (Charlie's entry)",
-    drive: { from: "Avon, CT", time: "~13 hr (fly)", miles: 850 },
-    travel: "Fly — combine with T6 (Aug 1–5). Continuous lodging through Aug 16.",
-    hotels: [
-      { name: "Radisson Plaza Hotel (host)", price: "$219+/night", note: "Downtown Kalamazoo, on-site amenities, walking distance" },
-      { name: "Delta by Marriott Kalamazoo", price: "$141–179/night", note: "Continuous booking from T6 makes sense" },
-      { name: "Holiday Inn Kalamazoo West", price: "$118–128/night", note: "If budget priority" }
-    ],
-    lodging: "Same booking as T6 if continuous. Sat Aug 7 is the heaviest match day (16s and 18s both play).",
-    notes: [
-      "The most prestigious U.S. junior tournament — primary college recruitment event. Performance matters disproportionately.",
-      "Charlie entering Boys 16s (national standing not high enough for B18 selection at this point).",
-      "10-day event — plan for full duration even if early-round loss (lost time = MI/IN college visits).",
-      "Visit ustaboys.com for full schedule, brackets, draw timing.",
-      "Doubles registration separate. Photo selfie for player badge (text to 269-350-3070).",
-      "Ren's Middlebury preseason likely starts mid-to-late August — may need to fly her home mid-trip."
-    ],
-    plan: "Continuous from T6. Build rest day Aug 6. If eliminated early, treat remaining days as college visits (Michigan, Notre Dame, Northwestern all within 3-hr radius)."
-  }
+{id:1,level:"L5",levelLabel:"L5 Open",name:"Bloomfield Boys 18 Singles (Flighted)",venue:"Bloomfield Tennis Club, Bloomfield, CT",venueAddress:"Bloomfield Tennis Club, 45 Douglas St, Bloomfield, CT 06002",url:"https://playtennis.usta.com/Competitions/bloomfieldtennisclubllc/Tournaments/Overview/839a4f43-97f8-44de-aa33-c871e2da0b02",start:"2026-06-05",end:"2026-06-07",fee:93,regClose:"2026-05-28",registered:true,surface:"Red clay (indoor hard if rain)",div:"Boys 18s Singles ✓",drive:{time:"~15 min",miles:10},travel:"Local — daily commute.",hotels:[],notes:["✓ Already registered.","Conflicts with last week of school (Charlie's last day Jun 17). Fri Jun 5 may need partial absence.","Red clay — Mill Pond sessions May 30 + Jun 4 are the clay tune-ups."],plan:"Drive each match. Pack lunch + extra shirts."},
+{id:2,level:"L3",levelLabel:"L3 Closed Sectional",name:"USTA NE Summer Sectionals (B18)",venue:"Babson College, Wellesley Hills, MA",venueAddress:"Babson College, 231 Forest St, Wellesley Hills, MA 02481",url:"https://playtennis.usta.com/Competitions/USTANewEngland/Tournaments/Overview/5fddbb3c-362d-4c55-962d-2303301126de",start:"2026-06-20",end:"2026-06-24",fee:160,regClose:"2026-06-03",surface:"Outdoor hard (multi-site)",div:"Boys 18s Singles",drive:{time:"~1 hr 45 min",miles:110},travel:"Drive. Family split: Ren + Teresa drive to Maine Sun Jun 21; Charlie + Robert stay then drive direct.",hotels:[{name:"Boston Marriott Newton (room block)",price:"$219/night",note:"Official rate. Book by Jun 3."},{name:"Hampton Inn Natick",price:"~$190/night",note:"~10 min to Babson"},{name:"Holiday Inn Express Norwood",price:"~$170/night",note:"15 min south"}],notes:["Multi-site (Gallagher Lexington, Newton South HS, Roxbury Latin). 20–40 min between.","FAMILY SPLIT: Ren + Teresa drive Avon → Boothbay Sun Jun 21 (~5 hrs).","Player party + 1-Point Slam Friday night.","Order event t-shirt by Jun 7."],plan:"Charlie + Robert drive Fri Jun 19 PM. Stay nightly through elimination. Babson → Boothbay is ~3.5 hrs."},
+{id:3,level:"L2",levelLabel:"L2 National",name:"L2 Boys 16 — Ithaca",venue:"Reis Tennis Center, Cornell U, Ithaca NY",venueAddress:"Reis Tennis Center, 230 Pine Tree Rd, Ithaca, NY 14850",url:"https://playtennis.usta.com/Competitions/reis-tennis-center-of-cornell-university/Tournaments/Overview/40445c7c-86e2-4758-9a5c-8be6b7ba2bee",start:"2026-06-27",end:"2026-06-29",fee:156,regClose:"2026-06-04",surface:"Indoor hard",div:"Boys 16s Singles + Doubles",drive:{time:"~4 hr 15 min / ~7 hr from Boothbay",miles:270},travel:"Drive from Boothbay Fri Jun 26 (~7 hrs) for 4–8 PM practice.",hotels:[{name:"Best Western University Inn (room block)",price:"$179/night",note:"0.3 mi from venue. Free breakfast + shuttle. THE pick."},{name:"Hilton Garden Inn Ithaca",price:"~$210/night",note:"Downtown, 10 min"},{name:"Hampton Inn Ithaca",price:"~$180/night",note:"Near campus"}],notes:["Charlie eligible (B16, born 12/17/2009).","FIC format — guaranteed multiple matches.","Practice Fri Jun 26, 4–8 PM.","Stringing on-site: $25/racket."],plan:"Drive Boothbay → Ithaca Fri morning. 3 nights hotel."},
+{id:4,level:"L1",levelLabel:"L1 National",name:"USTA Nat'l Clay Court Champs (B16)",venue:"Delray Beach + Boca + PBG, FL",venueAddress:"Delray Beach Tennis Center, 201 W Atlantic Ave, Delray Beach, FL 33444",url:"https://playtennis.usta.com/Competitions/players-international-management/Tournaments/Overview/a9e2ec82-804a-4e6e-8410-1e2a91ff70d1",start:"2026-07-05",end:"2026-07-12",fee:172,regClose:"2026-06-11",surface:"Clay",div:"Boys 16s Singles + Doubles",drive:{time:"Fly BDL → PBI/FLL",miles:1450},travel:"Fly. ~8 nights. Rental car (multi-site).",hotels:[{name:"Delray Beach Marriott",price:"$280–340/night",note:"Walking distance to Delray courts"},{name:"Crane's Beach House",price:"$220–280/night",note:"Boutique"},{name:"Hyatt Place Delray Beach",price:"$200–250/night",note:"Mid-tier"},{name:"Courtyard Boynton Beach",price:"$170–210/night",note:"15 min"}],notes:["192-player draws. Highest prestige outside Kalamazoo.","Charlie entering B16s.","Multi-site — confirm assigned site before booking.","Wildcard apps by Jun 16. Doubles deadline Jun 29 noon.","5–7 Mill Pond clay sessions before event."],plan:"Fly BDL → PBI/FLL Sat Jul 4 PM. Rental car. Bring 6+ rackets."},
+{id:5,level:"L2",levelLabel:"L2 National Team",name:"Northeast National Team Cup (16s)",venue:"Westtown School, West Chester, PA",venueAddress:"Westtown School, 975 Westtown Rd, West Chester, PA 19382",url:"https://playtennis.usta.com/Competitions/usta-middle-states00/Tournaments/Overview/33a8c5de-d86b-49c9-b755-b0ca0e548f4f",start:"2026-07-24",end:"2026-07-26",fee:205,regClose:"2026-07-08",surface:"Outdoor hard",div:"Boys 16 Team (waterfalled)",drive:{time:"~3 hr 45 min",miles:230},travel:"Drive. 3 nights hotel.",hotels:[{name:"Holiday Inn Express West Chester",price:"$150–180/night",note:"4.4 mi — best location"},{name:"Hampton Inn & Suites Chadds Ford",price:"$160–190/night",note:"5.9 mi"},{name:"Home2 Suites Downingtown",price:"$170–200/night",note:"11.8 mi backup"}],notes:["Team waterfall by WTN Jul 20.","5 singles + 5 doubles over 3 days.","Restricted to MS / Eastern / NE / Mid-Atlantic.","Selection by NSL Jul 8."],plan:"Drive Thu Jul 23 PM. 3 nights."},
+{id:6,level:"L1",levelLabel:"L1 National Team",name:"USTA Battle of the Sections (B16)",venue:"Sorensen Courts, WMU, Kalamazoo MI",venueAddress:"Western Michigan University, 1906 W Michigan Ave, Kalamazoo, MI 49008",url:"https://playtennis.usta.com/Competitions/USTA/Tournaments/Overview/4a8fc923-0e65-4cfe-93dc-f453e288805f",start:"2026-08-01",end:"2026-08-05",fee:208,regClose:"2026-07-09",surface:"Outdoor hard",div:"Boys 16 Team",drive:{time:"Fly BDL → AZO/GRR/DTW",miles:850},travel:"Fly. Combine with T7 — one hotel Jul 31 → Aug 16.",hotels:[{name:"Radisson Plaza (T7 host)",price:"$199–229/night",note:"Best for continuous trip"},{name:"Delta by Marriott Kalamazoo",price:"$141/night",note:"Cheapest in block"},{name:"Holiday Inn Kalamazoo West",price:"$118–128/night",note:"Best value, 10 min"},{name:"Courtyard by Marriott",price:"$159–179/night",note:"Mid-tier"}],notes:["L1 college recruiting event — coaches on-site.","Registration Jul 31, 4–6 PM.","Hotel cutoff Jul 11.","3 singles + 4 doubles across event.","Ren may join — adult tennis around WMU."],plan:"Fly Jul 31 BDL → AZO/GRR. Rental car. Continuous through Aug 16. Rest day Aug 6."},
+{id:7,level:"L1",levelLabel:"L1 National",name:"USTA Nationals — Kalamazoo (B16)",venue:"Stowe Stadium, Kalamazoo College",venueAddress:"Stowe Stadium, Kalamazoo College, 100 Acker Ln, Kalamazoo, MI 49006",url:"https://playtennis.usta.com/Competitions/kalamazoocollege/Tournaments/Overview/c1f7d22c-5c90-4e4e-8b13-a7e14a9e5470",start:"2026-08-07",end:"2026-08-16",fee:156,regClose:"2026-07-16",surface:"Outdoor hard",div:"Boys 16s Singles + Doubles",drive:{time:"Fly (combine T6)",miles:850},travel:"Continuous from T6.",hotels:[{name:"Radisson Plaza (host)",price:"$219+/night",note:"Downtown, walking distance"},{name:"Delta by Marriott",price:"$141–179/night",note:"Continuous from T6"},{name:"Holiday Inn West",price:"$118–128/night",note:"Budget"}],notes:["Most prestigious U.S. junior tournament — primary recruitment event.","Charlie entering B16s.","10-day event. Sat Aug 7 heaviest match day.","ustaboys.com for schedule.","Ren may need to fly home mid-trip (Middlebury preseason)."],plan:"Continuous from T6. Rest day Aug 6. If eliminated early, MI/IN college visits."}
+];
+
+const VENUES = [
+{name:"Sycamore Park",sub:"Outdoor hard · Default · ~5 min from home",address:"Sycamore Park, Avon, CT 06001",desc:"Bulk of training. Default for non-clay blocks."},
+{name:"Mill Pond",sub:"Outdoor clay · Clay prep · ~20 min south",address:"Mill Pond Park, Newington, CT 06111",desc:"1–2 sessions before T1 (May 30 + Jun 4). 5+ sessions Jun 30 – Jul 4 before T4."},
+{name:"Juniper Point",sub:"Red clay · Family rental · Jun 21–26",address:"Juniper Point, Boothbay Harbor, ME 04538",desc:"Ren + Teresa drive Sun Jun 21. Charlie + Robert join when Babson wraps. Clay training camp for Delray."},
+{name:"Bloomfield Tennis Club",sub:"Red clay · T1 venue · ~15 min",address:"45 Douglas St, Bloomfield, CT 06002",desc:"T1 tournament Jun 5–7."},
+{name:"Babson + multi-site MA",sub:"Outdoor hard · T2",address:"Babson College, 231 Forest St, Wellesley Hills, MA",desc:"Sites: Gallagher (Lexington), Newton South HS, Roxbury Latin."},
+{name:"Reis Tennis Center",sub:"Indoor hard · T3 · Cornell U",address:"230 Pine Tree Rd, Ithaca, NY 14850",desc:"Practice walk-on Fri Jun 26, 4–8 PM."},
+{name:"Delray Beach Tennis Center",sub:"Clay · T4 · multi-site FL",address:"201 W Atlantic Ave, Delray Beach, FL 33444",desc:"Confirm site before booking. Bring 4+ rackets."},
+{name:"Westtown School",sub:"Outdoor hard · T5",address:"975 Westtown Rd, West Chester, PA 19382",desc:"Hot/humid late July."},
+{name:"WMU + Kalamazoo College",sub:"Outdoor hard · T6 + T7",address:"Western Michigan University, 1906 W Michigan Ave, Kalamazoo, MI",desc:"T6 at WMU Sorensen. T7 at Stowe Stadium. Single hotel Jul 31 → Aug 16."}
 ];
 
 const DRILLS = {
-  fh: [
-    { name: "Inside-Out Forehand to Cone", duration: "20 min · 5 sets × 8 balls",
-      desc: "Feed cross-court balls to BH corner. Charlie runs around and crushes inside-out FH to a 1m² target on opponent's ad corner. Reset between balls. Counts hits inside cone." },
-    { name: "Run-Around FH Off Return", duration: "15 min · 5 sets × 6 balls",
-      desc: "Feeder serves to deuce service box at ~70% pace. Charlie steps left and rips inside-out or inside-in FH return. Goal: 4/6 makes deep, 2/6 winners." },
-    { name: "Short Ball Attack Ladder", duration: "20 min · 5 sets × 5 balls",
-      desc: "Feed progressively shorter balls — baseline → halfway → service line. Identify shortness, step in, hit with intent. Score: 1 pt deep make, 2 pts clean winner, -1 error." },
-    { name: "FH-FH Cross-Court Rally Battle", duration: "15 min · 3 × 5-min sets",
-      desc: "Both players FH-only cross-court. Score every ball — first to 11 each set. Forces depth and shape under fatigue. Great Ren + Charlie + Robert rotation drill." },
-    { name: "FH Recovery & Pursuit", duration: "12 min · 4 sets × 6 balls",
-      desc: "After every FH, sprint touch opposite singles sideline before next ball. Builds capacity to hit FH at full extension repeatedly." }
-  ],
-  serve: [
-    { name: "Spot Serve Ladder (5 zones)", duration: "20 min · 4 boxes × 10 balls each",
-      desc: "5 target zones per side: wide, body-wide, T, body-T, dead-T. Hit 10 to each, count makes. Track week over week. Improvement = makes per session climb." },
-    { name: "First-Serve % Game", duration: "15 min",
-      desc: "Charlie serves out 4 service games. Track 1st serve % per game. Constraint: anything over 80mph that lands in = legal. Goal: 65%+ across 4 games." },
-    { name: "Toss Lock (no swing)", duration: "8 min · 50 tosses",
-      desc: "Standing in service motion. Toss only. Place racquet on shoulder. Goal: toss lands on dime-sized spot in front-right of body 45+ of 50 times. Most 1st-serve misses are toss misses." },
-    { name: "Serve + 1 Pattern", duration: "20 min · 6 patterns × 6 reps",
-      desc: "Pre-call serve location AND next-ball direction. Wide → step in, FH cross-court. T → FH inside-out. Body → BH down line. Track first-strike won rate." },
-    { name: "Pressure 2nd Serve", duration: "12 min",
-      desc: "Score: down 30-40. Must hit 2nd serve in. 10 reps each side. Variations: kick to BH, slice wide, body. Build 'I trust my 2nd' feeling." }
-  ],
-  pc: [
-    { name: "3-Ball Pattern Drill", duration: "20 min",
-      desc: "Pre-scripted 3-ball pattern (serve → FH inside-out → BH cross or DTL approach). 8x each side. Then live point starting from pattern's 3rd ball. Score: did the pattern win?" },
-    { name: "Plan A / Plan B Sets", duration: "30 min · play 2 short sets",
-      desc: "Before each set, Charlie commits aloud to Plan A (e.g., FH inside-out to ad court) and Plan B (e.g., BH slice + net approach). Coach calls 'A' or 'B' each changeover based on what's working." },
-    { name: "Neutral Ball Decision", duration: "15 min",
-      desc: "Cross-court rally. On any ball Charlie classifies as 'neutral or better,' he MUST attack (step in, change direction, or approach). Builds decision speed — main UTR 9.67 ceiling issue." },
-    { name: "Down 0-30 Patterns", duration: "20 min",
-      desc: "Coach calls 'down 0-30 on serve' or 'down 0-30 on return.' Charlie plays the point with pre-committed pattern. Builds tactical reflex for pressure." },
-    { name: "Pattern of the Day", duration: "Throughout session",
-      desc: "One pattern (Mon: FH inside-out / Tue: slice approach / Wed: kick serve to BH) — EVERY rally that day funnels into it. Coach calls penalties for not executing." }
-  ],
-  fit: [
-    { name: "Spider Run Sets", duration: "10 min · 4 sets × 8 reps",
-      desc: "Touch center T, then 5 court corners (R sideline, R baseline corner, center baseline, L baseline corner, L sideline). Each return to T. Target: under 16 sec per set." },
-    { name: "Ladder + Cone Combo", duration: "15 min · 6 sequences",
-      desc: "Speed ladder (in-in-out / icky shuffle / lateral) → 3-cone sprint → backpedal to start. Builds first-step explosion for FH run-arounds." },
-    { name: "Recovery Steps Drill", duration: "12 min",
-      desc: "Coach hand-feeds wide ball. Player hits, sprints back to center mark with three split-recovery steps. Hits next wide ball. 6 reps each direction." },
-    { name: "Match-Length Conditioning", duration: "20 min",
-      desc: "Suicide runs every 90 sec for 10 reps, then 5-min rest, then 5 more. Simulates match work:rest ratio. Use only 1×/wk during heavy blocks." },
-    { name: "Mobility & Cool-Down Flow", duration: "10 min daily",
-      desc: "Hip openers, T-spine rotations, hamstring + calf stretches, shoulder PNF. Non-negotiable after every hitting session." }
-  ],
-  match: [
-    { name: "Best-of-3 Tiebreak Sets", duration: "1.5–2 hr",
-      desc: "Real scoring, real rituals. No coaching during. Debrief first ('what was your Plan A, did you stay with it'), then technical feedback." },
-    { name: "Pro Set with Constraints", duration: "45 min",
-      desc: "8-game pro set with a constraint each set: 'every 1st serve to T,' or 'no BH down-line,' or 'must approach on any short ball.' Reveals patterns Charlie defaults to vs. chooses." },
-    { name: "Returner Wins Tiebreak", duration: "30 min",
-      desc: "First-to-7 tiebreak format but returner gets +1 point on every game. Forces server to make more 1st serves and play offensive serve+1." },
-    { name: "Pressure Tiebreak (down 3-6)", duration: "15 min",
-      desc: "Start every tiebreak at 3-6 for Charlie. Plays out. Builds comeback rep memory." },
-    { name: "Charlie vs Robert Set", duration: "60 min",
-      desc: "Real set, 5.0 vs 9.67 — Robert plays his best but Charlie can't drop below 6-2. Forces Charlie to close out closer matches. Robert's role: serve big, mix in slice, change pace." }
-  ],
-  net: [
-    { name: "Block Volley — Stop Then Hit", duration: "15 min · 6 sets × 8 balls each side",
-      desc: "Player stands at the service line. Feed mid-pace volleys (FH then BH). Rule: feet must come to a full stop before contact. No swing — block only. The fix for 'missing easy volleys while moving forward.' Goal: 7/8 clean blocks deep cross-court." },
-    { name: "Approach + 2 Volleys", duration: "20 min · 5 sets × 6 reps",
-      desc: "Coach feeds a short ball. Player hits approach DTL, closes the net (4 small steps + split-step), takes the next ball as a controlled volley to the open court, then puts away a third ball (high or angle). The full transition sequence." },
-    { name: "Approach Decision Drill", duration: "15 min",
-      desc: "Coach feeds 3 ball types randomly: (a) high deep — STAY back, (b) neutral mid-court — DRIVE approach, (c) short low — SLICE approach. Player calls out the type before contact ('stay!' / 'drive!' / 'slice!'). Builds the recognition, not just the shot." },
-    { name: "First Volley from No-Man's-Land", duration: "12 min · 5 sets × 6 reps",
-      desc: "Player serves, partner returns at the player's feet from 3/4 court. Player must hit first volley from the awkward in-between position. This is the volley most amateurs miss — too low, too deep, no rhythm. Block-volley technique, deep cross-court target." },
-    { name: "Touch Volley Targets", duration: "12 min · 4 sets × 5 each",
-      desc: "From mid-court, hit angle drop volley, deep drive volley, lob volley. Targets: 1m² zones. Builds the soft hands part — the touch that turns volleys into winners, not retrievable balls." },
-    { name: "Live Point — Net Mandatory", duration: "20 min · play 4 games",
-      desc: "Live cross-court rally points. Rule: player MUST close to net within 5 balls or loses the point. Forces aggressive court-position decisions and tests transition execution under pressure. Great with Robert as opponent." },
-    { name: "Swing Volley Read", duration: "10 min · 3 sets × 8 balls",
-      desc: "For balls that sit up at shoulder height around the service line — don't volley them, swing them. Feed waist-to-shoulder height balls and player takes them as full swing volleys (compact, no extra wind-up). Ren's FH is her weapon — this is how it stays a weapon when she's at net." }
-  ]
+fh:[
+{name:"Inside-Out Forehand to Cone",duration:"20 min · 5×8",desc:"Feed cross-court to BH corner. Run around and crush inside-out FH to 1m² target on opponent's ad corner. Count hits inside cone."},
+{name:"Run-Around FH Off Return",duration:"15 min · 5×6",desc:"Feeder serves to deuce box ~70%. Step left, rip inside-out or inside-in FH return. Goal: 4/6 deep, 2/6 winners."},
+{name:"Short Ball Attack Ladder",duration:"20 min · 5×5",desc:"Progressively shorter balls — baseline → halfway → service line. Step in, hit with intent. 1 deep make, 2 winner, -1 error."},
+{name:"FH-FH Cross-Court Battle",duration:"15 min · 3×5min",desc:"Both FH-only cross-court. First to 11. Forces depth and shape under fatigue."},
+{name:"FH Recovery & Pursuit",duration:"12 min · 4×6",desc:"After every FH, sprint to opposite singles sideline before next ball."}
+],
+serve:[
+{name:"Spot Serve Ladder",duration:"20 min · 4 boxes × 10",desc:"5 zones per side: wide, body-wide, T, body-T, dead-T. Hit 10 to each. 📊 Log total makes in Today tab tracker."},
+{name:"First-Serve % Game",duration:"15 min",desc:"Serve 4 service games. Anything over 80mph counts. Goal: 65%+. 📊 Log avg % in Today tab tracker."},
+{name:"Toss Lock",duration:"8 min · 50 tosses",desc:"Service motion, toss only. Toss lands on dime-sized spot. Goal: 45+/50. 📊 Log makes in Today tab tracker."},
+{name:"Serve + 1 Pattern",duration:"20 min · 6×6",desc:"Pre-call serve location AND next ball. Wide → step in FH cross. T → FH inside-out. Body → BH down line."},
+{name:"Pressure 2nd Serve",duration:"12 min",desc:"Down 30-40. Must hit 2nd serve in. 10 reps each side. Build 'I trust my 2nd' feeling."}
+],
+pc:[
+{name:"3-Ball Pattern Drill",duration:"20 min",desc:"Pre-scripted 3-ball pattern. 8x each side. Then live point from 3rd ball."},
+{name:"Plan A / Plan B Sets",duration:"30 min · 2 sets",desc:"Commit aloud to Plan A and Plan B before each set. Coach calls A or B each changeover."},
+{name:"Neutral Ball Decision",duration:"15 min",desc:"On any 'neutral or better' ball MUST attack (step in, change direction, or approach)."},
+{name:"Down 0-30 Patterns",duration:"20 min",desc:"Coach calls 'down 0-30.' Play with pre-committed pattern. Builds pressure reflex."},
+{name:"Pattern of the Day",duration:"Throughout session",desc:"One pattern per day. EVERY rally funnels into it."}
+],
+fit:[
+{name:"Spider Run Sets",duration:"10 min · 4×8",desc:"Touch center T + 5 court corners. Target: under 16 sec per set."},
+{name:"Ladder + Cone Combo",duration:"15 min",desc:"Speed ladder → 3-cone sprint → backpedal. Builds first-step explosion."},
+{name:"Recovery Steps",duration:"12 min",desc:"Hand-fed wide ball, hit, sprint back with 3 split-recovery steps. 6 reps each direction."},
+{name:"Match-Length Conditioning",duration:"20 min",desc:"Suicide runs every 90 sec × 10, 5 min rest, 5 more. 1×/wk max."},
+{name:"Mobility & Cool-Down",duration:"10 min daily",desc:"Hip openers, T-spine rotations, hamstring + calf, shoulder PNF. Non-negotiable."}
+],
+match:[
+{name:"Best-of-3 Tiebreak Sets",duration:"1.5–2 hr",desc:"Real scoring, no coaching during. Debrief Plan A first."},
+{name:"Pro Set with Constraints",duration:"45 min",desc:"8-game pro set with constraint each set: 'every 1st to T,' 'no BH DTL,' 'approach on short ball.'"},
+{name:"Returner Wins Tiebreak",duration:"30 min",desc:"First-to-7 but returner gets +1 every game. Forces 1st serves and offensive serve+1."},
+{name:"Pressure Tiebreak (3-6)",duration:"15 min",desc:"Start every tiebreak at 3-6. Builds comeback rep memory."},
+{name:"Charlie vs Robert Set",duration:"60 min",desc:"5.0 vs 9.67 — Robert plays best but Charlie can't drop below 6-2. Forces closing closer matches."}
+],
+net:[
+{name:"Block Volley — Stop Then Hit",duration:"15 min · 6×8",desc:"Stand at service line. Mid-pace feeds. Feet STOP before contact. No swing. Goal: 7/8 clean blocks deep cross."},
+{name:"Approach + 2 Volleys",duration:"20 min · 5×6",desc:"Short ball → approach DTL → close net (4 steps + split) → volley to open court → third-ball put-away."},
+{name:"Approach Decision Drill",duration:"15 min",desc:"Random ball types: high deep → STAY, neutral mid → DRIVE approach, short low → SLICE approach. Call out type before contact."},
+{name:"First Volley from No-Man's-Land",duration:"12 min · 5×6",desc:"Serve, return at feet from 3/4 court. Hit first volley from awkward position."},
+{name:"Touch Volley Targets",duration:"12 min · 4×5",desc:"From mid-court: angle drop, deep drive, lob volley. 1m² targets."},
+{name:"Live Point — Net Mandatory",duration:"20 min · 4 games",desc:"Live cross-court points. MUST close to net within 5 balls or lose point."},
+{name:"Swing Volley Read",duration:"10 min · 3×8",desc:"Waist-to-shoulder balls around service line — swing them. Compact, no extra wind-up."}
+]
 };
 
-// ====== SCHEDULE GENERATION ======
 const PHASES = [
-  // Foundation: clinic days Wed May 27 + Thu May 28
-  { start: "2026-05-25", end: "2026-05-26", label: "Foundation",
-    daily: {
-      Mon: { type: "rest", title: "Rest day", detail: "Mobility flow only", venue: "Home" },
-      Tue: { type: "train", focus: "FH Technique + Spot Serve", drills: ["Inside-Out Forehand to Cone", "Spot Serve Ladder", "Spider Run Sets"], weights: true, venue: "Sycamore Park", partners: ["Charlie", "Ren", "Robert"] }
-    }
-  },
-  { start: "2026-05-27", end: "2026-05-27", label: "Foundation",
-    daily: { _all: { type: "clinic", title: "Clinic 4:00–6:30 PM (2.5 hr hitting)", detail: "30 min footwork in AM. No additional drilling — clinic covers hitting. Robert + Ren hit at Sycamore Park.", venue: "Charlie: Clinic / Ren+Robert: Sycamore Park", partners: ["Charlie alone at clinic", "Ren + Robert hit"] } }
-  },
-  { start: "2026-05-28", end: "2026-05-28", label: "Foundation",
-    daily: { _all: { type: "clinic", title: "Clinic 5:00–6:30 PM + AM hit + weights", detail: "AM: 60 min serve + footwork at Sycamore Park (Charlie + Ren). PM clinic 5–6:30. Weights AM or evening 7:30. Upper body + rotational core.", venue: "AM: Sycamore Park / PM: Clinic", partners: ["Charlie + Ren AM", "Charlie at clinic PM"], weights: true } }
-  },
-  { start: "2026-05-29", end: "2026-05-29", label: "Foundation",
-    daily: { _all: { type: "train", focus: "Run-around FH + Match", drills: ["Run-Around FH Off Return", "Best-of-3 Tiebreak Sets"], weights: false, venue: "Sycamore Park", partners: ["Charlie", "Ren", "Robert"] } }
-  },
-  { start: "2026-05-30", end: "2026-05-30", label: "Foundation (Mill Pond #1)",
-    daily: { _all: { type: "train", focus: "Clay introduction (Mill Pond)", drills: ["FH-FH Cross-Court Rally Battle", "Neutral Ball Decision", "Spot Serve Ladder"], weights: true, venue: "Mill Pond (Newington) — clay", partners: ["Charlie", "Ren", "Robert"] } }
-  },
-  { start: "2026-05-31", end: "2026-05-31", label: "Foundation",
-    daily: { _all: { type: "train", focus: "Serve + Pattern review", drills: ["Toss Lock", "Plan A / Plan B Sets"], weights: false, venue: "Sycamore Park", partners: ["Charlie", "Ren"] } }
-  },
-  { start: "2026-06-01", end: "2026-06-01", label: "Foundation",
-    daily: { _all: { type: "rest", title: "Rest day", detail: "Mobility flow only", venue: "Home" } }
-  },
-  { start: "2026-06-02", end: "2026-06-02", label: "Foundation",
-    daily: { _all: { type: "train", focus: "Match intensity (taper week)", drills: ["3-Ball Pattern Drill", "Pressure Tiebreak (down 3-6)"], weights: true, venue: "Sycamore Park", partners: ["Charlie", "Ren", "Robert"] } }
-  },
-  { start: "2026-06-03", end: "2026-06-03", label: "T1 Taper",
-    daily: { _all: { type: "clinic", title: "Clinic 4:00–6:30 PM (taper)", detail: "Tell coach: taper mode, no max-effort sets. 30 min footwork AM at Sycamore Park.", venue: "Charlie: Clinic / Ren+Robert: Sycamore Park", partners: ["Charlie at clinic"] } }
-  },
-  { start: "2026-06-04", end: "2026-06-04", label: "T1 Taper (Mill Pond #2)",
-    daily: { _all: { type: "train", focus: "Final clay tune-up (90 min — light)", drills: ["Toss Lock", "Spot Serve Ladder", "FH-FH Cross-Court Rally Battle"], weights: false, venue: "Mill Pond (Newington) — clay", partners: ["Charlie", "Robert"] } }
-  },
-  { start: "2026-06-05", end: "2026-06-07", label: "T1: Bloomfield",
-    daily: { _all: { type: "tourn", title: "T1 — Bloomfield Boys 18 (L5)", detail: "Local, drive each day. Eat well, sleep 9 hrs. Don't lose to anyone below 9.5.", venue: "Bloomfield Tennis Club (red clay)" } }
-  },
-  { start: "2026-06-08", end: "2026-06-08", label: "T1 Recovery",
-    daily: { _all: { type: "rest", title: "Active recovery", detail: "Light bike or walk + mobility. No tennis.", venue: "Home" } }
-  },
-  { start: "2026-06-09", end: "2026-06-09", label: "Build-Babson",
-    daily: { _all: { type: "train", focus: "Match Intensity restart", drills: ["Best-of-3 Tiebreak Sets", "Spider Run Sets"], weights: true, venue: "Sycamore Park", partners: ["Charlie", "Ren", "Robert"] } }
-  },
-  { start: "2026-06-10", end: "2026-06-10", label: "Build-Babson",
-    daily: { _all: { type: "clinic", title: "Clinic 4:00–6:30 PM", detail: "30 min footwork AM. Ren + Robert hit Sycamore Park 90 min.", venue: "Charlie: Clinic / Ren+Robert: Sycamore Park", partners: ["Ren + Robert hit"] } }
-  },
-  { start: "2026-06-11", end: "2026-06-11", label: "Build-Babson",
-    daily: { _all: { type: "clinic", title: "Clinic 5:00–6:30 PM + AM Match + weights", detail: "AM: 2 hr match play (Charlie vs Ren). PM clinic. Weights AM or evening — upper body + rotational core.", venue: "AM: Sycamore Park / PM: Clinic", partners: ["Charlie vs Ren AM", "Charlie at clinic PM"], weights: true } }
-  },
-  { start: "2026-06-12", end: "2026-06-12", label: "Build-Babson",
-    daily: { _all: { type: "train", focus: "Pressure Sets", drills: ["Pressure Tiebreak (down 3-6)", "Returner Wins Tiebreak"], weights: false, venue: "Sycamore Park", partners: ["Charlie", "Ren", "Robert"] } }
-  },
-  { start: "2026-06-13", end: "2026-06-13", label: "Build-Babson",
-    daily: { _all: { type: "train", focus: "Long session — match play + heavy", drills: ["FH-FH Cross-Court Rally Battle", "Pro Set with Constraints", "Match-Length Conditioning"], weights: true, venue: "Sycamore Park", partners: ["Charlie", "Ren", "Robert"] } }
-  },
-  { start: "2026-06-14", end: "2026-06-14", label: "Build-Babson",
-    daily: { _all: { type: "train", focus: "Patterns + Live Sets", drills: ["Plan A / Plan B Sets", "Neutral Ball Decision"], weights: false, venue: "Sycamore Park", partners: ["Charlie", "Ren"] } }
-  },
-  { start: "2026-06-15", end: "2026-06-15", label: "Build-Babson",
-    daily: { _all: { type: "rest", title: "Rest day", detail: "Mobility + cold tub if hot week", venue: "Home" } }
-  },
-  { start: "2026-06-16", end: "2026-06-16", label: "Build-Babson",
-    daily: { _all: { type: "train", focus: "FH Weapon", drills: ["Inside-Out Forehand to Cone", "Run-Around FH Off Return", "Ladder + Cone Combo"], weights: true, venue: "Sycamore Park", partners: ["Charlie", "Ren", "Robert"] } }
-  },
-  { start: "2026-06-17", end: "2026-06-17", label: "Build-Babson — School ends!",
-    daily: { _all: { type: "train", focus: "Heavy match play (school's out)", drills: ["Best-of-3 Tiebreak Sets", "Pressure Tiebreak (down 3-6)"], weights: false, venue: "Sycamore Park", partners: ["Charlie", "Ren"] } }
-  },
-  { start: "2026-06-18", end: "2026-06-18", label: "Build-Babson",
-    daily: { _all: { type: "train", focus: "Serve + Point Construction", drills: ["Serve + 1 Pattern", "3-Ball Pattern Drill"], weights: false, venue: "Sycamore Park", partners: ["Charlie", "Ren", "Robert"] } }
-  },
-  { start: "2026-06-19", end: "2026-06-19", label: "T2 Travel",
-    daily: { _all: { type: "train", focus: "Light hit on arrival (travel day)", drills: ["Spot Serve Ladder", "Toss Lock"], weights: false, venue: "Travel: Avon → Wellesley Hills MA", partners: ["Charlie + Robert drive"] } }
-  },
-  { start: "2026-06-20", end: "2026-06-24", label: "T2: Babson Sectionals",
-    daily: { _all: { type: "tourn", title: "T2 — Babson L3 Sectionals", detail: "Charlie + Robert at MA. Ren + Teresa drive to Maine SUN JUN 21. Match days: light hit + serve before, dynamic warmup, hydration.", venue: "Babson (multi-site MA)" } }
-  },
-  { start: "2026-06-25", end: "2026-06-25", label: "Babson→Maine drive",
-    daily: { _all: { type: "tourn", title: "Charlie + Robert drive Babson → Boothbay", detail: "Drive ~3.5 hrs direct (or if Charlie still in draw: stay another night). Arrive Maine, dinner with family.", venue: "Travel: MA → Boothbay ME" } }
-  },
-  { start: "2026-06-26", end: "2026-06-26", label: "T3 Travel + Practice",
-    daily: { _all: { type: "tourn", title: "Boothbay → Ithaca (~7 hr direct) + 4–8 PM practice", detail: "Long drive day. Walk-on at Reis Tennis Center 4–8 PM if energy allows. Charlie can grab 60-90 min.", venue: "Travel + Reis Tennis Center practice" } }
-  },
-  { start: "2026-06-27", end: "2026-06-29", label: "T3: Cornell",
-    daily: { _all: { type: "tourn", title: "T3 — Cornell L2 Boys 16", detail: "Match days. Indoor hard — bouncier than expected. Stay aggressive.", venue: "Reis Tennis Center (indoor hard)" } }
-  },
-  // Clay prep Mill Pond
-  { start: "2026-06-30", end: "2026-06-30", label: "Clay Prep (Mill Pond #3)",
-    daily: { _all: { type: "rest", title: "Recovery + drive home", detail: "Drive Ithaca → Avon (~4.5 hrs). Mobility only.", venue: "Travel home" } }
-  },
-  { start: "2026-07-01", end: "2026-07-01", label: "Clay Prep (Mill Pond #4)",
-    daily: { _all: { type: "train", focus: "Clay sliding + patience", drills: ["FH-FH Cross-Court Rally Battle", "Neutral Ball Decision", "Spider Run Sets"], weights: false, venue: "Mill Pond (Newington) — clay", partners: ["Charlie", "Ren", "Robert"] } }
-  },
-  { start: "2026-07-02", end: "2026-07-02", label: "Clay Prep (Mill Pond #5)",
-    daily: { _all: { type: "train", focus: "Heavy topspin + depth", drills: ["Inside-Out Forehand to Cone", "Pattern of the Day", "Recovery Steps Drill"], weights: true, venue: "Mill Pond (Newington) — clay", partners: ["Charlie", "Ren"] } }
-  },
-  { start: "2026-07-03", end: "2026-07-03", label: "Clay Prep (Mill Pond #6)",
-    daily: { _all: { type: "train", focus: "Match play on clay (3 sets)", drills: ["Best-of-3 Tiebreak Sets", "Pro Set with Constraints"], weights: false, venue: "Mill Pond (Newington) — clay", partners: ["Charlie", "Ren", "Robert"] } }
-  },
-  { start: "2026-07-04", end: "2026-07-04", label: "T4 Travel",
-    daily: { _all: { type: "tourn", title: "Fly Avon → Delray (BDL → PBI/FLL)", detail: "Fly afternoon (clubs close early for July 4). Light hit at hotel courts on arrival if time.", venue: "Travel: CT → FL" } }
-  },
-  { start: "2026-07-05", end: "2026-07-12", label: "T4: Delray Clay",
-    daily: { _all: { type: "tourn", title: "T4 — National Clay Courts (L1)", detail: "Match week — between rounds: serve practice, hydration, 90-min nap window. Heat management critical.", venue: "Delray Beach Tennis Center + sites (clay)" } }
-  },
-  { start: "2026-07-13", end: "2026-07-15", label: "Rebuild Recovery",
-    daily: { _all: { type: "rest", title: "Heavy recovery (3 days no tennis)", detail: "Travel back. Mobility + massage if available. Sleep 9+ hrs.", venue: "Home" } }
-  },
-  { start: "2026-07-16", end: "2026-07-16", label: "Rebuild",
-    daily: { _all: { type: "train", focus: "Easy return to tennis", drills: ["Toss Lock", "FH-FH Cross-Court Rally Battle"], weights: false, venue: "Sycamore Park", partners: ["Charlie", "Ren"] } }
-  },
-  { start: "2026-07-17", end: "2026-07-17", label: "Rebuild",
-    daily: { _all: { type: "train", focus: "Heavy FH + footwork", drills: ["Run-Around FH Off Return", "Spider Run Sets", "Ladder + Cone Combo"], weights: false, venue: "Sycamore Park", partners: ["Charlie", "Ren", "Robert"] } }
-  },
-  { start: "2026-07-18", end: "2026-07-18", label: "Rebuild",
-    daily: { _all: { type: "train", focus: "Match play + heavy weights", drills: ["Best-of-3 Tiebreak Sets", "Match-Length Conditioning"], weights: true, venue: "Sycamore Park", partners: ["Charlie", "Ren", "Robert"] } }
-  },
-  { start: "2026-07-19", end: "2026-07-19", label: "Rebuild",
-    daily: { _all: { type: "train", focus: "Serve + patterns", drills: ["Spot Serve Ladder", "Serve + 1 Pattern", "Plan A / Plan B Sets"], weights: false, venue: "Sycamore Park", partners: ["Charlie", "Ren"] } }
-  },
-  { start: "2026-07-20", end: "2026-07-20", label: "Rebuild",
-    daily: { _all: { type: "rest", title: "Rest", detail: "Mobility only", venue: "Home" } }
-  },
-  { start: "2026-07-21", end: "2026-07-21", label: "Rebuild",
-    daily: { _all: { type: "train", focus: "Power day", drills: ["Inside-Out Forehand to Cone", "Returner Wins Tiebreak", "Spider Run Sets"], weights: true, venue: "Sycamore Park", partners: ["Charlie", "Ren", "Robert"] } }
-  },
-  { start: "2026-07-22", end: "2026-07-22", label: "Rebuild",
-    daily: { _all: { type: "train", focus: "Heavy match play", drills: ["Best-of-3 Tiebreak Sets", "Pressure Tiebreak (down 3-6)"], weights: false, venue: "Sycamore Park", partners: ["Charlie", "Ren"] } }
-  },
-  { start: "2026-07-23", end: "2026-07-23", label: "T5 Taper / Travel",
-    daily: { _all: { type: "train", focus: "Travel day — light hit on arrival", drills: ["Toss Lock", "Spot Serve Ladder"], weights: false, venue: "Travel: Avon → West Chester PA", partners: ["Charlie + Robert drive"] } }
-  },
-  { start: "2026-07-24", end: "2026-07-26", label: "T5: PA Team Cup",
-    daily: { _all: { type: "tourn", title: "T5 — NE National Team Cup (L2 Team)", detail: "Each day: 1 singles + 1 doubles. Manage energy across formats.", venue: "Westtown School, West Chester PA" } }
-  },
-  { start: "2026-07-27", end: "2026-07-27", label: "Final Sharpen",
-    daily: { _all: { type: "rest", title: "Drive home + recovery", detail: "Drive PA → Avon. Mobility only.", venue: "Travel home" } }
-  },
-  { start: "2026-07-28", end: "2026-07-28", label: "Final Sharpen",
-    daily: { _all: { type: "train", focus: "Pattern review + serve", drills: ["Serve + 1 Pattern", "3-Ball Pattern Drill"], weights: false, venue: "Sycamore Park", partners: ["Charlie", "Ren", "Robert"] } }
-  },
-  { start: "2026-07-29", end: "2026-07-29", label: "Final Sharpen",
-    daily: { _all: { type: "train", focus: "Sharpening sets", drills: ["Pro Set with Constraints", "Pressure Tiebreak (down 3-6)"], weights: false, venue: "Sycamore Park", partners: ["Charlie", "Ren"] } }
-  },
-  { start: "2026-07-30", end: "2026-07-30", label: "Final Sharpen",
-    daily: { _all: { type: "train", focus: "Light hit + mental rehearsal", drills: ["Spot Serve Ladder", "Plan A / Plan B Sets"], weights: false, venue: "Sycamore Park", partners: ["Charlie", "Robert"] } }
-  },
-  { start: "2026-07-31", end: "2026-07-31", label: "Travel to Kalamazoo",
-    daily: { _all: { type: "tourn", title: "Fly to Kalamazoo + team registration (4–6 PM)", detail: "Light walk-on at Sorensen Courts. Team practice/meeting.", venue: "Travel: CT → MI" } }
-  },
-  { start: "2026-08-01", end: "2026-08-05", label: "T6: Battle of Sections",
-    daily: { _all: { type: "tourn", title: "T6 — Battle of Sections (L1 Team)", detail: "3 singles + 4 doubles across event. College coaches watching.", venue: "WMU — Sorensen Courts" } }
-  },
-  { start: "2026-08-06", end: "2026-08-06", label: "T6→T7 Rest",
-    daily: { _all: { type: "rest", title: "Rest day in Kalamazoo", detail: "Mobility, massage if available. Pre-tournament dinner. Mental reset.", venue: "Kalamazoo (rest)" } }
-  },
-  { start: "2026-08-07", end: "2026-08-16", label: "T7: Kalamazoo Nationals",
-    daily: { _all: { type: "tourn", title: "T7 — USTA Nationals (Kalamazoo)", detail: "10-day event. Light hit + serve between match days. Recovery is the limiter.", venue: "Kalamazoo College — Stowe Stadium" } }
-  }
+{start:"2026-05-25",end:"2026-05-26",label:"Foundation",daily:{Mon:{type:"rest",title:"Rest day",detail:"Mobility flow only",venue:"Home"},Tue:{type:"train",focus:"FH Technique + Spot Serve",drills:["Inside-Out Forehand to Cone","Spot Serve Ladder","Spider Run Sets"],weights:true,venue:"Sycamore Park",partners:["Charlie","Ren","Robert"]}}},
+{start:"2026-05-27",end:"2026-05-27",label:"Foundation",daily:{_all:{type:"clinic",title:"Clinic 4:00–6:30 PM",detail:"30 min footwork AM. Clinic covers hitting. Ren + Robert at Sycamore.",venue:"Charlie: Clinic / Ren+Robert: Sycamore Park",partners:["Ren + Robert hit"]}}},
+{start:"2026-05-28",end:"2026-05-28",label:"Foundation",daily:{_all:{type:"clinic",title:"Clinic 5:00–6:30 + AM hit + weights",detail:"AM: 60 min serve + footwork. PM clinic. Weights AM or evening — upper + rotational.",venue:"AM: Sycamore Park / PM: Clinic",partners:["Charlie + Ren AM"],weights:true}}},
+{start:"2026-05-29",end:"2026-05-29",label:"Foundation",daily:{_all:{type:"train",focus:"Run-around FH + Match",drills:["Run-Around FH Off Return","Best-of-3 Tiebreak Sets"],weights:false,venue:"Sycamore Park",partners:["Charlie","Ren","Robert"]}}},
+{start:"2026-05-30",end:"2026-05-30",label:"Foundation (Mill Pond #1)",daily:{_all:{type:"train",focus:"Clay introduction",drills:["FH-FH Cross-Court Battle","Neutral Ball Decision","Spot Serve Ladder"],weights:true,venue:"Mill Pond (clay)",partners:["Charlie","Ren","Robert"]}}},
+{start:"2026-05-31",end:"2026-05-31",label:"Foundation",daily:{_all:{type:"train",focus:"Serve + Pattern review",drills:["Toss Lock","Plan A / Plan B Sets"],weights:false,venue:"Sycamore Park",partners:["Charlie","Ren"]}}},
+{start:"2026-06-01",end:"2026-06-01",label:"Foundation",daily:{_all:{type:"rest",title:"Rest day",detail:"Mobility only",venue:"Home"}}},
+{start:"2026-06-02",end:"2026-06-02",label:"Foundation",daily:{_all:{type:"train",focus:"Match intensity",drills:["3-Ball Pattern Drill","Pressure Tiebreak (3-6)"],weights:true,venue:"Sycamore Park",partners:["Charlie","Ren","Robert"]}}},
+{start:"2026-06-03",end:"2026-06-03",label:"T1 Taper",daily:{_all:{type:"clinic",title:"Clinic 4:00–6:30 (taper)",detail:"Taper mode, no max-effort sets. 30 min footwork AM.",venue:"Charlie: Clinic / Ren+Robert: Sycamore",partners:["Charlie at clinic"]}}},
+{start:"2026-06-04",end:"2026-06-04",label:"T1 Taper (Mill Pond #2)",daily:{_all:{type:"train",focus:"Final clay tune-up (90 min light)",drills:["Toss Lock","Spot Serve Ladder","FH-FH Cross-Court Battle"],weights:false,venue:"Mill Pond (clay)",partners:["Charlie","Robert"]}}},
+{start:"2026-06-05",end:"2026-06-07",label:"T1: Bloomfield",daily:{_all:{type:"tourn",title:"T1 — Bloomfield Boys 18 (L5)",detail:"Local. Drive daily. Sleep 9 hrs. Don't lose to anyone below 9.5.",venue:"Bloomfield Tennis Club (red clay)"}}},
+{start:"2026-06-08",end:"2026-06-08",label:"T1 Recovery",daily:{_all:{type:"rest",title:"Active recovery",detail:"Light bike or walk + mobility. No tennis.",venue:"Home"}}},
+{start:"2026-06-09",end:"2026-06-09",label:"Build-Babson",daily:{_all:{type:"train",focus:"Match Intensity restart",drills:["Best-of-3 Tiebreak Sets","Spider Run Sets"],weights:true,venue:"Sycamore Park",partners:["Charlie","Ren","Robert"]}}},
+{start:"2026-06-10",end:"2026-06-10",label:"Build-Babson",daily:{_all:{type:"clinic",title:"Clinic 4:00–6:30",detail:"30 min footwork AM. Ren + Robert hit 90 min.",venue:"Charlie: Clinic / Ren+Robert: Sycamore",partners:["Ren + Robert hit"]}}},
+{start:"2026-06-11",end:"2026-06-11",label:"Build-Babson",daily:{_all:{type:"clinic",title:"Clinic 5:00–6:30 + AM Match + weights",detail:"AM: 2 hr match play (Charlie vs Ren). PM clinic.",venue:"AM: Sycamore / PM: Clinic",partners:["Charlie vs Ren AM"],weights:true}}},
+{start:"2026-06-12",end:"2026-06-12",label:"Build-Babson",daily:{_all:{type:"train",focus:"Pressure Sets",drills:["Pressure Tiebreak (3-6)","Returner Wins Tiebreak"],weights:false,venue:"Sycamore Park",partners:["Charlie","Ren","Robert"]}}},
+{start:"2026-06-13",end:"2026-06-13",label:"Build-Babson",daily:{_all:{type:"train",focus:"Long session — match + heavy",drills:["FH-FH Cross-Court Battle","Pro Set with Constraints","Match-Length Conditioning"],weights:true,venue:"Sycamore Park",partners:["Charlie","Ren","Robert"]}}},
+{start:"2026-06-14",end:"2026-06-14",label:"Build-Babson",daily:{_all:{type:"train",focus:"Patterns + Live Sets",drills:["Plan A / Plan B Sets","Neutral Ball Decision"],weights:false,venue:"Sycamore Park",partners:["Charlie","Ren"]}}},
+{start:"2026-06-15",end:"2026-06-15",label:"Build-Babson",daily:{_all:{type:"rest",title:"Rest day",detail:"Mobility + cold tub if hot",venue:"Home"}}},
+{start:"2026-06-16",end:"2026-06-16",label:"Build-Babson",daily:{_all:{type:"train",focus:"FH Weapon",drills:["Inside-Out Forehand to Cone","Run-Around FH Off Return","Ladder + Cone Combo"],weights:true,venue:"Sycamore Park",partners:["Charlie","Ren","Robert"]}}},
+{start:"2026-06-17",end:"2026-06-17",label:"School ends!",daily:{_all:{type:"train",focus:"Heavy match play (school's out)",drills:["Best-of-3 Tiebreak Sets","Pressure Tiebreak (3-6)"],weights:false,venue:"Sycamore Park",partners:["Charlie","Ren"]}}},
+{start:"2026-06-18",end:"2026-06-18",label:"Build-Babson",daily:{_all:{type:"train",focus:"Serve + Point Construction",drills:["Serve + 1 Pattern","3-Ball Pattern Drill"],weights:true,venue:"Sycamore Park",partners:["Charlie","Ren","Robert"]}}},
+{start:"2026-06-19",end:"2026-06-19",label:"T2 Travel",daily:{_all:{type:"train",focus:"Light hit (travel day)",drills:["Spot Serve Ladder","Toss Lock"],weights:false,venue:"Travel: Avon → Wellesley Hills",partners:["Charlie + Robert drive"]}}},
+{start:"2026-06-20",end:"2026-06-24",label:"T2: Babson Sectionals",daily:{_all:{type:"tourn",title:"T2 — Babson L3 Sectionals",detail:"Charlie + Robert in MA. Ren + Teresa drive to Maine SUN JUN 21.",venue:"Babson (multi-site MA)"}}},
+{start:"2026-06-25",end:"2026-06-25",label:"Babson→Maine",daily:{_all:{type:"tourn",title:"Drive Babson → Boothbay (~3.5 hrs)",detail:"Reunite with Ren + Teresa.",venue:"Travel: MA → Boothbay"}}},
+{start:"2026-06-26",end:"2026-06-26",label:"T3 Travel + Practice",daily:{_all:{type:"tourn",title:"Boothbay → Ithaca (~7 hr) + 4–8 PM practice",detail:"Long drive. Walk-on at Reis if energy allows.",venue:"Travel + Reis practice"}}},
+{start:"2026-06-27",end:"2026-06-29",label:"T3: Cornell",daily:{_all:{type:"tourn",title:"T3 — Cornell L2 Boys 16",detail:"Indoor hard rewards first-strike tennis.",venue:"Reis Tennis Center"}}},
+{start:"2026-06-30",end:"2026-06-30",label:"Clay Prep",daily:{_all:{type:"rest",title:"Recovery + drive home",detail:"Drive Ithaca → Avon (~4.5 hrs).",venue:"Travel home"}}},
+{start:"2026-07-01",end:"2026-07-01",label:"Clay Prep (Mill Pond #3)",daily:{_all:{type:"train",focus:"Clay sliding + patience",drills:["FH-FH Cross-Court Battle","Neutral Ball Decision","Spider Run Sets"],weights:false,venue:"Mill Pond (clay)",partners:["Charlie","Ren","Robert"]}}},
+{start:"2026-07-02",end:"2026-07-02",label:"Clay Prep (Mill Pond #4)",daily:{_all:{type:"train",focus:"Heavy topspin + depth",drills:["Inside-Out Forehand to Cone","Pattern of the Day","Recovery Steps"],weights:true,venue:"Mill Pond (clay)",partners:["Charlie","Ren"]}}},
+{start:"2026-07-03",end:"2026-07-03",label:"Clay Prep (Mill Pond #5)",daily:{_all:{type:"train",focus:"Match play on clay",drills:["Best-of-3 Tiebreak Sets","Pro Set with Constraints"],weights:false,venue:"Mill Pond (clay)",partners:["Charlie","Ren","Robert"]}}},
+{start:"2026-07-04",end:"2026-07-04",label:"T4 Travel",daily:{_all:{type:"tourn",title:"Fly Avon → Delray (BDL → PBI/FLL)",detail:"PM flight. Light hit at hotel if time.",venue:"Travel: CT → FL"}}},
+{start:"2026-07-05",end:"2026-07-12",label:"T4: Delray Clay",daily:{_all:{type:"tourn",title:"T4 — National Clay Courts (L1)",detail:"Match week. Between rounds: serve practice, hydration, 90-min nap. Heat management critical.",venue:"Delray + sites (clay)"}}},
+{start:"2026-07-13",end:"2026-07-15",label:"Rebuild Recovery",daily:{_all:{type:"rest",title:"3 days no tennis",detail:"Travel back. Mobility + massage. Sleep 9+ hrs.",venue:"Home"}}},
+{start:"2026-07-16",end:"2026-07-16",label:"Rebuild",daily:{_all:{type:"train",focus:"Easy return",drills:["Toss Lock","FH-FH Cross-Court Battle"],weights:false,venue:"Sycamore Park",partners:["Charlie","Ren"]}}},
+{start:"2026-07-17",end:"2026-07-17",label:"Rebuild",daily:{_all:{type:"train",focus:"Heavy FH + footwork",drills:["Run-Around FH Off Return","Spider Run Sets","Ladder + Cone Combo"],weights:false,venue:"Sycamore Park",partners:["Charlie","Ren","Robert"]}}},
+{start:"2026-07-18",end:"2026-07-18",label:"Rebuild",daily:{_all:{type:"train",focus:"Match play + weights",drills:["Best-of-3 Tiebreak Sets","Match-Length Conditioning"],weights:true,venue:"Sycamore Park",partners:["Charlie","Ren","Robert"]}}},
+{start:"2026-07-19",end:"2026-07-19",label:"Rebuild",daily:{_all:{type:"train",focus:"Serve + patterns",drills:["Spot Serve Ladder","Serve + 1 Pattern","Plan A / Plan B Sets"],weights:false,venue:"Sycamore Park",partners:["Charlie","Ren"]}}},
+{start:"2026-07-20",end:"2026-07-20",label:"Rebuild",daily:{_all:{type:"rest",title:"Rest",detail:"Mobility only",venue:"Home"}}},
+{start:"2026-07-21",end:"2026-07-21",label:"Rebuild",daily:{_all:{type:"train",focus:"Power day",drills:["Inside-Out Forehand to Cone","Returner Wins Tiebreak","Spider Run Sets"],weights:true,venue:"Sycamore Park",partners:["Charlie","Ren","Robert"]}}},
+{start:"2026-07-22",end:"2026-07-22",label:"Rebuild",daily:{_all:{type:"train",focus:"Heavy match play",drills:["Best-of-3 Tiebreak Sets","Pressure Tiebreak (3-6)"],weights:false,venue:"Sycamore Park",partners:["Charlie","Ren"]}}},
+{start:"2026-07-23",end:"2026-07-23",label:"T5 Taper / Travel",daily:{_all:{type:"train",focus:"Travel day light hit",drills:["Toss Lock","Spot Serve Ladder"],weights:false,venue:"Travel: Avon → West Chester",partners:["Charlie + Robert drive"]}}},
+{start:"2026-07-24",end:"2026-07-26",label:"T5: PA Team Cup",daily:{_all:{type:"tourn",title:"T5 — NE National Team Cup (L2)",detail:"Each day: 1 singles + 1 doubles.",venue:"Westtown School, PA"}}},
+{start:"2026-07-27",end:"2026-07-27",label:"Final Sharpen",daily:{_all:{type:"rest",title:"Drive home + recovery",detail:"Mobility only.",venue:"Travel home"}}},
+{start:"2026-07-28",end:"2026-07-28",label:"Final Sharpen",daily:{_all:{type:"train",focus:"Pattern review + serve",drills:["Serve + 1 Pattern","3-Ball Pattern Drill"],weights:true,venue:"Sycamore Park",partners:["Charlie","Ren","Robert"]}}},
+{start:"2026-07-29",end:"2026-07-29",label:"Final Sharpen",daily:{_all:{type:"train",focus:"Sharpening sets",drills:["Pro Set with Constraints","Pressure Tiebreak (3-6)"],weights:false,venue:"Sycamore Park",partners:["Charlie","Ren"]}}},
+{start:"2026-07-30",end:"2026-07-30",label:"Final Sharpen",daily:{_all:{type:"train",focus:"Light hit + mental rehearsal",drills:["Spot Serve Ladder","Plan A / Plan B Sets"],weights:false,venue:"Sycamore Park",partners:["Charlie","Robert"]}}},
+{start:"2026-07-31",end:"2026-07-31",label:"Travel to Kalamazoo",daily:{_all:{type:"tourn",title:"Fly to Kalamazoo + team reg (4–6 PM)",detail:"Light walk-on Sorensen. Team practice/meeting.",venue:"Travel: CT → MI"}}},
+{start:"2026-08-01",end:"2026-08-05",label:"T6: Battle of Sections",daily:{_all:{type:"tourn",title:"T6 — Battle of Sections (L1 Team)",detail:"3 singles + 4 doubles. College coaches watching.",venue:"WMU — Sorensen Courts"}}},
+{start:"2026-08-06",end:"2026-08-06",label:"T6→T7 Rest",daily:{_all:{type:"rest",title:"Rest day in Kalamazoo",detail:"Mobility, massage. Pre-tournament dinner.",venue:"Kalamazoo (rest)"}}},
+{start:"2026-08-07",end:"2026-08-16",label:"T7: Kalamazoo Nationals",daily:{_all:{type:"tourn",title:"T7 — USTA Nationals",detail:"10-day event. Recovery is the limiter.",venue:"Kalamazoo College — Stowe Stadium"}}}
 ];
 
-// Maine block override — gets attached after T2 logic
-// Actual scheduling for Maine handled inside blockForDate (Jun 21–25 = Maine for Ren+Teresa, partial for Robert+Charlie)
-const MAINE = {
-  start: "2026-06-21",
-  end: "2026-06-25",
-  label: "Maine — Boothbay Harbor",
-  detail: "Ren + Teresa from Jun 21. Charlie + Robert join when Babson concludes. Clay training on Juniper Point red clay 90 min/day."
+const PHASE_SUMMARY = {
+"Foundation":"Reset FH technique, hammer serve toss, install pattern library.",
+"Foundation (Mill Pond #1)":"First clay session. Long rallies, sliding intro.",
+"T1 Taper":"Pull back. Touch + serve only.",
+"T1 Taper (Mill Pond #2)":"Last hit before Bloomfield. 90 min light.",
+"T1: Bloomfield":"Compete. Don't lose to anyone below 9.5.",
+"T1 Recovery":"Mobility only.",
+"Build-Babson":"Highest training load of early summer.",
+"School ends!":"School's out — full training capacity. Heavy match play.",
+"T2 Travel":"Get to MA, walk on. Don't drill hard.",
+"T2: Babson Sectionals":"L3 closed. Beat the players you should, steal one above.",
+"Babson→Maine":"~3.5 hrs. Reunite with Ren + Teresa.",
+"T3 Travel + Practice":"Long drive from Maine. Use 4–8 PM practice window.",
+"T3: Cornell":"Indoor hard rewards first-strike tennis.",
+"Clay Prep":"Drive home + rest.",
+"Clay Prep (Mill Pond #3)":"Slower courts, longer rallies, sliding, patience.",
+"Clay Prep (Mill Pond #4)":"Heavy topspin day — shape and depth.",
+"Clay Prep (Mill Pond #5)":"Match play on clay — practice the patience.",
+"T4 Travel":"Fly to FL afternoon.",
+"T4: Delray Clay":"Long event. Recovery > practice. Sleep 9 hrs.",
+"Rebuild Recovery":"3 days fully off.",
+"Rebuild":"Heaviest training block. Next UTR jump comes from here.",
+"T5 Taper / Travel":"Drive PA, light hit on arrival.",
+"T5: PA Team Cup":"Team event — energy management across formats.",
+"Final Sharpen":"Last prep block. Pattern rehearsal.",
+"Travel to Kalamazoo":"Fly + team registration.",
+"T6: Battle of Sections":"L1. College coaches present. Visible effort matters.",
+"T6→T7 Rest":"Critical rest day.",
+"T7: Kalamazoo Nationals":"10 days. Pace yourself."
 };
 
-// ====== UTILITIES ======
-function parseDate(s) { const [y,m,d] = s.split("-").map(Number); return new Date(y, m-1, d); }
-function fmtDate(d) { return d.toISOString().slice(0,10); }
-function fmtNice(d) { return d.toLocaleDateString("en-US", { weekday:"long", month:"long", day:"numeric", year:"numeric" }); }
-function fmtShort(d) { return d.toLocaleDateString("en-US", { month:"short", day:"numeric" }); }
-function daysBetween(a, b) { return Math.round((b - a) / (1000*60*60*24)); }
-function dow(d) { return ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"][d.getDay()]; }
-function dowFull(d) { return ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"][d.getDay()]; }
+const TRACKERS = [
+{key:"spot-serve",name:"Spot Serve Ladder",goal:"5 zones × 10 each × 2 sides = 100 max. Goal: improve total over weeks.",max:100,unit:"/100"},
+{key:"first-serve-pct",name:"First-Serve % Game",goal:"Average % across 4 service games. Goal: 65%+",max:100,unit:"%"},
+{key:"toss-lock",name:"Toss Lock",goal:"Tosses landing on the spot, out of 50. Goal: 45+",max:50,unit:"/50"}
+];
 
-function phaseFor(date) {
-  const ds = fmtDate(date);
-  for (const p of PHASES) {
-    if (ds >= p.start && ds <= p.end) return p;
+function parseDate(s){const [y,m,d]=s.split("-").map(Number);return new Date(y,m-1,d)}
+function fmtDate(d){return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0")}
+function fmtNice(d){return d.toLocaleDateString("en-US",{weekday:"long",month:"long",day:"numeric",year:"numeric"})}
+function fmtShort(d){return d.toLocaleDateString("en-US",{month:"short",day:"numeric"})}
+function daysBetween(a,b){return Math.round((b-a)/86400000)}
+function dow(d){return ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"][d.getDay()]}
+
+function phaseFor(date){const ds=fmtDate(date);for(const p of PHASES){if(ds>=p.start&&ds<=p.end)return p}return null}
+function blockForDate(date){
+  const p=phaseFor(date);
+  if(!p)return {type:"off",phase:"Off-season",detail:"No plan",venue:"—"};
+  let b;
+  if(p.daily._all)b=p.daily._all;else b=p.daily[dow(date)];
+  if(!b)b={type:"rest",title:"Open",detail:"",venue:"TBD"};
+  return Object.assign({},b,{phase:p.label});
+}
+
+const TODAY=(function(){const t=new Date();const mn=parseDate("2026-05-25");const mx=parseDate("2026-08-16");if(t<mn)return mn;if(t>mx)return mx;return new Date(t.getFullYear(),t.getMonth(),t.getDate())})();
+let selectedDate=(function(){try{const s=localStorage.getItem("sot2026_selected");if(s&&s>="2026-05-25"&&s<="2026-08-16")return s}catch(e){}return fmtDate(TODAY)})();
+let completion=(function(){try{return JSON.parse(localStorage.getItem("sot2026_completion")||"{}")}catch(e){return {}}})();
+let tracking=(function(){try{return JSON.parse(localStorage.getItem("sot2026_tracking")||"{}")}catch(e){return {}}})();
+let weekOffset=0;
+const UTR_PER_UNIT=0.015;
+const KIDS={charlie:{name:"Charlie",start:9.67,goal:11.0},ren:{name:"Ren",start:8.47,goal:9.0}};
+
+function saveCompletion(){try{localStorage.setItem("sot2026_completion",JSON.stringify(completion))}catch(e){}}
+function saveSelected(){try{localStorage.setItem("sot2026_selected",selectedDate)}catch(e){}}
+function saveTracking(){try{localStorage.setItem("sot2026_tracking",JSON.stringify(tracking))}catch(e){}}
+function getCompletion(date,kid,item){return ((completion[date]||{})[kid]||{})[item]||false}
+function setCompletion(date,kid,item,val){if(!completion[date])completion[date]={};if(!completion[date][kid])completion[date][kid]={};if(val)completion[date][kid][item]=true;else delete completion[date][kid][item];saveCompletion()}
+function getTracking(kid,key,date){return (((tracking[kid]||{})[key]||{})[date])}
+function setTracking(kid,key,date,val){if(!tracking[kid])tracking[kid]={};if(!tracking[kid][key])tracking[kid][key]={};if(val===null||val===undefined||val==="")delete tracking[kid][key][date];else tracking[kid][key][date]=Number(val);saveTracking()}
+function trackingHistory(kid,key,n){const d=(tracking[kid]||{})[key]||{};return Object.entries(d).sort((a,b)=>b[0].localeCompare(a[0])).slice(0,n)}
+
+function itemsForBlock(block,kid){
+  if(!block||block.type==="rest"||block.type==="off")return [];
+  const items=[];
+  if(block.type==="tourn"){
+    if(block.title&&/drive|fly|travel/i.test(block.title))items.push({key:"travel",label:"Travel day"});
+    else items.push({key:"match",label:"Match / event"});
+  } else if(block.type==="clinic"){
+    if(kid==="charlie")items.push({key:"clinic",label:"Clinic"});
+    else items.push({key:"hitting",label:"Hitting"});
+  } else if(block.type==="train"){
+    items.push({key:"hitting",label:"Hitting"});
   }
-  return null;
-}
-
-function blockForDate(date) {
-  const p = phaseFor(date);
-  if (!p) return { type: "off", label: "Off-season", detail: "No plan for this date.", venue: "—" };
-  let block;
-  if (p.daily._all) block = p.daily._all;
-  else block = p.daily[dow(date)];
-  if (!block) block = { type: "rest", title: "Open day", detail: "Slot to fill", venue: "TBD" };
-  return { ...block, phase: p.label };
-}
-
-// ====== STATE ======
-const TODAY = (() => {
-  const t = new Date();
-  const min = parseDate("2026-05-25");
-  const max = parseDate("2026-08-16");
-  if (t < min) return min;
-  if (t > max) return max;
-  return new Date(t.getFullYear(), t.getMonth(), t.getDate());
-})();
-
-let selectedDate = (() => {
-  try {
-    const s = localStorage.getItem("sot2026_selected");
-    if (s && s >= "2026-05-25" && s <= "2026-08-16") return s;
-  } catch(e) {}
-  return fmtDate(TODAY);
-})();
-
-let completion = (() => {
-  try { return JSON.parse(localStorage.getItem("sot2026_completion") || "{}"); }
-  catch(e) { return {}; }
-})();
-
-const UTR_PER_UNIT = 0.015;
-const KIDS = {
-  charlie: { name: "Charlie", start: 9.67, goal: 11.0 },
-  ren:     { name: "Ren",     start: 8.47, goal: 9.0  }
-};
-
-function saveCompletion() {
-  try { localStorage.setItem("sot2026_completion", JSON.stringify(completion)); } catch(e) {}
-}
-function saveSelected() {
-  try { localStorage.setItem("sot2026_selected", selectedDate); } catch(e) {}
-}
-function getCompletion(date, kid, item) {
-  return ((completion[date] || {})[kid] || {})[item] || false;
-}
-function setCompletion(date, kid, item, val) {
-  if (!completion[date]) completion[date] = {};
-  if (!completion[date][kid]) completion[date][kid] = {};
-  if (val) completion[date][kid][item] = true;
-  else delete completion[date][kid][item];
-  saveCompletion();
-}
-
-function itemsForBlock(block, kid) {
-  if (!block || block.type === "rest" || block.type === "off") return [];
-  const items = [];
-  if (block.type === "tourn") {
-    if (block.title && /drive|fly|travel/i.test(block.title)) {
-      items.push({ key: "travel", label: "Travel day" });
-    } else {
-      items.push({ key: "match", label: "Match / event day" });
-    }
-  } else if (block.type === "clinic") {
-    if (kid === "charlie") items.push({ key: "clinic", label: "Clinic" });
-    else items.push({ key: "hitting", label: "Hitting" });
-  } else if (block.type === "train") {
-    items.push({ key: "hitting", label: "Hitting" });
-  }
-  if (block.weights) items.push({ key: "weights", label: "Weights" });
+  if(block.weights)items.push({key:"weights",label:"Weights"});
   return items;
 }
 
-function countUnits(kid) {
-  let n = 0;
-  Object.values(completion).forEach(byDate => {
-    const k = byDate[kid] || {};
-    Object.values(k).forEach(v => { if (v) n++; });
+function countUnits(kid){let n=0;Object.values(completion).forEach(b=>{const k=b[kid]||{};Object.values(k).forEach(v=>{if(v)n++})});return n}
+function projectedUTR(kid){return KIDS[kid].start+countUnits(kid)*UTR_PER_UNIT}
+function progressPct(kid){const k=KIDS[kid];const c=projectedUTR(kid);return Math.max(0,Math.min(105,((c-k.start)/(k.goal-k.start))*100))}
+function getWeekStart(date,off){off=off||0;const d=new Date(date);return new Date(d.getFullYear(),d.getMonth(),d.getDate()-d.getDay()+off*7)}
+function sessionsThisWeek(kid){const s=getWeekStart(TODAY);let n=0;for(let i=0;i<7;i++){const d=new Date(s);d.setDate(d.getDate()+i);const c=(completion[fmtDate(d)]||{})[kid]||{};Object.values(c).forEach(v=>{if(v)n++})}return n}
+function streakDays(kid){let s=0;let d=new Date(TODAY);const mn=parseDate("2026-05-25");while(d>=mn){const ds=fmtDate(d);const b=blockForDate(d);const c=(completion[ds]||{})[kid]||{};const any=Object.values(c).some(v=>v);if(b&&(b.type==="rest"||b.type==="tourn"))s++;else if(any)s++;else if(ds===fmtDate(TODAY)){}else break;d.setDate(d.getDate()-1)}return s}
+
+function ballIcon(){return '<svg class="kid-icon" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8" fill="#dfe97a" stroke="#b8c356" stroke-width=".5"/><path d="M 2 10 Q 10 4 18 10" stroke="white" stroke-width="1.2" fill="none"/><path d="M 2 10 Q 10 16 18 10" stroke="white" stroke-width="1.2" fill="none"/></svg>'}
+
+function renderCountdown(){
+  const row=document.getElementById("countdownRow");
+  const next=TOURNAMENTS.find(t=>fmtDate(TODAY)<=t.end);
+  const nextReg=TOURNAMENTS.find(t=>!t.registered&&fmtDate(TODAY)<=t.regClose);
+  let h="";
+  if(next){const d=daysBetween(TODAY,parseDate(next.start));h+='<div class="cd-card"><div class="label">Next tournament</div><div class="value">'+next.name.split(":")[0].split("—")[0].trim().slice(0,28)+'</div><div class="days">'+fmtShort(parseDate(next.start))+' · '+d+'d</div></div>'}
+  if(nextReg){const d=daysBetween(TODAY,parseDate(nextReg.regClose));h+='<div class="cd-card"><div class="label">Next reg deadline</div><div class="value">'+nextReg.name.split(":")[0].split("—")[0].trim().slice(0,26)+'</div><div class="days">'+fmtShort(parseDate(nextReg.regClose))+' · '+d+'d</div></div>'}
+  const se=parseDate("2026-06-17");
+  if(TODAY<=se)h+='<div class="cd-card"><div class="label">Last day of school</div><div class="value">Jun 17</div><div class="days">'+daysBetween(TODAY,se)+' days</div></div>';
+  const left=TOURNAMENTS.filter(t=>fmtDate(TODAY)<=t.end).length;
+  h+='<div class="cd-card"><div class="label">Tournaments left</div><div class="value">'+left+' of 7</div><div class="days">Through Aug 16</div></div>';
+  row.innerHTML=h;
+}
+
+function renderMomentum(){
+  const el=document.getElementById("momentumCard");
+  let h='<div class="mh"><span>Momentum</span><span class="sub">+0.015 projected UTR per session</span></div>';
+  ["charlie","ren"].forEach(kid=>{
+    const k=KIDS[kid];const c=projectedUTR(kid);const p=progressPct(kid);const w=sessionsThisWeek(kid);const s=streakDays(kid);
+    const fc=kid==="ren"?"progress-fill ren":"progress-fill";
+    const sc=s>=5?"streak-pill hot":"streak-pill";
+    h+='<div class="momentum-row"><div class="momentum-header"><span class="momentum-name">'+ballIcon()+k.name+'</span><span class="momentum-stats"><b>'+c.toFixed(2)+'</b> projected · goal '+k.goal.toFixed(1)+' · '+w+' this wk <span class="'+sc+'">🔥 '+s+'d</span></span></div><div class="progress-track"><div class="'+fc+'" style="width:'+p+'%"></div></div><div class="progress-markers"><span>start '+k.start+'</span><span>+'+(c-k.start).toFixed(3)+'</span><span>goal '+k.goal+'</span></div></div>';
   });
-  return n;
-}
-function projectedUTR(kid) { return KIDS[kid].start + countUnits(kid) * UTR_PER_UNIT; }
-function progressPct(kid) {
-  const k = KIDS[kid];
-  const cur = projectedUTR(kid);
-  return Math.max(0, Math.min(105, ((cur - k.start) / (k.goal - k.start)) * 100));
-}
-function sessionsThisWeek(kid) {
-  const start = getWeekStart(TODAY);
-  let n = 0;
-  for (let i = 0; i < 7; i++) {
-    const d = new Date(start);
-    d.setDate(d.getDate() + i);
-    const c = (completion[fmtDate(d)] || {})[kid] || {};
-    Object.values(c).forEach(v => { if (v) n++; });
-  }
-  return n;
-}
-function streakDays(kid) {
-  let s = 0;
-  let d = new Date(TODAY);
-  const start = parseDate("2026-05-25");
-  while (d >= start) {
-    const ds = fmtDate(d);
-    const block = blockForDate(d);
-    const c = (completion[ds] || {})[kid] || {};
-    const anyChecked = Object.values(c).some(v => v);
-    if (block && (block.type === "rest" || block.type === "tourn")) { s++; }
-    else if (anyChecked) { s++; }
-    else if (ds === fmtDate(TODAY)) { /* today not yet logged is fine */ }
-    else { break; }
-    d.setDate(d.getDate() - 1);
-  }
-  return s;
+  el.innerHTML=h;
 }
 
-// ====== RENDER ======
-function renderMomentum() {
-  const el = document.getElementById("momentumCard");
-  let html = `<h2>Momentum <span class="sub">+${UTR_PER_UNIT} projected UTR per practice + per weights session</span></h2>`;
-  ["charlie", "ren"].forEach(kid => {
-    const k = KIDS[kid];
-    const cur = projectedUTR(kid);
-    const pct = progressPct(kid);
-    const wk = sessionsThisWeek(kid);
-    const streak = streakDays(kid);
-    const fillCls = kid === "ren" ? "progress-fill ren" : "progress-fill";
-    const streakCls = streak >= 5 ? "streak-pill hot" : "streak-pill";
-    html += `
-      <div class="momentum-row">
-        <div class="momentum-header">
-          <span class="momentum-name">${k.name}</span>
-          <span class="momentum-stats"><b>${cur.toFixed(2)}</b> projected · goal ${k.goal.toFixed(1)} · this week: ${wk} sessions <span class="${streakCls}">🔥 ${streak}d streak</span></span>
-        </div>
-        <div class="progress-track"><div class="${fillCls}" style="width:${pct}%"></div></div>
-        <div class="progress-markers"><span>start ${k.start}</span><span>+${(cur - k.start).toFixed(3)} so far</span><span>goal ${k.goal}</span></div>
-      </div>
-    `;
-  });
-  el.innerHTML = html;
-}
+function renderToday(){
+  const date=parseDate(selectedDate);
+  const block=blockForDate(date);
+  const el=document.getElementById("todayBlock");
+  const isToday=selectedDate===fmtDate(TODAY);
+  document.getElementById("selectedIndicator").textContent=isToday?"Viewing today":(selectedDate<fmtDate(TODAY)?"Viewing past day":"Viewing future day");
 
-function renderToday() {
-  const date = parseDate(selectedDate);
-  const block = blockForDate(date);
-  const el = document.getElementById("todayBlock");
-  const isActualToday = selectedDate === fmtDate(TODAY);
-  document.getElementById("selectedIndicator").textContent = isActualToday ? "Viewing today" : (selectedDate < fmtDate(TODAY) ? "Viewing a past day" : "Viewing a future day");
+  let bh="";
+  if(block.type==="rest")bh='<div class="tblock rest"><div class="ttitle">Rest day</div><div class="tcontent">'+(block.title||"Rest")+'<br><span class="muted">'+(block.detail||"")+'</span></div></div>';
+  else if(block.type==="tourn")bh='<div class="tblock tourn"><div class="ttitle">Tournament / travel</div><div class="tcontent"><b>'+(block.title||"")+'</b><br><span class="muted">'+(block.detail||"")+'</span></div></div>';
+  else if(block.type==="clinic")bh='<div class="tblock clinic"><div class="ttitle">Clinic day</div><div class="tcontent"><b>'+(block.title||"")+'</b><br><span class="muted">'+(block.detail||"")+'</span></div></div>';
+  else if(block.type==="train")bh='<div class="tblock"><div class="ttitle">Hitting focus</div><div class="tcontent"><b>'+block.focus+'</b><br><span class="muted">1.5–2 hr + 30 min footwork</span></div></div><div class="tblock"><div class="ttitle">Drills</div><div class="tcontent">'+(block.drills||[]).map(d=>"• "+d).join("<br>")+'</div></div><div class="tblock"><div class="ttitle">Weights?</div><div class="tcontent">'+(block.weights?"Yes — full session after hitting":"No")+'</div></div><div class="tblock"><div class="ttitle">Who\'s hitting</div><div class="tcontent">'+((block.partners||[]).join(" + ")||"—")+'</div></div>';
 
-  let blocksHtml = "";
-  if (block.type === "rest") {
-    blocksHtml = `<div class="tblock rest"><div class="ttitle">Rest day</div><div class="tcontent">${block.title || "Rest"}<br><span class="muted">${block.detail || ""}</span></div></div>`;
-  } else if (block.type === "tourn") {
-    blocksHtml = `<div class="tblock tourn"><div class="ttitle">Tournament / travel</div><div class="tcontent"><b>${block.title || ""}</b><br><span class="muted">${block.detail || ""}</span></div></div>`;
-  } else if (block.type === "clinic") {
-    blocksHtml = `<div class="tblock clinic"><div class="ttitle">Clinic day</div><div class="tcontent"><b>${block.title || ""}</b><br><span class="muted">${block.detail || ""}</span></div></div>`;
-  } else if (block.type === "train") {
-    blocksHtml = `
-      <div class="tblock"><div class="ttitle">Hitting focus</div><div class="tcontent"><b>${block.focus}</b><br><span class="muted">1.5–2 hr hitting + 30 min footwork</span></div></div>
-      <div class="tblock"><div class="ttitle">Drills (in order)</div><div class="tcontent">${(block.drills||[]).map(d => `• ${d}`).join("<br>")}</div></div>
-      <div class="tblock"><div class="ttitle">Weights?</div><div class="tcontent">${block.weights ? "Yes — full session after hitting" : "No"}</div></div>
-      <div class="tblock"><div class="ttitle">Who's hitting</div><div class="tcontent">${(block.partners||[]).join(" + ") || "—"}</div></div>
-    `;
-  }
-
-  // Build checkin section
-  let checkinHtml = "";
-  const charlieItems = itemsForBlock(block, "charlie");
-  const renItems = itemsForBlock(block, "ren");
-  if (charlieItems.length || renItems.length) {
-    checkinHtml = `<div class="checkin-section"><h3>Check-in (saves automatically)</h3>`;
-    ["charlie", "ren"].forEach(kid => {
-      const items = itemsForBlock(block, kid);
-      if (!items.length) return;
-      checkinHtml += `<div class="checkin-row"><div class="checkin-name">${KIDS[kid].name}</div><div class="checkin-items">`;
-      items.forEach(it => {
-        const checked = getCompletion(selectedDate, kid, it.key);
-        checkinHtml += `<label class="checkin-pill ${checked ? "checked" : ""}">
-          <input type="checkbox" data-checkin data-date="${selectedDate}" data-kid="${kid}" data-item="${it.key}" ${checked ? "checked" : ""}>
-          ${it.label}<span class="utr-bump">+0.015</span>
-        </label>`;
+  let ch="";
+  const ci=itemsForBlock(block,"charlie");
+  const ri=itemsForBlock(block,"ren");
+  if(ci.length||ri.length){
+    ch='<div class="checkin-section"><h3>Check-in (saves automatically)</h3>';
+    ["charlie","ren"].forEach(kid=>{
+      const items=itemsForBlock(block,kid);
+      if(!items.length)return;
+      ch+='<div class="checkin-row"><div class="checkin-name">'+KIDS[kid].name+'</div><div class="checkin-items">';
+      items.forEach(it=>{
+        const checked=getCompletion(selectedDate,kid,it.key);
+        ch+='<label class="checkin-pill '+(checked?"checked":"")+'"><input type="checkbox" data-checkin data-date="'+selectedDate+'" data-kid="'+kid+'" data-item="'+it.key+'"'+(checked?" checked":"")+'>'+it.label+'<span class="utr-bump">+0.015</span></label>';
       });
-      checkinHtml += `</div></div>`;
+      ch+='</div></div>';
     });
-    checkinHtml += `</div>`;
+    ch+='</div>';
   }
 
-  el.innerHTML = `
-    <div class="today-header">
-      <div class="today-date">${fmtNice(date)}</div>
-      <div class="today-phase">${block.phase || ""}</div>
-    </div>
-    <div class="today-venue"><b>Venue:</b> ${block.venue || "—"}</div>
-    <div class="today-blocks">${blocksHtml}</div>
-    ${checkinHtml}
-  `;
-
-  const next = nextTournament(date);
-  let ctx = "";
-  if (next) {
-    const days = daysBetween(date, parseDate(next.start));
-    if (days >= 0) {
-      ctx = `<p><b>Next tournament:</b> ${next.name} on ${fmtShort(parseDate(next.start))} — <b>${days} day${days===1?"":"s"} away</b>. ${days <= 3 ? "Taper mode — pull back intensity, focus on touch and serve." : days <= 7 ? "Sharpening week — pattern work and match play." : "Build phase — push physically."}</p>`;
-    }
+  let th="";
+  if(block.type==="train"||block.type==="clinic"){
+    th='<div class="trackers-section"><h3>📊 Trackers (log your numbers)</h3>';
+    TRACKERS.forEach(t=>{
+      function histTxt(hist,unit){
+        if(!hist.length)return '<span class="muted">no entries yet</span>';
+        const v=hist.map(h=>h[1]);
+        let tr="";
+        if(v.length>=2){if(v[0]>v[1])tr='<span class="tracker-trend up">↑</span>';else if(v[0]<v[1])tr='<span class="tracker-trend down">↓</span>'}
+        return 'Recent: <b>'+v.map(x=>x+unit).join(" · ")+'</b>'+tr;
+      }
+      const ch_h=trackingHistory("charlie",t.key,3);
+      const re_h=trackingHistory("ren",t.key,3);
+      const ch_t=getTracking("charlie",t.key,selectedDate);
+      const re_t=getTracking("ren",t.key,selectedDate);
+      th+='<div class="tracker-card"><div class="tracker-name">'+t.name+'</div><div class="tracker-goal">'+t.goal+'</div>';
+      ["charlie","ren"].forEach(kid=>{
+        const cur=kid==="charlie"?ch_t:re_t;
+        const hist=kid==="charlie"?ch_h:re_h;
+        th+='<div class="tracker-row"><span class="tracker-label">'+KIDS[kid].name+'</span><input class="tracker-input" type="number" min="0" max="'+t.max+'" placeholder="—" value="'+(cur!==undefined?cur:"")+'" data-track-kid="'+kid+'" data-track-drill="'+t.key+'"><button class="tracker-save" data-track-save data-track-kid="'+kid+'" data-track-drill="'+t.key+'">Save</button><span class="tracker-history">'+histTxt(hist,t.unit)+'</span></div>';
+      });
+      th+='</div>';
+    });
+    th+='</div>';
   }
-  ctx += `<p><b>This phase:</b> ${block.phase || ""}. ${phaseSummary(block.phase)}</p>`;
-  document.getElementById("todayContext").innerHTML = ctx;
+
+  el.innerHTML='<div class="today-header"><div class="today-date">'+fmtNice(date)+'</div><div class="today-phase">'+(block.phase||"")+'</div></div><div class="today-venue"><b>Venue:</b> '+(block.venue||"—")+'</div><div class="today-blocks">'+bh+'</div>'+ch+th;
+
+  const next=TOURNAMENTS.find(t=>fmtDate(date)<=t.end);
+  let ctx="";
+  if(next){const d=daysBetween(date,parseDate(next.start));if(d>=0)ctx='<p><b>Next tournament:</b> '+next.name+' on '+fmtShort(parseDate(next.start))+' — <b>'+d+' day'+(d===1?"":"s")+' away</b>. '+(d<=3?"Taper mode.":d<=7?"Sharpening week.":"Build phase.")+'</p>'}
+  ctx+='<p><b>This phase:</b> '+(block.phase||"")+'. '+(PHASE_SUMMARY[block.phase]||"Stay on plan.")+'</p>';
+  document.getElementById("todayContext").innerHTML=ctx;
 }
 
-function shiftSelectedDate(delta) {
-  const d = parseDate(selectedDate);
-  d.setDate(d.getDate() + delta);
-  const min = parseDate("2026-05-25");
-  const max = parseDate("2026-08-16");
-  if (d < min || d > max) return;
-  selectedDate = fmtDate(d);
-  saveSelected();
-  renderToday();
-  renderWeek();
+function renderWeek(){
+  const start=getWeekStart(TODAY,weekOffset);
+  const end=new Date(start);end.setDate(end.getDate()+6);
+  document.getElementById("weekLabel").textContent="Week of "+fmtShort(start)+" – "+fmtShort(end)+", 2026";
+  const grid=document.getElementById("weekGrid");
+  let h="";
+  for(let i=0;i<7;i++){
+    const d=new Date(start);d.setDate(d.getDate()+i);
+    const ds=fmtDate(d);const block=blockForDate(d);
+    const isToday=ds===fmtDate(TODAY);const sel=ds===selectedDate;
+    const cls="day "+(block.type||"off")+(isToday?" today":"")+(sel?" selected":"");
+    const di=(completion[ds]||{});
+    let c=0,a=0;
+    ["charlie","ren"].forEach(kid=>{const its=itemsForBlock(block,kid);a+=its.length;its.forEach(it=>{if(((di[kid]||{})[it.key]))c++})});
+    let dot="";
+    if(a>0){if(c===0)dot='<span class="complete-dot empty"></span>';else if(c>=a)dot='<span class="complete-dot full">✓</span>';else dot='<span class="complete-dot partial">'+c+'</span>'}
+    let inner='<div class="dow"><span>'+dow(d)+'</span>'+dot+'</div><div class="date">'+d.getDate()+'</div>';
+    if(block.type==="rest")inner+='<div class="focus">REST</div><div class="detail">'+(block.detail||"").slice(0,60)+'</div>';
+    else if(block.type==="tourn")inner+='<div class="focus">'+(block.title||"Tournament").slice(0,40)+'</div><div class="detail">'+(block.detail||"").slice(0,60)+'</div>';
+    else if(block.type==="clinic")inner+='<div class="focus">CLINIC</div><div class="detail">'+(block.title||"").slice(0,55)+'</div>';
+    else if(block.type==="train")inner+='<div class="focus">'+block.focus+'</div><div class="detail">'+(block.drills||[]).slice(0,2).join(" · ")+(block.weights?'<br><span class="muted">+ weights</span>':'')+'</div>';
+    else inner+='<div class="focus">—</div>';
+    if(block.venue)inner+='<div class="venue">'+block.venue+'</div>';
+    if(block.partners)inner+='<div class="partners">'+block.partners.join(" + ")+'</div>';
+    h+='<div class="'+cls+'" onclick="selectDateAndFocus(\''+ds+'\')">'+inner+'</div>';
+  }
+  grid.innerHTML=h;
 }
 
-function jumpToToday() {
-  selectedDate = fmtDate(TODAY);
-  saveSelected();
-  // also reset week offset to current
-  weekOffset = 0;
-  renderToday();
-  renderWeek();
+function shiftWeek(d){weekOffset+=d;renderWeek()}
+function goToCurrentWeek(){weekOffset=0;renderWeek()}
+function shiftSelectedDate(d){const dt=parseDate(selectedDate);dt.setDate(dt.getDate()+d);const mn=parseDate("2026-05-25");const mx=parseDate("2026-08-16");if(dt<mn||dt>mx)return;selectedDate=fmtDate(dt);saveSelected();renderToday();renderWeek()}
+function jumpToToday(){selectedDate=fmtDate(TODAY);saveSelected();weekOffset=0;renderToday();renderWeek()}
+function selectDateAndFocus(s){selectedDate=s;saveSelected();document.querySelectorAll(".tab").forEach(b=>b.classList.remove("active"));document.querySelectorAll(".panel").forEach(p=>p.classList.remove("active"));const t=document.querySelector('.tab[data-tab="today"]');if(t)t.classList.add("active");document.getElementById("panel-today").classList.add("active");try{localStorage.setItem("sot2026_tab","today")}catch(e){}renderToday();renderMomentum();window.scrollTo({top:0,behavior:"smooth"})}
+
+function renderTournaments(){
+  const list=document.getElementById("tournList");
+  list.innerHTML=TOURNAMENTS.map(t=>{
+    const sd=parseDate(t.start),ed=parseDate(t.end);
+    const dl=sd.getMonth()===ed.getMonth()?sd.toLocaleString('en-US',{month:'short'})+' '+sd.getDate()+'–'+ed.getDate()+', 2026':fmtShort(sd)+' – '+fmtShort(ed)+', 2026';
+    const rd=daysBetween(TODAY,parseDate(t.regClose));
+    let rf="";
+    if(t.registered)rf='<span class="reg-flag" style="background:#e8f0ea;color:#1e5631">Registered ✓</span>';
+    else if(rd<0)rf='<span class="reg-flag">Reg closed</span>';
+    else if(rd<=5)rf='<span class="reg-flag urgent">Closes '+(rd===0?"today":"in "+rd+"d")+'</span>';
+    else rf='<span class="reg-flag">Closes '+fmtShort(parseDate(t.regClose))+'</span>';
+    const map='https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(t.venueAddress||t.venue);
+    const title=t.url?'<a href="'+t.url+'" target="_blank" rel="noopener" class="link-ext">T'+t.id+' · '+t.name+'</a>':'T'+t.id+' · '+t.name;
+    const ven='<a href="'+map+'" target="_blank" rel="noopener" class="link-map">'+t.venue+'</a>';
+    const hh=t.hotels.length?'<div class="tourn-section"><h4>Hotels</h4><ul>'+t.hotels.map(h=>{const city=(t.venueAddress||t.venue).split(",").slice(-2).join(" ");const q=encodeURIComponent(h.name+" "+city);return '<li><a href="https://www.google.com/search?q='+q+'" target="_blank" rel="noopener" class="link-ext"><b>'+h.name+'</b></a> — '+h.price+'. <span class="muted">'+h.note+'</span></li>'}).join("")+'</ul></div>':"";
+    const nh='<div class="tourn-section"><h4>Notes</h4><ul>'+t.notes.map(n=>'<li>'+n+'</li>').join("")+'</ul></div>';
+    const ph='<div class="tourn-section"><h4>The plan</h4><p style="font-size:13px">'+t.plan+'</p></div>';
+    return '<div class="tourn-card '+t.level.toLowerCase()+'"><div class="tourn-header"><div><div class="tourn-title">'+title+'</div><div class="muted" style="margin-top:2px">'+ven+'</div></div><div><span class="tourn-level '+t.level.toLowerCase()+'">'+t.levelLabel+'</span></div></div><div class="tourn-meta"><div><b>'+dl+'</b></div><div>Surface: <b>'+t.surface+'</b></div><div>Entry: <b>$'+t.fee+'</b> '+rf+'</div><div>Drive: <b>'+t.drive.time+'</b> · '+t.drive.miles+' mi</div></div><div style="background:#f7f6f1;padding:10px 12px;border-radius:6px;font-size:13px;margin-bottom:8px"><b>Travel:</b> '+t.travel+'</div>'+hh+nh+ph+'</div>';
+  }).join("");
+  const u=TOURNAMENTS.find(t=>{if(t.registered)return false;const d=daysBetween(TODAY,parseDate(t.regClose));return d>=0&&d<=5});
+  const ue=document.getElementById("urgentReg");
+  if(u){const d=daysBetween(TODAY,parseDate(u.regClose));ue.innerHTML='<b>⚠ Registration deadline soon:</b> '+u.name+' closes <b>'+fmtShort(parseDate(u.regClose))+'</b> — '+(d===0?"TODAY":"in "+d+" day"+(d===1?"":"s"))+'.';ue.style.display="block"} else ue.style.display="none";
 }
 
-function selectDateAndFocus(dateStr) {
-  selectedDate = dateStr;
-  saveSelected();
-  // switch to Today tab
-  document.querySelectorAll(".tab").forEach(b => b.classList.remove("active"));
-  document.querySelectorAll(".panel").forEach(p => p.classList.remove("active"));
-  const todayBtn = document.querySelector('.tab[data-tab="today"]');
-  if (todayBtn) todayBtn.classList.add("active");
-  document.getElementById("panel-today").classList.add("active");
-  try { localStorage.setItem("sot2026_tab", "today"); } catch(e) {}
-  renderToday();
-  renderMomentum();
-  window.scrollTo({ top: 0, behavior: "smooth" });
+function renderVenues(){
+  const el=document.getElementById("venueList");
+  el.innerHTML=VENUES.map(v=>{const m='https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(v.address);return '<div class="venue-card"><h3>'+v.name+'</h3><div class="vsub">'+v.sub+'</div><p>'+v.desc+'</p><p><a href="'+m+'" target="_blank" rel="noopener" class="link-map">'+v.address+'</a></p></div>'}).join("");
 }
 
-// Wire up checkbox changes (delegated)
-document.addEventListener("change", e => {
-  if (e.target && e.target.matches("input[type=checkbox][data-checkin]")) {
-    const { date, kid, item } = e.target.dataset;
-    setCompletion(date, kid, item, e.target.checked);
-    renderMomentum();
-    renderToday();
-    renderWeek();
+function renderDrills(){
+  const L={fh:"FH Weapon",serve:"Serve",pc:"Point Construction",fit:"Conditioning",match:"Match",net:"Net & Transition"};
+  ["fh","serve","pc","fit","match","net"].forEach(k=>{
+    const el=document.getElementById("drills"+k.charAt(0).toUpperCase()+k.slice(1));
+    if(!el)return;
+    el.innerHTML=DRILLS[k].map(d=>'<div class="drill"><div class="drill-cat '+k+'">'+L[k]+'</div><h3>'+d.name+'</h3><p>'+d.desc+'</p><div class="duration">'+d.duration+'</div></div>').join("");
+  });
+}
+
+document.querySelectorAll(".tab").forEach(btn=>{
+  btn.addEventListener("click",()=>{
+    document.querySelectorAll(".tab").forEach(b=>b.classList.remove("active"));
+    document.querySelectorAll(".panel").forEach(p=>p.classList.remove("active"));
+    btn.classList.add("active");
+    document.getElementById("panel-"+btn.dataset.tab).classList.add("active");
+    try{localStorage.setItem("sot2026_tab",btn.dataset.tab)}catch(e){}
+  });
+});
+
+document.addEventListener("change",function(e){
+  if(e.target&&e.target.matches&&e.target.matches("input[type=checkbox][data-checkin]")){
+    const ds=e.target.dataset;
+    setCompletion(ds.date,ds.kid,ds.item,e.target.checked);
+    renderMomentum();renderToday();renderWeek();
   }
 });
 
-function phaseSummary(label) {
-  const m = {
-    "Foundation": "Reset the FH technique, hammer the serve toss, and install the pattern library. Volume over intensity. One Mill Pond clay session this week to start clay legs.",
-    "Foundation (Mill Pond #1)": "First clay session of the summer at Mill Pond. Long rallies, footwork in clay surface, sliding intro.",
-    "T1 Taper": "Pull back. Touch + serve only. Final clay tune-up at Mill Pond Thu Jun 4.",
-    "T1 Taper (Mill Pond #2)": "Last hit before Bloomfield. 90 min light at Mill Pond clay. No max effort.",
-    "T1: Bloomfield": "Compete. Don't lose to anyone below 9.5 — that's the L5 job.",
-    "T1 Recovery": "Mobility only. Tennis takes a day off.",
-    "Build-Babson": "Highest training load of the early summer. Intensity ramps daily — match-pace sets twice this week.",
-    "Build-Babson — School ends!": "School's out — full training capacity available. Heavy match play day.",
-    "T2 Travel": "Get to MA, walk on at Babson, get a feel. Don't drill hard.",
-    "T2: Babson Sectionals": "L3 closed — Charlie + Robert on-site. Ren + Teresa drive to Maine Sun Jun 21. Beat the players you should and steal one above you.",
-    "Babson→Maine drive": "Drive ~3.5 hrs Babson area → Boothbay. Reunite with Ren + Teresa.",
-    "T3 Travel + Practice": "Long drive day from Maine. Use the 4–8 PM Cornell practice window if energy allows.",
-    "T3: Cornell": "Stay aggressive on indoor courts — they reward first-strike tennis.",
-    "Clay Prep (Mill Pond #3)": "Drive home from Cornell + rest.",
-    "Clay Prep (Mill Pond #4)": "Mill Pond clay. Slower courts, longer rallies, sliding mechanics, patience patterns.",
-    "Clay Prep (Mill Pond #5)": "Mill Pond clay. Heavy topspin day — work shape and depth.",
-    "Clay Prep (Mill Pond #6)": "Mill Pond clay. Match play day on clay — practice the patience.",
-    "T4 Travel": "Fly to FL afternoon (clubs close early Jul 4).",
-    "T4: Delray Clay": "Long event. Recovery between rounds matters more than practice. Sleep 9 hrs.",
-    "Rebuild Recovery": "3 days fully off tennis after Florida. Sleep, eat, walk.",
-    "Rebuild": "Heaviest training block of the summer. This is where the next UTR jump comes from.",
-    "T5 Taper / Travel": "Drive to PA, light hit on arrival.",
-    "T5: PA Team Cup": "Team event — energy management across singles + doubles is the skill.",
-    "Final Sharpen": "Last preparation block before Kalamazoo. Pattern rehearsal, mental imagery.",
-    "Travel to Kalamazoo": "Fly + team registration. Walk on if energy allows.",
-    "T6: Battle of Sections": "L1. College coaches present. Compete every point — visible effort matters here.",
-    "T6→T7 Rest": "Critical rest day between Kalamazoo events. Don't waste it on practice.",
-    "T7: Kalamazoo Nationals": "The main event. 10 days. Pace yourself."
-  };
-  return m[label] || "Stay on plan — see drill library for the day's session.";
-}
-
-function nextTournament(fromDate) {
-  for (const t of TOURNAMENTS) {
-    if (fmtDate(fromDate) <= t.end) return t;
+document.addEventListener("click",function(e){
+  if(e.target&&e.target.matches&&e.target.matches("[data-track-save]")){
+    const btn=e.target;
+    const kid=btn.dataset.trackKid;
+    const drill=btn.dataset.trackDrill;
+    const inp=document.querySelector('input.tracker-input[data-track-kid="'+kid+'"][data-track-drill="'+drill+'"]');
+    if(!inp)return;
+    const raw=inp.value.trim();
+    if(raw==="")setTracking(kid,drill,selectedDate,null);
+    else {const v=Number(raw);if(isNaN(v))return;setTracking(kid,drill,selectedDate,v)}
+    btn.textContent="Saved ✓";
+    btn.classList.add("saved");
+    setTimeout(()=>{renderToday()},600);
   }
-  return null;
-}
+});
 
-function renderCountdown() {
-  const row = document.getElementById("countdownRow");
-  const next = nextTournament(TODAY);
-  const nextReg = TOURNAMENTS.find(t => !t.registered && fmtDate(TODAY) <= t.regClose);
-  let html = "";
-  if (next) {
-    const days = daysBetween(TODAY, parseDate(next.start));
-    html += `<div class="cd-card"><div class="label">Next tournament</div><div class="value">${next.name.split(":")[0].split("—")[0].trim().slice(0,32)}</div><div class="days">${fmtShort(parseDate(next.start))} · ${days} days</div></div>`;
-  }
-  if (nextReg) {
-    const days = daysBetween(TODAY, parseDate(nextReg.regClose));
-    const cls = days <= 3 ? 'style="background:rgba(255,180,150,0.25);border-color:rgba(255,180,150,0.4)"' : "";
-    html += `<div class="cd-card" ${cls}><div class="label">Next reg deadline</div><div class="value">${nextReg.name.split(":")[0].split("—")[0].trim().slice(0,28)}</div><div class="days">${fmtShort(parseDate(nextReg.regClose))} · ${days} day${days===1?"":"s"} left</div></div>`;
-  }
-  const schoolEnd = parseDate("2026-06-17");
-  if (TODAY <= schoolEnd) {
-    const days = daysBetween(TODAY, schoolEnd);
-    html += `<div class="cd-card"><div class="label">Last day of school</div><div class="value">Jun 17, 2026</div><div class="days">${days} days</div></div>`;
-  }
-  const left = TOURNAMENTS.filter(t => fmtDate(TODAY) <= t.end).length;
-  html += `<div class="cd-card"><div class="label">Tournaments remaining</div><div class="value">${left} of 7</div><div class="days">Through Aug 16</div></div>`;
-  row.innerHTML = html;
-}
+function forceReload(){const u=new URL(window.location.href);u.searchParams.set("_t",Date.now());window.location.replace(u.toString())}
 
-// ====== WEEK VIEW ======
-let weekOffset = 0;
+(function(){try{const la=Date.now();document.addEventListener("visibilitychange",()=>{if(document.visibilityState==="visible"){const oh=(Date.now()-la)/3600000;if(oh>12){const u=new URL(window.location.href);if(!u.searchParams.has("_t")){u.searchParams.set("_t",Date.now());window.location.replace(u.toString())}}}})}catch(e){}})();
 
-function getWeekStart(date, offset = 0) {
-  const d = new Date(date);
-  const day = d.getDay();
-  const diff = d.getDate() - day + (offset * 7);
-  return new Date(d.getFullYear(), d.getMonth(), diff);
-}
+try{const s=localStorage.getItem("sot2026_tab");if(s){const b=document.querySelector('.tab[data-tab="'+s+'"]');if(b)b.click()}}catch(e){}
 
-function renderWeek() {
-  const start = getWeekStart(TODAY, weekOffset);
-  const end = new Date(start);
-  end.setDate(end.getDate() + 6);
-  document.getElementById("weekLabel").textCon
+renderCountdown();
+renderMomentum();
+renderToday();
+renderWeek();
+renderTournaments();
+renderVenues();
+renderDrills();
+</script>
+</body>
+</html>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
