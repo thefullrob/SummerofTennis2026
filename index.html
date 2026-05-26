@@ -7,7 +7,6 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="Tennis 2026">
 <meta name="theme-color" content="#1e5631">
 <title>Summer of Tennis 2026</title>
@@ -23,7 +22,7 @@ a.link-ext::after,a.link-map::after{content:" ↗";font-size:.85em;opacity:.7}
 .hero .sub{opacity:.85;font-size:14px}
 .hero .deco{position:absolute;top:8px;right:12px;opacity:.85;pointer-events:none}
 .hero .deco .ball{animation:bounce 2.4s ease-in-out infinite;transform-origin:center}
-@keyframes bounce{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-6px) rotate(15deg)}}
+@keyframes bounce{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-6px) rotate(15deg)}}
 .family-row{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap;font-size:12px;opacity:.92}
 .fam-chip{background:rgba(255,255,255,.14);padding:4px 10px;border-radius:12px;border:1px solid rgba(255,255,255,.22)}
 .countdown-row{display:flex;gap:12px;margin-top:14px;flex-wrap:wrap}
@@ -33,22 +32,21 @@ a.link-ext::after,a.link-map::after{content:" ↗";font-size:.85em;opacity:.7}
 .cd-card .days{font-size:11px;opacity:.85;margin-top:2px}
 .version-row{display:flex;justify-content:space-between;align-items:center;margin-top:14px;padding-top:10px;border-top:1px solid rgba(255,255,255,.18);font-size:11px;opacity:.85}
 .refresh-btn{background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.28);color:white;padding:6px 14px;border-radius:14px;font-size:11px;cursor:pointer;font-family:inherit}
-.refresh-btn:hover{background:rgba(255,255,255,.28)}
 .tabs{display:flex;gap:4px;border-bottom:2px solid #e5e3dc;margin-bottom:20px;overflow-x:auto;scrollbar-width:none}
 .tabs::-webkit-scrollbar{display:none}
 .tab{background:none;border:none;padding:11px 18px;font-size:14px;font-weight:500;color:#6b6b6b;cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px;white-space:nowrap;font-family:inherit}
-.tab:hover{color:#1e5631}.tab.active{color:#1e5631;border-bottom-color:#1e5631;font-weight:600}
+.tab.active{color:#1e5631;border-bottom-color:#1e5631;font-weight:600}
 .panel{display:none}.panel.active{display:block}
 .card{background:white;border:1px solid #e8e6df;border-radius:12px;padding:20px 22px;margin-bottom:16px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
 .card h2{font-size:18px;font-weight:700;color:#1e5631;margin-bottom:12px}
-.card h3{font-size:15px;font-weight:600;color:#2d2d2d;margin-top:14px;margin-bottom:6px}
+.card h3{font-size:15px;font-weight:600;margin-top:14px;margin-bottom:6px}
 .card p{margin-bottom:8px}.card ul,.card ol{margin-left:22px;margin-bottom:8px}.card li{margin-bottom:4px}
 .momentum-card{background:white;border:1px solid #e8e6df;border-radius:12px;padding:18px 22px;margin-bottom:16px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
 .momentum-card .mh{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:15px;font-weight:700;color:#1e5631}
 .momentum-card .mh .sub{font-size:11px;color:#888;font-weight:500;text-transform:none}
 .momentum-row{margin-bottom:14px}.momentum-row:last-child{margin-bottom:0}
 .momentum-header{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px;font-size:13px;gap:8px;flex-wrap:wrap}
-.momentum-name{font-weight:600;color:#1a1a1a;display:flex;align-items:center;gap:6px}
+.momentum-name{font-weight:600;display:flex;align-items:center;gap:6px}
 .momentum-stats{color:#555;font-size:12px}.momentum-stats b{color:#1e5631;font-size:14px}
 .progress-track{background:#f0efe7;border-radius:6px;height:12px;overflow:hidden}
 .progress-fill{background:linear-gradient(90deg,#2d7a44,#4ea065);height:100%;border-radius:6px;transition:width .4s ease}
@@ -59,52 +57,93 @@ a.link-ext::after,a.link-map::after{content:" ↗";font-size:.85em;opacity:.7}
 .kid-icon{width:18px;height:18px;vertical-align:middle}
 .date-nav{display:flex;align-items:center;gap:8px;margin-bottom:14px;flex-wrap:wrap}
 .date-nav button{background:white;border:1px solid #d8d5cc;border-radius:8px;padding:8px 14px;cursor:pointer;font-family:inherit;font-size:13px;font-weight:500}
-.date-nav button:hover{background:#f0efe7}
-.date-nav .today-jump{background:#1e5631;color:white;border-color:#1e5631}.date-nav .today-jump:hover{background:#2d7a44}
+.date-nav .today-jump{background:#1e5631;color:white;border-color:#1e5631}
 .date-nav .selected-indicator{flex:1;text-align:right;font-size:12px;color:#888}
 .today-block{background:white;border:2px solid #1e5631;border-radius:14px;padding:24px;margin-bottom:20px}
 .today-header{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;margin-bottom:14px}
 .today-date{font-size:20px;font-weight:700;color:#1e5631}
 .today-phase{background:#e8f0ea;color:#1e5631;padding:4px 12px;border-radius:20px;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.5px}
-.today-venue{font-size:13px;color:#555;margin-bottom:12px}.today-venue b{color:#1a1a1a}
-.today-blocks{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:10px}
-.tblock{background:#f7f6f1;border-left:4px solid #2d7a44;padding:12px 14px;border-radius:6px}
-.tblock .ttitle{font-size:11px;text-transform:uppercase;letter-spacing:.6px;color:#6b6b6b;font-weight:600;margin-bottom:4px}
-.tblock .tcontent{font-size:14px}
-.tblock.rest{border-left-color:#b89855;background:#faf5e8}
-.tblock.tourn{border-left-color:#c14d35;background:#faece8}
-.tblock.clinic{border-left-color:#4a7ab8;background:#ecf2f9}
+.today-venue{font-size:13px;color:#555;margin-bottom:8px}.today-venue b{color:#1a1a1a}
+.practice-total{font-size:12px;color:#555;background:#f7f6f1;padding:8px 12px;border-radius:6px;margin-bottom:14px;border-left:3px solid #2d7a44}
+.practice-total b{color:#1e5631}
+.today-blocks{display:flex;flex-direction:column;gap:12px;margin-top:10px}
+.pblock{background:#f7f6f1;border-left:4px solid #2d7a44;padding:14px 16px;border-radius:6px}
+.pblock .ptitle{font-size:11px;text-transform:uppercase;letter-spacing:.6px;color:#6b6b6b;font-weight:700;margin-bottom:6px;display:flex;justify-content:space-between}
+.pblock .ptime{font-weight:600;color:#1e5631}
+.pblock .pcontent{font-size:14px}
+.pblock .pcontent ol,.pblock .pcontent ul{margin-left:18px;margin-top:6px}
+.pblock .pcontent li{margin-bottom:4px;font-size:13px}
+.pblock.dynamic{border-left-color:#888;background:#f5f5f2}
+.pblock.dynamic .ptitle{color:#555}
+.pblock.warmup{border-left-color:#d4a93a;background:#fff8e8}
+.pblock.warmup .ptitle{color:#7a5400}
+.pblock.footwork{border-left-color:#1a7d77;background:#e6f4f3}
+.pblock.footwork .ptitle{color:#0f5854}
+.pblock.objectives{border-left-color:#4a7ab8;background:#ecf2f9}
+.pblock.objectives .ptitle{color:#2c4a78}
+.pblock.games{border-left-color:#6e4a8d;background:#f2edf7}
+.pblock.games .ptitle{color:#573a71}
+.pblock.hitting{border-left-color:#2d7a44}
+.pblock.cooldown{border-left-color:#888;background:#f5f5f2}
+.pblock.cooldown .ptitle{color:#555}
+.pblock.weights{border-left-color:#855218;background:#faf3e8}
+.pblock.weights .ptitle{color:#5a3812}
+.pblock.misc{border-left-color:#888;background:#f5f5f2}
+.pblock.rest{border-left-color:#b89855;background:#faf5e8}
+.pblock.tourn{border-left-color:#c14d35;background:#faece8}
+.pblock.clinic{border-left-color:#4a7ab8;background:#ecf2f9}
+.drill-link{color:#1a5fbf;text-decoration:underline;cursor:pointer}
+.drill-link:hover{color:#1e5631}
+.footwork-tag{display:inline-block;background:#e6f4f3;color:#0f5854;padding:1px 6px;border-radius:8px;font-size:10px;font-weight:600;margin-left:4px}
+.training-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin-top:8px}
+.training-card{background:rgba(255,255,255,.72);border:1px solid rgba(0,0,0,.06);border-radius:8px;padding:10px 12px}
+.training-card h4{font-size:12px;text-transform:uppercase;letter-spacing:.4px;color:#555;margin-bottom:4px}
+.training-card p{font-size:13px;margin:0;color:#333}
+.game-note{font-size:12px;color:#666;margin-top:8px}
+.metric-tag{display:inline-block;background:white;border:1px solid rgba(0,0,0,.08);border-radius:12px;padding:2px 8px;margin:2px 4px 2px 0;font-size:11px;color:#555}
 .checkin-section{background:#f7f6f1;border-radius:10px;padding:14px 16px;margin-top:16px}
-.checkin-section h3{font-size:12px;text-transform:uppercase;letter-spacing:.5px;color:#555;margin-bottom:10px;font-weight:600}
+.checkin-section h3{font-size:12px;text-transform:uppercase;letter-spacing:.5px;color:#555;margin-bottom:4px;font-weight:600}
+.checkin-section .helper{font-size:11px;color:#888;margin-bottom:10px}
 .checkin-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:10px;align-items:flex-start}
 .checkin-row:last-child{margin-bottom:0}
-.checkin-name{font-weight:600;font-size:13px;min-width:72px;padding-top:8px;color:#1a1a1a}
+.checkin-name{font-weight:600;font-size:13px;min-width:72px;padding-top:8px}
 .checkin-items{display:flex;gap:6px;flex-wrap:wrap;flex:1}
 .checkin-pill{display:inline-flex;align-items:center;gap:6px;background:white;border:2px solid #e8e6df;padding:8px 14px;border-radius:20px;cursor:pointer;font-size:13px;font-weight:500;user-select:none;min-height:38px}
-.checkin-pill:hover{border-color:#2d7a44}
-.checkin-pill input{margin:0;width:16px;height:16px;accent-color:#2d7a44;cursor:pointer}
+.checkin-pill input{margin:0;width:16px;height:16px;cursor:pointer}
 .checkin-pill.checked{background:#2d7a44;color:white;border-color:#2d7a44}
+.checkin-pill.checked.sleep{background:#4a7ab8;border-color:#4a7ab8}
+.checkin-pill.checked.rest{background:#b89855;border-color:#b89855}
+.checkin-pill.checked.match{background:#c14d35;border-color:#c14d35}
 .utr-bump{font-size:10px;opacity:.75;margin-left:2px}
 .trackers-section{background:#fff8e8;border:1px solid #f1e4b8;border-radius:10px;padding:14px 16px;margin-top:16px}
 .trackers-section>h3{font-size:12px;text-transform:uppercase;letter-spacing:.5px;color:#7a5400;margin-bottom:10px;font-weight:700}
 .tracker-card{background:white;border:1px solid #f1e4b8;border-radius:8px;padding:12px 14px;margin-bottom:8px}
 .tracker-card:last-child{margin-bottom:0}
-.tracker-name{font-size:13px;font-weight:600;color:#1a1a1a;margin-bottom:2px}
+.tracker-name{font-size:13px;font-weight:600;margin-bottom:2px}
 .tracker-goal{font-size:11px;color:#888;margin-bottom:8px}
 .tracker-row{display:flex;gap:8px;align-items:center;margin-bottom:6px;flex-wrap:wrap}
 .tracker-row:last-child{margin-bottom:0}
-.tracker-label{font-weight:600;font-size:12px;min-width:60px;color:#1a1a1a}
+.tracker-label{font-weight:600;font-size:12px;min-width:60px}
 .tracker-input{width:80px;padding:8px 10px;border:1px solid #d8d5cc;border-radius:6px;font-size:14px;font-family:inherit;text-align:center}
-.tracker-input:focus{outline:none;border-color:#2d7a44}
 .tracker-save{background:#2d7a44;color:white;border:none;padding:8px 14px;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;font-family:inherit}
-.tracker-save:hover{background:#1e5631}.tracker-save.saved{background:#888}
+.tracker-save.saved{background:#888}
 .tracker-history{font-size:11px;color:#555;flex:1;min-width:140px}
 .tracker-history b{color:#1a1a1a}
 .tracker-trend{display:inline-block;margin-left:4px;font-weight:700}
 .tracker-trend.up{color:#2d7a44}.tracker-trend.down{color:#c14d35}
+.modal-overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.5);z-index:1000;align-items:flex-start;justify-content:center;overflow-y:auto;padding:20px 10px}
+.modal-overlay.active{display:flex}
+.modal-content{background:white;border-radius:14px;max-width:600px;width:100%;padding:24px;margin:20px 0;box-shadow:0 12px 40px rgba(0,0,0,.25);position:relative}
+.modal-close{position:absolute;top:12px;right:14px;background:#f0efe7;border:none;width:32px;height:32px;border-radius:50%;font-size:18px;cursor:pointer;font-family:inherit;line-height:1}
+.modal-content h3{font-size:20px;color:#1e5631;margin-bottom:6px;padding-right:40px}
+.modal-content .modal-duration{display:inline-block;background:#e8f0ea;color:#1e5631;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:600;margin-bottom:14px}
+.modal-content h4{font-size:13px;text-transform:uppercase;letter-spacing:.5px;color:#888;margin-top:14px;margin-bottom:6px;font-weight:600}
+.modal-content p,.modal-content li{font-size:14px;color:#333;margin-bottom:4px}
+.modal-content ol{margin-left:20px;margin-bottom:8px}
+.modal-content .target{background:#fff8e8;border-left:3px solid #d4a93a;padding:8px 12px;border-radius:4px;font-size:13px}
 .week-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
 .day{background:white;border:1px solid #e8e6df;border-radius:8px;padding:10px;min-height:110px;font-size:12px;cursor:pointer}
-.day:hover{transform:translateY(-1px);box-shadow:0 2px 6px rgba(0,0,0,.08)}
+.day:hover{box-shadow:0 2px 6px rgba(0,0,0,.08)}
 .day.today{border-color:#1e5631;border-width:2px;background:#f6faf6}
 .day.rest{background:#faf5e8}.day.tourn{background:#faece8;border-color:#c14d35}.day.clinic{background:#ecf2f9}
 .day.selected{border-color:#4a7ab8!important;border-width:2px!important;box-shadow:0 0 0 3px rgba(74,122,184,.18)}
@@ -126,7 +165,7 @@ a.link-ext::after,a.link-map::after{content:" ↗";font-size:.85em;opacity:.7}
 .tourn-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:#2d7a44}
 .tourn-card.l1::before{background:#c14d35}.tourn-card.l2::before{background:#d18b2c}.tourn-card.l3::before{background:#4a7ab8}.tourn-card.l5::before{background:#6b6b6b}
 .tourn-header{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;flex-wrap:wrap;margin-bottom:10px}
-.tourn-title{font-size:17px;font-weight:700;color:#1a1a1a}
+.tourn-title{font-size:17px;font-weight:700}
 .tourn-level{background:#f0efe7;color:#555;padding:3px 10px;border-radius:12px;font-size:11px;font-weight:600}
 .tourn-level.l1{background:#fbe3dc;color:#8d2e1d}.tourn-level.l2{background:#fbecd0;color:#855218}.tourn-level.l3{background:#dbe7f5;color:#2c4a78}.tourn-level.l5{background:#e8e6df;color:#4a4a4a}
 .tourn-meta{display:flex;flex-wrap:wrap;gap:14px;font-size:13px;color:#555;margin-bottom:12px}.tourn-meta b{color:#1a1a1a}
@@ -136,47 +175,44 @@ a.link-ext::after,a.link-map::after{content:" ↗";font-size:.85em;opacity:.7}
 .reg-flag{display:inline-block;background:#fff4d4;color:#7a5400;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;margin-left:6px}
 .reg-flag.urgent{background:#fbe3dc;color:#8d2e1d}
 .drill-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
-.drill{background:white;border:1px solid #e8e6df;border-radius:10px;padding:16px}
+.drill{background:white;border:1px solid #e8e6df;border-radius:10px;padding:16px;cursor:pointer}
+.drill:hover{box-shadow:0 2px 6px rgba(0,0,0,.08)}
 .drill-cat{font-size:11px;text-transform:uppercase;letter-spacing:.5px;font-weight:600;margin-bottom:4px}
 .drill-cat.fh{color:#c14d35}.drill-cat.serve{color:#2c4a78}.drill-cat.pc{color:#855218}.drill-cat.fit{color:#1e5631}.drill-cat.match{color:#6e4a8d}.drill-cat.net{color:#1a7d77}
-.drill h3{font-size:15px;margin-bottom:6px}.drill p{font-size:13px;color:#444}.drill .duration{font-size:11px;color:#888;margin-top:6px;font-style:italic}
+.drill h3{font-size:15px;margin-bottom:6px;color:#1a5fbf}.drill p{font-size:13px;color:#444}.drill .duration{font-size:11px;color:#888;margin-top:6px;font-style:italic}
 .venue-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
 .venue-card{background:white;border:1px solid #e8e6df;border-radius:10px;padding:14px 16px}
 .venue-card h3{font-size:15px;color:#1e5631;margin-bottom:4px}.venue-card .vsub{font-size:12px;color:#888;margin-bottom:8px}.venue-card p{font-size:13px}
 table{width:100%;border-collapse:collapse;font-size:13px;margin-top:8px}
-th{text-align:left;padding:8px 10px;background:#f0efe7;font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.3px}
+th{text-align:left;padding:8px 10px;background:#f0efe7;font-weight:600;font-size:12px;text-transform:uppercase}
 td{padding:8px 10px;border-bottom:1px solid #f0efe7}tr:last-child td{border-bottom:none}
 .note{background:#fff8e8;border-left:4px solid #d4a93a;padding:10px 14px;border-radius:6px;font-size:13px;margin-bottom:12px}
 .note.urgent{background:#fbe3dc;border-color:#c14d35}.note.info{background:#e6f0f7;border-color:#4a7ab8}
-.tag{display:inline-block;background:#e8f0ea;color:#1e5631;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;margin-right:4px}
 .muted{color:#888;font-size:12px}
-@media (max-width:720px){
-.wrap{padding:10px}.hero{padding:16px 18px;border-radius:12px}.hero h1{font-size:22px}.hero .sub{font-size:13px}.hero .deco{transform:scale(.7);top:4px;right:6px}
-.family-row{gap:6px;margin-top:8px}.fam-chip{font-size:11px;padding:3px 8px}
-.countdown-row{gap:8px;margin-top:12px}.cd-card{min-width:0;flex:1 1 calc(50% - 4px);padding:8px 10px}.cd-card .label{font-size:10px}.cd-card .value{font-size:13px}.cd-card .days{font-size:11px}
-.tabs{gap:0;margin-bottom:14px}.tab{padding:12px 14px;font-size:13px;min-height:44px}
-.card{padding:14px 16px;border-radius:10px;margin-bottom:12px}.card h2{font-size:16px}.card p,.card li{font-size:14px}
-.momentum-card{padding:14px 16px}.momentum-card .mh{flex-direction:column;align-items:flex-start;gap:2px}.momentum-card .mh .sub{font-size:10px}
+@media(max-width:720px){
+.wrap{padding:10px}.hero{padding:16px 18px}.hero h1{font-size:22px}.hero .deco{transform:scale(.7);top:4px;right:6px}
+.cd-card{min-width:0;flex:1 1 calc(50% - 4px);padding:8px 10px}.cd-card .value{font-size:13px}
+.tab{padding:12px 14px;font-size:13px;min-height:44px}
+.card{padding:14px 16px;margin-bottom:12px}.card h2{font-size:16px}.card p,.card li{font-size:14px}
+.momentum-card{padding:14px 16px}.momentum-card .mh{flex-direction:column;align-items:flex-start;gap:2px}
 .momentum-header{flex-direction:column;align-items:flex-start;gap:4px}.momentum-stats{font-size:11px}
-.date-nav{gap:6px}.date-nav button{padding:10px 14px;font-size:13px;min-height:44px;flex:1 1 auto}
-.date-nav .today-jump{flex-basis:100%;order:3}.date-nav .selected-indicator{flex-basis:100%;text-align:left;order:4;padding-left:4px}
-.today-block{padding:16px 14px}.today-date{font-size:17px;line-height:1.3}.today-phase{font-size:10px;padding:3px 9px}.today-venue{font-size:12px}
-.today-blocks{grid-template-columns:1fr;gap:10px}.tblock{padding:10px 12px}.tblock .tcontent{font-size:13px}
-.checkin-section{padding:12px 14px}.checkin-row{flex-direction:column;gap:6px}.checkin-name{min-width:0;padding-top:0;font-size:14px}
-.checkin-pill{padding:10px 14px;font-size:13px;min-height:42px;border-radius:22px}.checkin-pill input{width:18px;height:18px}
-.tracker-row{flex-direction:row;flex-wrap:wrap;align-items:center;gap:6px}.tracker-label{min-width:54px}
-.tracker-input{width:90px;padding:10px;font-size:16px;min-height:42px}
-.tracker-save{padding:10px 16px;min-height:42px}.tracker-history{width:100%;font-size:11px}
+.date-nav button{padding:10px 14px;min-height:44px;flex:1 1 auto}.date-nav .today-jump{flex-basis:100%;order:3}.date-nav .selected-indicator{flex-basis:100%;text-align:left;order:4}
+.today-block{padding:16px 14px}.today-date{font-size:17px}
+.pblock{padding:12px 14px}.pblock .pcontent{font-size:13px}
+.checkin-row{flex-direction:column;gap:6px}.checkin-name{min-width:0;padding-top:0;font-size:14px}
+.checkin-pill{padding:10px 14px;min-height:42px;border-radius:22px}.checkin-pill input{width:18px;height:18px}
+.tracker-input{width:90px;padding:10px;font-size:16px;min-height:42px}.tracker-save{padding:10px 16px;min-height:42px}.tracker-history{width:100%;font-size:11px}
+.modal-content{padding:18px;margin:10px 0}
 .week-grid{grid-template-columns:1fr;gap:6px}.day{display:flex;align-items:center;gap:12px;padding:12px 14px;min-height:60px}
 .day .dow{font-size:11px;min-width:32px;flex-shrink:0;flex-direction:column;align-items:flex-start;gap:4px}
 .day .date{font-size:18px;margin:0;min-width:28px;flex-shrink:0}
-.day>div:not(.dow):not(.date){flex:1}.day .focus{font-size:13px}.day .detail{font-size:11px}
-.week-nav{flex-wrap:wrap;gap:6px}.week-nav button{padding:10px 14px;font-size:13px;min-height:44px}.week-nav .week-label{flex-basis:100%;order:-1;text-align:center;padding:4px 0}
-.tourn-card{padding:14px 16px}.tourn-title{font-size:15px}.tourn-meta{gap:8px 14px;font-size:12px}.tourn-section li{font-size:12px}
-.venue-grid{grid-template-columns:1fr;gap:10px}.drill-grid{grid-template-columns:1fr;gap:10px}
+.day>div:not(.dow):not(.date){flex:1}
+.week-nav{flex-wrap:wrap;gap:6px}.week-nav button{padding:10px 14px;min-height:44px}.week-nav .week-label{flex-basis:100%;order:-1;text-align:center;padding:4px 0}
+.tourn-card{padding:14px 16px}.tourn-title{font-size:15px}.tourn-meta{gap:8px 14px;font-size:12px}
+.venue-grid,.drill-grid{grid-template-columns:1fr;gap:10px}
 table{font-size:12px;display:block;overflow-x:auto;white-space:nowrap}th,td{padding:6px 8px}
 }
-@media (max-width:380px){.hero h1{font-size:20px}.cd-card{flex-basis:100%}}
+@media(max-width:380px){.hero h1{font-size:20px}.cd-card{flex-basis:100%}}
 </style>
 </head>
 <body>
@@ -185,7 +221,6 @@ table{font-size:12px;display:block;overflow-x:auto;white-space:nowrap}th,td{padd
 <svg class="deco" width="80" height="80" viewBox="0 0 100 100" aria-hidden="true">
 <g transform="translate(15,15) rotate(-25 35 35)">
 <ellipse cx="35" cy="28" rx="22" ry="26" fill="none" stroke="white" stroke-width="3" opacity=".9"/>
-<ellipse cx="35" cy="28" rx="18" ry="22" fill="rgba(255,255,255,.06)"/>
 <line x1="17" y1="28" x2="53" y2="28" stroke="white" stroke-width=".6" opacity=".65"/>
 <line x1="17" y1="20" x2="53" y2="20" stroke="white" stroke-width=".6" opacity=".65"/>
 <line x1="17" y1="36" x2="53" y2="36" stroke="white" stroke-width=".6" opacity=".65"/>
@@ -210,15 +245,12 @@ table{font-size:12px;display:block;overflow-x:auto;white-space:nowrap}th,td{padd
 <div class="fam-chip">Teresa · 53</div>
 </div>
 <div class="countdown-row" id="countdownRow"></div>
-<div class="version-row">
-<span>v.2026.05.26</span>
-<button class="refresh-btn" onclick="forceReload()">↻ Refresh</button>
-</div>
+<div class="version-row"><span>v.2026.05.29</span><button class="refresh-btn" onclick="forceReload()">↻ Refresh</button></div>
 </div>
 <div class="tabs">
 <button class="tab active" data-tab="today">Today</button>
 <button class="tab" data-tab="week">This Week</button>
-<button class="tab" data-tab="tournaments">Tournaments &amp; Travel</button>
+<button class="tab" data-tab="tournaments">Tournaments</button>
 <button class="tab" data-tab="venues">Courts</button>
 <button class="tab" data-tab="drills">Drill Library</button>
 <button class="tab" data-tab="ren">Ren's Plan</button>
@@ -250,280 +282,370 @@ table{font-size:12px;display:block;overflow-x:auto;white-space:nowrap}th,td{padd
 <div class="legend-item"><div class="legend-dot" style="background:#faece8"></div>Tournament</div>
 <div class="legend-item"><div class="legend-dot" style="background:#f6faf6;border:2px solid #1e5631"></div>Today</div>
 </div>
-<p class="muted" style="margin-top:10px">Tap any day to view its plan in the Today tab.</p>
+<p class="muted" style="margin-top:10px">Tap any day to view its plan.</p>
 </div>
 <div class="panel" id="panel-tournaments">
 <div class="note urgent" id="urgentReg" style="display:none"></div>
-<div class="note info"><b>Charlie's division plan (locked):</b> Boys 18 for T1 Bloomfield (registered) + T2 Babson. Boys 16 for T3–T7 — national standing not high enough for B18 at L1/L2 nationals.</div>
+<div class="note info"><b>Charlie's division plan (locked):</b> Boys 18 for T1 Bloomfield (registered) + T2 Babson. Boys 16 for T3–T7.</div>
 <div id="tournList"></div>
 </div>
 <div class="panel" id="panel-venues">
-<div class="card"><h2>Where you're playing this summer</h2><p>Default is Sycamore Park outdoor in Avon. Clay tournaments (Bloomfield, Delray) need clay-specific prep at Mill Pond and during the Maine trip. Tap any address to open in Maps.</p></div>
+<div class="card"><h2>Where you're playing</h2><p>Default: Sycamore Park in Avon. Clay prep at Mill Pond + Maine. Tap any address to open in Maps.</p></div>
 <div class="venue-grid" id="venueList"></div>
 </div>
 <div class="panel" id="panel-drills">
-<div class="card"><h2>How to use this library</h2><p>Each training day points to one of these drill blocks. Aim for 6–8 quality reps per drill, not volume.</p></div>
+<div class="card"><h2>How to use</h2><p>Tap any drill name — in Today or here — for full setup, steps, and target. The <span class="footwork-tag">footwork</span> tag means it can become one station inside the 30-min footwork circuit.</p></div>
 <h2 style="margin-bottom:10px;color:#c14d35;">Forehand as a weapon</h2><div class="drill-grid" id="drillsFH"></div>
 <h2 style="margin:18px 0 10px;color:#2c4a78;">1st serve %</h2><div class="drill-grid" id="drillsServe"></div>
 <h2 style="margin:18px 0 10px;color:#855218;">Point construction</h2><div class="drill-grid" id="drillsPC"></div>
 <h2 style="margin:18px 0 10px;color:#1e5631;">Footwork &amp; conditioning</h2><div class="drill-grid" id="drillsFit"></div>
-<h2 style="margin:18px 0 10px;color:#6e4a8d;">Match play / sets</h2><div class="drill-grid" id="drillsMatch"></div>
-<h2 style="margin:18px 0 10px;color:#1a7d77;">Net hands &amp; transition (Ren focus)</h2>
-<p class="muted" style="margin-bottom:8px">Designed for Ren but useful for Charlie's net-game maintenance too.</p>
-<div class="drill-grid" id="drillsNet"></div>
+<h2 style="margin:18px 0 10px;color:#6e4a8d;">Match play</h2><div class="drill-grid" id="drillsMatch"></div>
+<h2 style="margin:18px 0 10px;color:#1a7d77;">Net hands &amp; transition (Ren focus)</h2><div class="drill-grid" id="drillsNet"></div>
 </div>
 <div class="panel" id="panel-ren">
-<div class="card"><h2>Ren's plan in one paragraph</h2><p>Ren (19, ex-Middlebury #3, UTR 8.47). The path to 9.0 runs through <b>net hands</b> (fixing missed easy volleys while moving forward), <b>transition decisions</b> (when to come in), and <b>quality hitting against Charlie</b>. Her FH is already her weapon — keep sharp with one short block per session. She leaves for Middlebury in September.</p></div>
-<div class="card"><h2>Ren's three focus areas</h2><ol><li><b>Hands at the net</b> — soft volleys, drop volleys, angle volleys. Fix: missed easy volleys while moving forward. Block-volley footwork. "Stop, then hit."</li><li><b>Transition decisions</b> — any ball inside the baseline she can hit aggressively = approach. Call out loud ("approach!" or "stay!") as she's moving.</li><li><b>Forehand maintenance only</b> — already her weapon. 20 min/session. Freed time goes to net + transition.</li></ol></div>
-<div class="card"><h2>Weekly skeleton</h2><ul><li><b>Mon</b>: Rest or light footwork</li><li><b>Tue</b>: 90 min Charlie + Robert: 20 FH + 40 approach/volley + 30 sets · footwork · weights</li><li><b>Wed</b>: Charlie at clinic. 90 min with Robert: approach + first volley, serve-and-volley patterns</li><li><b>Thu</b>: 2 hr match play with Charlie AM (constraint: come to net 4+ times per set) · weights</li><li><b>Fri</b>: 90 min Charlie + Robert — short-ball recognition, approach + 2 volleys · footwork</li><li><b>Sat</b>: 2 hr — half drilling (net + decision), half sets · weights</li><li><b>Sun</b>: 90 min serve + return only with Charlie</li></ul></div>
-<div class="card"><h2>Transition when Ren leaves for Middlebury (September)</h2><p>Preseason in September. ~14 weeks together with Charlie before the handoff. After she leaves, Robert becomes Charlie's primary home hitting partner. That's why Robert's 3x/week schedule matters now.</p></div>
+<div class="card"><h2>Ren's plan</h2><p>Ren (19, ex-Middlebury #3, UTR 8.47). Path to 9.0: <b>net hands</b>, <b>transition decisions</b>, and <b>quality hitting against Charlie</b>. FH is her weapon — keep sharp with one short block per session. She leaves for Middlebury in September.</p><p>Most days are shared on purpose: Ren can take Charlie's FH/serve reps as quality-ball work, and Charlie can take Ren's transition reps because it makes him less one-dimensional. They train together, but each player scores the rep against a different goal.</p></div>
+<div class="card"><h2>Three focus areas</h2><ol>
+<li><b>Hands at net</b> — block-volley footwork. "Stop, then hit."</li>
+<li><b>Transition decisions</b> — call out loud ("approach!" or "stay!") as moving.</li>
+<li><b>FH maintenance only</b> — 20 min/session. Freed time goes to net + transition.</li>
+</ol></div>
 </div>
 <div class="panel" id="panel-methodology">
-<div class="card"><h2>Who plays when</h2><p>Charlie trains 6 days/week. Ren same skeleton. Robert hits 3x/week (Tue, Fri, Sat). On clinic days (Wed, Thu), home plan adjusts.</p>
+<div class="card"><h2>Practice structure</h2><p>Every training day looks like this:</p>
+<ul>
+<li><b>⓪ Dynamic warmup — 6–7 min</b>, off-court, BEFORE the practice clock starts. Light jog + leg swings + arm circles + lunges + high knees.</li>
+<li><b>① Hitting warmup — 20 min</b> (first block of the 2-hr practice). Mini-tennis → half-court rally → baseline rally → serves + returns. Get timing, not heart rate.</li>
+<li><b>② Footwork circuit — 30 min</b>. Built from 3–5 stations, never one drill for the whole block. A scheduled footwork drill becomes one station, then the app fills the rest with reaction, recovery, mirror, or transition footwork.</li>
+<li><b>③ Hitting drills — ~45–50 min</b>. The focus drills for the day. Tap any drill name for full setup + execution.</li>
+<li><b>④ Competitive games — 20–25 min</b>. At least two scored games every training day: serve + one, baseline direction, transition, pressure tiebreaks, or practice-set pieces.</li>
+<li><b>⑤ Cool-down — 10–15 min</b>, AFTER the practice clock. Light walk + static stretches + foam roll + hydrate.</li>
+</ul>
+<p><b>2-hour practice = hitting warmup + footwork + drills + games</b> (120 min). Bookends ⓪ and cool-down are essential but not counted in the 2 hrs. Match days replace this structure entirely.</p></div>
+<div class="card"><h2>Who plays when (suggested)</h2><p>Schedule is a SUGGESTION. Check-in pills in Today are universal.</p>
 <table><thead><tr><th>Day</th><th>Charlie</th><th>Ren</th><th>Robert</th></tr></thead><tbody>
 <tr><td>Mon</td><td>Rest</td><td>Rest / light</td><td>Off</td></tr>
-<tr><td>Tue</td><td>2 hr + 30 footwork</td><td>2 hr + 30 footwork</td><td>Hits (1/3)</td></tr>
+<tr><td>Tue</td><td>2 hr practice</td><td>2 hr practice</td><td>Hits (1/3)</td></tr>
 <tr><td>Wed</td><td>Clinic 4–6:30</td><td>Hits w/ Robert</td><td>Hits w/ Ren</td></tr>
-<tr><td>Thu</td><td>AM hit + clinic 5–6:30</td><td>Match play w/ Charlie AM</td><td>Off</td></tr>
-<tr><td>Fri</td><td>2 hr + 30 footwork</td><td>2 hr + 30 footwork</td><td>Hits (2/3)</td></tr>
+<tr><td>Thu</td><td>AM + clinic 5–6:30</td><td>Match w/ Charlie AM</td><td>Off</td></tr>
+<tr><td>Fri</td><td>2 hr practice</td><td>2 hr practice</td><td>Hits (2/3)</td></tr>
 <tr><td>Sat</td><td>2 hr + weights</td><td>2 hr + weights</td><td>Hits (3/3)</td></tr>
-<tr><td>Sun</td><td>90 min serve + patterns</td><td>90 min serve + return</td><td>Off</td></tr>
+<tr><td>Sun</td><td>Serve + patterns</td><td>Serve + return</td><td>Off</td></tr>
 </tbody></table></div>
-<div class="card"><h2>Weights schedule rule</h2><p>3×/wk on <b>Tue / Thu / Sat</b> ONLY — never on back-to-back days. 48-hour gaps. Tue (full body), Thu (upper + rotational), Sat (lower + plyo, skip on tournament Saturdays). When a tournament cancels Sat, drop it — don't shift to Fri.</p></div>
-<div class="card"><h2>About the projected UTR (Momentum)</h2><p>The "projected UTR" is a <b>motivational counter, not a prediction</b>. Real UTR moves on rated match results. Each completed practice + each weights session = +0.015 projected UTR. If they hit the full plan, both kids cruise past their goals. Point: make daily consistency visible.</p></div>
-<div class="card"><h2>The Trackers — what they're for</h2><p>Three drills with explicit numeric goals get in-app trackers (visible on training/clinic days in the Today tab):</p><ul><li><b>Spot Serve Ladder</b> — total makes out of 100 (5 zones × 10 each × 2 sides). Goal: improve week over week.</li><li><b>First-Serve % Game</b> — average % across 4 service games. Goal: 65%+.</li><li><b>Toss Lock</b> — tosses landing on the spot, out of 50. Goal: 45+.</li></ul><p>Enter a number, tap Save. Last 3 entries show with ↑/↓ trend arrows. Data persists per device.</p></div>
-<div class="card"><h2>UTR math at L1 vs L5 events</h2><p>To pull a 12-match avg up 1.33 points: 8–10 strong wins over 10.5+ opponents AND avoid bad losses. <b>At L1: Charlie's job is to compete</b> — wins move him, losses to higher-ranked don't hurt. <b>At L5/L3: don't lose to anyone below 9.5.</b> Different mindset per level.</p></div>
-<div class="card"><h2>Cache busting (when you update the page)</h2><p>Three layers: meta tags in head, ↻ Refresh button (cache-busting query string), auto-reload after 12hrs backgrounded.</p><p>After pushing a new file: wait 60–90 sec for CDN, pull-to-refresh, verify version label updated. If kids report stale data, they tap ↻ Refresh. iOS "Add to Home Screen" caches hardest — if stuck, delete icon and re-add.</p></div>
-<div class="card"><h2>Sharing this</h2><p>Three hosting options: <b>Netlify Drop</b> (drag-and-drop, ~30 sec, no account), <b>GitHub Pages</b> (~5 min, free), <b>Cloudflare Pages</b> (faster CDN, via GitHub). Check-off and tracker state live per-device — same URL but progress is local to each phone.</p></div>
+<div class="card"><h2>Weights rule</h2><p>3×/wk with 48-hour gaps — never back-to-back. Tue=full body, Thu=upper+rotational, Sat=lower+plyo (skip on tournament Sats).</p></div>
+<div class="card"><h2>Training Momentum</h2><p>Motivational counter, not a UTR prediction. Practice/Weights/Match = <b>+0.015</b>. Sleep before 10 PM = <b>+0.005</b>. Rest day = +0 streak-safe. Use the numbers as consistency fuel, then judge tennis progress by the trackers and games.</p></div>
+<div class="card"><h2>Trackers</h2><p>Track serve quality, serve + one, FH attack, transition decisions, volley contact, game points, and fatigue. Save logs trend with ↑/↓.</p></div>
+<div class="card"><h2>Cache busting</h2><p>Meta tags + ↻ Refresh button + auto-reload after 12 hrs. After GitHub push: wait 60–90 sec, pull-to-refresh, verify version label.</p></div>
+</div>
+</div>
+<div class="modal-overlay" id="drillModal" onclick="if(event.target===this)hideDrillDetail()">
+<div class="modal-content">
+<button class="modal-close" onclick="hideDrillDetail()">×</button>
+<div id="drillModalBody"></div>
 </div>
 </div>
 <script>
-const TOURNAMENTS = [
-{id:1,level:"L5",levelLabel:"L5 Open",name:"Bloomfield Boys 18 Singles (Flighted)",venue:"Bloomfield Tennis Club, Bloomfield, CT",venueAddress:"Bloomfield Tennis Club, 45 Douglas St, Bloomfield, CT 06002",url:"https://playtennis.usta.com/Competitions/bloomfieldtennisclubllc/Tournaments/Overview/839a4f43-97f8-44de-aa33-c871e2da0b02",start:"2026-06-05",end:"2026-06-07",fee:93,regClose:"2026-05-28",registered:true,surface:"Red clay (indoor hard if rain)",div:"Boys 18s Singles ✓",drive:{time:"~15 min",miles:10},travel:"Local — daily commute.",hotels:[],notes:["✓ Already registered.","Conflicts with last week of school (Charlie's last day Jun 17). Fri Jun 5 may need partial absence.","Red clay — Mill Pond sessions May 30 + Jun 4 are the clay tune-ups."],plan:"Drive each match. Pack lunch + extra shirts."},
-{id:2,level:"L3",levelLabel:"L3 Closed Sectional",name:"USTA NE Summer Sectionals (B18)",venue:"Babson College, Wellesley Hills, MA",venueAddress:"Babson College, 231 Forest St, Wellesley Hills, MA 02481",url:"https://playtennis.usta.com/Competitions/USTANewEngland/Tournaments/Overview/5fddbb3c-362d-4c55-962d-2303301126de",start:"2026-06-20",end:"2026-06-24",fee:160,regClose:"2026-06-03",surface:"Outdoor hard (multi-site)",div:"Boys 18s Singles",drive:{time:"~1 hr 45 min",miles:110},travel:"Drive. Family split: Ren + Teresa drive to Maine Sun Jun 21; Charlie + Robert stay then drive direct.",hotels:[{name:"Boston Marriott Newton (room block)",price:"$219/night",note:"Official rate. Book by Jun 3."},{name:"Hampton Inn Natick",price:"~$190/night",note:"~10 min to Babson"},{name:"Holiday Inn Express Norwood",price:"~$170/night",note:"15 min south"}],notes:["Multi-site (Gallagher Lexington, Newton South HS, Roxbury Latin). 20–40 min between.","FAMILY SPLIT: Ren + Teresa drive Avon → Boothbay Sun Jun 21 (~5 hrs).","Player party + 1-Point Slam Friday night.","Order event t-shirt by Jun 7."],plan:"Charlie + Robert drive Fri Jun 19 PM. Stay nightly through elimination. Babson → Boothbay is ~3.5 hrs."},
-{id:3,level:"L2",levelLabel:"L2 National",name:"L2 Boys 16 — Ithaca",venue:"Reis Tennis Center, Cornell U, Ithaca NY",venueAddress:"Reis Tennis Center, 230 Pine Tree Rd, Ithaca, NY 14850",url:"https://playtennis.usta.com/Competitions/reis-tennis-center-of-cornell-university/Tournaments/Overview/40445c7c-86e2-4758-9a5c-8be6b7ba2bee",start:"2026-06-27",end:"2026-06-29",fee:156,regClose:"2026-06-04",surface:"Indoor hard",div:"Boys 16s Singles + Doubles",drive:{time:"~4 hr 15 min / ~7 hr from Boothbay",miles:270},travel:"Drive from Boothbay Fri Jun 26 (~7 hrs) for 4–8 PM practice.",hotels:[{name:"Best Western University Inn (room block)",price:"$179/night",note:"0.3 mi from venue. Free breakfast + shuttle. THE pick."},{name:"Hilton Garden Inn Ithaca",price:"~$210/night",note:"Downtown, 10 min"},{name:"Hampton Inn Ithaca",price:"~$180/night",note:"Near campus"}],notes:["Charlie eligible (B16, born 12/17/2009).","FIC format — guaranteed multiple matches.","Practice Fri Jun 26, 4–8 PM.","Stringing on-site: $25/racket."],plan:"Drive Boothbay → Ithaca Fri morning. 3 nights hotel."},
-{id:4,level:"L1",levelLabel:"L1 National",name:"USTA Nat'l Clay Court Champs (B16)",venue:"Delray Beach + Boca + PBG, FL",venueAddress:"Delray Beach Tennis Center, 201 W Atlantic Ave, Delray Beach, FL 33444",url:"https://playtennis.usta.com/Competitions/players-international-management/Tournaments/Overview/a9e2ec82-804a-4e6e-8410-1e2a91ff70d1",start:"2026-07-05",end:"2026-07-12",fee:172,regClose:"2026-06-11",surface:"Clay",div:"Boys 16s Singles + Doubles",drive:{time:"Fly BDL → PBI/FLL",miles:1450},travel:"Fly. ~8 nights. Rental car (multi-site).",hotels:[{name:"Delray Beach Marriott",price:"$280–340/night",note:"Walking distance to Delray courts"},{name:"Crane's Beach House",price:"$220–280/night",note:"Boutique"},{name:"Hyatt Place Delray Beach",price:"$200–250/night",note:"Mid-tier"},{name:"Courtyard Boynton Beach",price:"$170–210/night",note:"15 min"}],notes:["192-player draws. Highest prestige outside Kalamazoo.","Charlie entering B16s.","Multi-site — confirm assigned site before booking.","Wildcard apps by Jun 16. Doubles deadline Jun 29 noon.","5–7 Mill Pond clay sessions before event."],plan:"Fly BDL → PBI/FLL Sat Jul 4 PM. Rental car. Bring 6+ rackets."},
-{id:5,level:"L2",levelLabel:"L2 National Team",name:"Northeast National Team Cup (16s)",venue:"Westtown School, West Chester, PA",venueAddress:"Westtown School, 975 Westtown Rd, West Chester, PA 19382",url:"https://playtennis.usta.com/Competitions/usta-middle-states00/Tournaments/Overview/33a8c5de-d86b-49c9-b755-b0ca0e548f4f",start:"2026-07-24",end:"2026-07-26",fee:205,regClose:"2026-07-08",surface:"Outdoor hard",div:"Boys 16 Team (waterfalled)",drive:{time:"~3 hr 45 min",miles:230},travel:"Drive. 3 nights hotel.",hotels:[{name:"Holiday Inn Express West Chester",price:"$150–180/night",note:"4.4 mi — best location"},{name:"Hampton Inn & Suites Chadds Ford",price:"$160–190/night",note:"5.9 mi"},{name:"Home2 Suites Downingtown",price:"$170–200/night",note:"11.8 mi backup"}],notes:["Team waterfall by WTN Jul 20.","5 singles + 5 doubles over 3 days.","Restricted to MS / Eastern / NE / Mid-Atlantic.","Selection by NSL Jul 8."],plan:"Drive Thu Jul 23 PM. 3 nights."},
-{id:6,level:"L1",levelLabel:"L1 National Team",name:"USTA Battle of the Sections (B16)",venue:"Sorensen Courts, WMU, Kalamazoo MI",venueAddress:"Western Michigan University, 1906 W Michigan Ave, Kalamazoo, MI 49008",url:"https://playtennis.usta.com/Competitions/USTA/Tournaments/Overview/4a8fc923-0e65-4cfe-93dc-f453e288805f",start:"2026-08-01",end:"2026-08-05",fee:208,regClose:"2026-07-09",surface:"Outdoor hard",div:"Boys 16 Team",drive:{time:"Fly BDL → AZO/GRR/DTW",miles:850},travel:"Fly. Combine with T7 — one hotel Jul 31 → Aug 16.",hotels:[{name:"Radisson Plaza (T7 host)",price:"$199–229/night",note:"Best for continuous trip"},{name:"Delta by Marriott Kalamazoo",price:"$141/night",note:"Cheapest in block"},{name:"Holiday Inn Kalamazoo West",price:"$118–128/night",note:"Best value, 10 min"},{name:"Courtyard by Marriott",price:"$159–179/night",note:"Mid-tier"}],notes:["L1 college recruiting event — coaches on-site.","Registration Jul 31, 4–6 PM.","Hotel cutoff Jul 11.","3 singles + 4 doubles across event.","Ren may join — adult tennis around WMU."],plan:"Fly Jul 31 BDL → AZO/GRR. Rental car. Continuous through Aug 16. Rest day Aug 6."},
-{id:7,level:"L1",levelLabel:"L1 National",name:"USTA Nationals — Kalamazoo (B16)",venue:"Stowe Stadium, Kalamazoo College",venueAddress:"Stowe Stadium, Kalamazoo College, 100 Acker Ln, Kalamazoo, MI 49006",url:"https://playtennis.usta.com/Competitions/kalamazoocollege/Tournaments/Overview/c1f7d22c-5c90-4e4e-8b13-a7e14a9e5470",start:"2026-08-07",end:"2026-08-16",fee:156,regClose:"2026-07-16",surface:"Outdoor hard",div:"Boys 16s Singles + Doubles",drive:{time:"Fly (combine T6)",miles:850},travel:"Continuous from T6.",hotels:[{name:"Radisson Plaza (host)",price:"$219+/night",note:"Downtown, walking distance"},{name:"Delta by Marriott",price:"$141–179/night",note:"Continuous from T6"},{name:"Holiday Inn West",price:"$118–128/night",note:"Budget"}],notes:["Most prestigious U.S. junior tournament — primary recruitment event.","Charlie entering B16s.","10-day event. Sat Aug 7 heaviest match day.","ustaboys.com for schedule.","Ren may need to fly home mid-trip (Middlebury preseason)."],plan:"Continuous from T6. Rest day Aug 6. If eliminated early, MI/IN college visits."}
+const TOURNAMENTS=[
+{id:1,level:"L5",levelLabel:"L5 Open",name:"Bloomfield Boys 18 Singles",venue:"Bloomfield Tennis Club, Bloomfield, CT",venueAddress:"Bloomfield Tennis Club, 45 Douglas St, Bloomfield, CT 06002",url:"https://playtennis.usta.com/Competitions/bloomfieldtennisclubllc/Tournaments/Overview/839a4f43-97f8-44de-aa33-c871e2da0b02",start:"2026-06-05",end:"2026-06-07",fee:93,regClose:"2026-05-28",registered:true,surface:"Red clay (indoor if rain)",drive:{time:"~15 min",miles:10},travel:"Local — daily commute.",hotels:[],notes:["✓ Already registered.","Last week of school conflict.","Red clay — Mill Pond sessions May 30 + Jun 4 = tune-ups."],plan:"Drive each match. Pack lunch + extra shirts."},
+{id:2,level:"L3",levelLabel:"L3 Closed Sectional",name:"USTA NE Sectionals (B18)",venue:"Babson College, Wellesley Hills, MA",venueAddress:"Babson College, 231 Forest St, Wellesley Hills, MA 02481",url:"https://playtennis.usta.com/Competitions/USTANewEngland/Tournaments/Overview/5fddbb3c-362d-4c55-962d-2303301126de",start:"2026-06-20",end:"2026-06-24",fee:160,regClose:"2026-06-03",surface:"Outdoor hard (multi-site)",drive:{time:"~1 hr 45 min",miles:110},travel:"Family split: Ren+Teresa to Maine Sun Jun 21; Charlie+Robert stay then drive direct.",hotels:[{name:"Boston Marriott Newton (block)",price:"$219/night",note:"Book by Jun 3"},{name:"Hampton Inn Natick",price:"~$190/night",note:"~10 min to Babson"},{name:"Holiday Inn Express Norwood",price:"~$170/night",note:"15 min south"}],notes:["Multi-site. 20–40 min between.","Ren+Teresa drive Avon → Boothbay Sun Jun 21 (~5 hrs).","Player party Friday."],plan:"Drive Fri Jun 19 PM. Stay through elimination."},
+{id:3,level:"L2",levelLabel:"L2 National",name:"L2 Boys 16 — Ithaca",venue:"Reis Tennis Center, Cornell U",venueAddress:"Reis Tennis Center, 230 Pine Tree Rd, Ithaca, NY 14850",url:"https://playtennis.usta.com/Competitions/reis-tennis-center-of-cornell-university/Tournaments/Overview/40445c7c-86e2-4758-9a5c-8be6b7ba2bee",start:"2026-06-27",end:"2026-06-29",fee:156,regClose:"2026-06-04",surface:"Indoor hard",drive:{time:"~4hr15 / ~7hr from Boothbay",miles:270},travel:"Drive from Boothbay Fri Jun 26 for 4–8 PM practice.",hotels:[{name:"Best Western University Inn (block)",price:"$179/night",note:"0.3 mi. Free breakfast + shuttle."},{name:"Hilton Garden Inn Ithaca",price:"~$210/night",note:"10 min"},{name:"Hampton Inn Ithaca",price:"~$180/night",note:"Near campus"}],notes:["B16 eligible.","FIC format.","Practice Fri 4–8 PM."],plan:"Drive Boothbay → Ithaca Fri morning. 3 nights."},
+{id:4,level:"L1",levelLabel:"L1 National",name:"USTA Clay Court Champs (B16)",venue:"Delray Beach + Boca + PBG, FL",venueAddress:"Delray Beach Tennis Center, 201 W Atlantic Ave, Delray Beach, FL 33444",url:"https://playtennis.usta.com/Competitions/players-international-management/Tournaments/Overview/a9e2ec82-804a-4e6e-8410-1e2a91ff70d1",start:"2026-07-05",end:"2026-07-12",fee:172,regClose:"2026-06-11",surface:"Clay",drive:{time:"Fly BDL → PBI/FLL",miles:1450},travel:"Fly. ~8 nights. Rental car.",hotels:[{name:"Delray Beach Marriott",price:"$280–340/night",note:"Walking to Delray courts"},{name:"Crane's Beach House",price:"$220–280/night",note:"Boutique"},{name:"Hyatt Place Delray Beach",price:"$200–250/night",note:"Mid-tier"},{name:"Courtyard Boynton Beach",price:"$170–210/night",note:"15 min"}],notes:["192-player draws.","Multi-site.","Doubles deadline Jun 29.","5–7 Mill Pond clay sessions before."],plan:"Fly Sat Jul 4 PM. Rental car. 6+ rackets."},
+{id:5,level:"L2",levelLabel:"L2 Team",name:"NE National Team Cup (16s)",venue:"Westtown School, West Chester, PA",venueAddress:"Westtown School, 975 Westtown Rd, West Chester, PA 19382",url:"https://playtennis.usta.com/Competitions/usta-middle-states00/Tournaments/Overview/33a8c5de-d86b-49c9-b755-b0ca0e548f4f",start:"2026-07-24",end:"2026-07-26",fee:205,regClose:"2026-07-08",surface:"Outdoor hard",drive:{time:"~3 hr 45 min",miles:230},travel:"Drive. 3 nights.",hotels:[{name:"Holiday Inn Express West Chester",price:"$150–180/night",note:"4.4 mi"},{name:"Hampton Inn & Suites Chadds Ford",price:"$160–190/night",note:"5.9 mi"},{name:"Home2 Suites Downingtown",price:"$170–200/night",note:"11.8 mi backup"}],notes:["Waterfall by WTN Jul 20.","5 singles + 5 doubles."],plan:"Drive Thu Jul 23 PM. 3 nights."},
+{id:6,level:"L1",levelLabel:"L1 Team",name:"USTA Battle of the Sections (B16)",venue:"WMU Sorensen, Kalamazoo MI",venueAddress:"Western Michigan University, 1906 W Michigan Ave, Kalamazoo, MI 49008",url:"https://playtennis.usta.com/Competitions/USTA/Tournaments/Overview/4a8fc923-0e65-4cfe-93dc-f453e288805f",start:"2026-08-01",end:"2026-08-05",fee:208,regClose:"2026-07-09",surface:"Outdoor hard",drive:{time:"Fly BDL → AZO/GRR/DTW",miles:850},travel:"Fly. Combine with T7.",hotels:[{name:"Radisson Plaza (T7 host)",price:"$199–229/night",note:"Best continuous"},{name:"Delta by Marriott",price:"$141/night",note:"Cheapest"},{name:"Holiday Inn Kalamazoo West",price:"$118–128/night",note:"Best value"},{name:"Courtyard by Marriott",price:"$159–179/night",note:"Mid-tier"}],notes:["L1 college recruiting.","Reg Jul 31, 4–6 PM.","Hotel cutoff Jul 11."],plan:"Fly Jul 31. Continuous through Aug 16."},
+{id:7,level:"L1",levelLabel:"L1 National",name:"USTA Nationals — Kalamazoo (B16)",venue:"Stowe Stadium, Kalamazoo College",venueAddress:"Stowe Stadium, Kalamazoo College, 100 Acker Ln, Kalamazoo, MI 49006",url:"https://playtennis.usta.com/Competitions/kalamazoocollege/Tournaments/Overview/c1f7d22c-5c90-4e4e-8b13-a7e14a9e5470",start:"2026-08-07",end:"2026-08-16",fee:156,regClose:"2026-07-16",surface:"Outdoor hard",drive:{time:"Fly (combine T6)",miles:850},travel:"Continuous from T6.",hotels:[{name:"Radisson Plaza (host)",price:"$219+/night",note:"Downtown"},{name:"Delta by Marriott",price:"$141–179/night",note:"Continuous"},{name:"Holiday Inn West",price:"$118–128/night",note:"Budget"}],notes:["Most prestigious U.S. junior tournament.","B16s.","10-day event.","ustaboys.com for schedule."],plan:"Continuous from T6. Rest day Aug 6."}
 ];
 
-const VENUES = [
-{name:"Sycamore Park",sub:"Outdoor hard · Default · ~5 min from home",address:"Sycamore Park, Avon, CT 06001",desc:"Bulk of training. Default for non-clay blocks."},
-{name:"Mill Pond",sub:"Outdoor clay · Clay prep · ~20 min south",address:"Mill Pond Park, Newington, CT 06111",desc:"1–2 sessions before T1 (May 30 + Jun 4). 5+ sessions Jun 30 – Jul 4 before T4."},
-{name:"Juniper Point",sub:"Red clay · Family rental · Jun 21–26",address:"Juniper Point, Boothbay Harbor, ME 04538",desc:"Ren + Teresa drive Sun Jun 21. Charlie + Robert join when Babson wraps. Clay training camp for Delray."},
-{name:"Bloomfield Tennis Club",sub:"Red clay · T1 venue · ~15 min",address:"45 Douglas St, Bloomfield, CT 06002",desc:"T1 tournament Jun 5–7."},
-{name:"Babson + multi-site MA",sub:"Outdoor hard · T2",address:"Babson College, 231 Forest St, Wellesley Hills, MA",desc:"Sites: Gallagher (Lexington), Newton South HS, Roxbury Latin."},
-{name:"Reis Tennis Center",sub:"Indoor hard · T3 · Cornell U",address:"230 Pine Tree Rd, Ithaca, NY 14850",desc:"Practice walk-on Fri Jun 26, 4–8 PM."},
-{name:"Delray Beach Tennis Center",sub:"Clay · T4 · multi-site FL",address:"201 W Atlantic Ave, Delray Beach, FL 33444",desc:"Confirm site before booking. Bring 4+ rackets."},
+const VENUES=[
+{name:"Sycamore Park",sub:"Outdoor hard · Default · 5 min",address:"Sycamore Park, Avon, CT 06001",desc:"Bulk of training."},
+{name:"Mill Pond",sub:"Outdoor clay · Clay prep · 20 min",address:"Mill Pond Park, Newington, CT 06111",desc:"1–2 sessions before T1. 5+ before T4."},
+{name:"Juniper Point",sub:"Red clay · Family rental · Jun 21–26",address:"Juniper Point, Boothbay Harbor, ME 04538",desc:"Clay training camp during Maine trip."},
+{name:"Bloomfield Tennis Club",sub:"Red clay · T1 · 15 min",address:"45 Douglas St, Bloomfield, CT 06002",desc:"T1 tournament Jun 5–7."},
+{name:"Babson + sites",sub:"Outdoor hard · T2",address:"Babson College, 231 Forest St, Wellesley Hills, MA",desc:"Sites: Gallagher, Newton South, Roxbury Latin."},
+{name:"Reis Tennis Center",sub:"Indoor hard · T3 · Cornell",address:"230 Pine Tree Rd, Ithaca, NY 14850",desc:"Practice walk-on Fri Jun 26, 4–8 PM."},
+{name:"Delray Beach Tennis Center",sub:"Clay · T4 · multi-site",address:"201 W Atlantic Ave, Delray Beach, FL 33444",desc:"Confirm site before booking."},
 {name:"Westtown School",sub:"Outdoor hard · T5",address:"975 Westtown Rd, West Chester, PA 19382",desc:"Hot/humid late July."},
-{name:"WMU + Kalamazoo College",sub:"Outdoor hard · T6 + T7",address:"Western Michigan University, 1906 W Michigan Ave, Kalamazoo, MI",desc:"T6 at WMU Sorensen. T7 at Stowe Stadium. Single hotel Jul 31 → Aug 16."}
+{name:"WMU + Kalamazoo College",sub:"Outdoor hard · T6 + T7",address:"Western Michigan University, 1906 W Michigan Ave, Kalamazoo, MI",desc:"Single hotel Jul 31 → Aug 16."}
 ];
 
-const DRILLS = {
+const DRILLS={
 fh:[
-{name:"Inside-Out Forehand to Cone",duration:"20 min · 5×8",desc:"Feed cross-court to BH corner. Run around and crush inside-out FH to 1m² target on opponent's ad corner. Count hits inside cone."},
-{name:"Run-Around FH Off Return",duration:"15 min · 5×6",desc:"Feeder serves to deuce box ~70%. Step left, rip inside-out or inside-in FH return. Goal: 4/6 deep, 2/6 winners."},
-{name:"Short Ball Attack Ladder",duration:"20 min · 5×5",desc:"Progressively shorter balls — baseline → halfway → service line. Step in, hit with intent. 1 deep make, 2 winner, -1 error."},
-{name:"FH-FH Cross-Court Battle",duration:"15 min · 3×5min",desc:"Both FH-only cross-court. First to 11. Forces depth and shape under fatigue."},
-{name:"FH Recovery & Pursuit",duration:"12 min · 4×6",desc:"After every FH, sprint to opposite singles sideline before next ball."}
+{name:"Inside-Out Forehand to Cone",duration:"15 min (capped)",desc:"Run-around FH to a target. 5×6 reps.",setup:"Place a cone in the deuce service box's back corner, 3 ft inside the singles sideline. Player stands 2 ft behind baseline at center mark. Coach at opposite baseline.",how:["Coach feeds a controlled cross-court ball to BH corner.","Step left, hit inside-out FH at shoulder height.","Drive toward the cone target.","Reset to center between balls.","Count balls landing within 3 ft of the cone."],reps:"5 sets × 6 = 30 reps",target:"4/6 cone-zone hits per set",rest:"30 sec between sets"},
+{name:"Run-Around FH Off Return",duration:"15 min",desc:"Aggressive run-around FH return.",setup:"Coach serves ~70% pace to deuce box. Player 1 ft behind baseline at center.",how:["Coach hits a controlled serve.","Step LEFT, rip inside-out or inside-in FH return.","Reset to center.","Track makes (deep) vs winners (clean)."],reps:"5 sets × 6 serves",target:"4/6 deep, 2/6 winners",rest:"30 sec between sets"},
+{name:"Short Ball Attack Ladder",duration:"15 min",desc:"Identify shortness and attack.",setup:"Coach at opposite baseline. Player on baseline.",how:["Feed progressively shorter: deep → mid → service line → short → very short.","Step in, attack each.","Optional approach + first volley on ball 5.","Score: 1 deep make, 2 clean winner, -1 error."],reps:"5 sets × 5 balls",target:"+5 or better per set",rest:"45 sec between sets"},
+{name:"FH-FH Cross-Court Battle",duration:"15 min",desc:"Live cross-court FH-only rally, scored.",setup:"Both on baseline, deuce diagonal.",how:["FH only.","Anything DTL or BH = lose point.","First to 11 each set."],reps:"3 sets × 5 min",target:"Beat partner 2/3",rest:"1 min between sets"},
+{name:"FH Recovery & Pursuit",duration:"12 min",footwork:true,desc:"FH + sprint recovery. Counts as footwork.",setup:"Player at center. Coach at opposite baseline.",how:["Coach feeds wide FH.","Player hits, sprints to touch opposite singles sideline before next ball.","Coach feeds again.","No reset, just go."],reps:"4 sets × 6",target:"All 6 in play, sprints completed",rest:"60 sec between sets"}
 ],
 serve:[
-{name:"Spot Serve Ladder",duration:"20 min · 4 boxes × 10",desc:"5 zones per side: wide, body-wide, T, body-T, dead-T. Hit 10 to each. 📊 Log total makes in Today tab tracker."},
-{name:"First-Serve % Game",duration:"15 min",desc:"Serve 4 service games. Anything over 80mph counts. Goal: 65%+. 📊 Log avg % in Today tab tracker."},
-{name:"Toss Lock",duration:"8 min · 50 tosses",desc:"Service motion, toss only. Toss lands on dime-sized spot. Goal: 45+/50. 📊 Log makes in Today tab tracker."},
-{name:"Serve + 1 Pattern",duration:"20 min · 6×6",desc:"Pre-call serve location AND next ball. Wide → step in FH cross. T → FH inside-out. Body → BH down line."},
-{name:"Pressure 2nd Serve",duration:"12 min",desc:"Down 30-40. Must hit 2nd serve in. 10 reps each side. Build 'I trust my 2nd' feeling."}
+{name:"Spot Serve Ladder",duration:"20 min",desc:"5 zones × 10 × 2 sides = 100 serves. 📊 Logged.",setup:"Mark 5 zones per service box: wide, body-wide, T, body-T, dead-T.",how:["Hit 10 to each zone.","Repeat other side.","Count makes — in target zone AND in box.","Log total in tracker."],reps:"100 serves",target:"Improve total week over week",rest:"30 sec between zones"},
+{name:"First-Serve % Game",duration:"15 min",desc:"Real games, track 1st serve %. 📊 Logged.",setup:"Player vs returner. Real game scoring.",how:["Serve 4 service games.","Over 80mph counts.","Track 1st serve makes per game.","Average and log."],reps:"4 games",target:"65%+ avg",rest:"Changeover only"},
+{name:"Toss Lock",duration:"8 min",desc:"50 tosses, no swing. 📊 Logged.",setup:"Place coin 12 in front + 12 right of front foot.",how:["Service stance.","Toss normal pace, no swing.","Racquet on shoulder after toss.","Lands within 6 in of coin = make."],reps:"50 tosses",target:"45+/50",rest:"10 sec pause every 10"},
+{name:"Serve + 1 Pattern",duration:"20 min",desc:"Pre-call serve + next-ball direction.",setup:"Player serves, partner returns.",how:["6 patterns × 6 reps.","Wide→step in FH cross. T→FH inside-out. Body→BH down line.","Pre-call BOTH.","Track first-strike won rate."],reps:"36 reps",target:"4/6 in 4 of 6 patterns",rest:"45 sec between patterns"},
+{name:"Pressure 2nd Serve",duration:"10 min",desc:"Score: down 30-40. 2nd serve only.",setup:"Imaginary 30-40.",how:["Only 2nd serves.","Variations: kick BH, slice wide, body.","10 reps each side."],reps:"20 serves",target:"18/20 in",rest:"30 sec halfway"}
 ],
 pc:[
-{name:"3-Ball Pattern Drill",duration:"20 min",desc:"Pre-scripted 3-ball pattern. 8x each side. Then live point from 3rd ball."},
-{name:"Plan A / Plan B Sets",duration:"30 min · 2 sets",desc:"Commit aloud to Plan A and Plan B before each set. Coach calls A or B each changeover."},
-{name:"Neutral Ball Decision",duration:"15 min",desc:"On any 'neutral or better' ball MUST attack (step in, change direction, or approach)."},
-{name:"Down 0-30 Patterns",duration:"20 min",desc:"Coach calls 'down 0-30.' Play with pre-committed pattern. Builds pressure reflex."},
-{name:"Pattern of the Day",duration:"Throughout session",desc:"One pattern per day. EVERY rally funnels into it."}
+{name:"3-Ball Pattern Drill",duration:"15 min",desc:"Scripted 3-ball pattern + live point.",setup:"Coach feeds.",how:["Pattern A: serve → FH inside-out → BH cross.","Pattern B: serve → run-around FH → close net.","8x each side.","Live point from 3rd ball."],reps:"2 patterns × 8 × 2 sides",target:"Pattern wins 50%+",rest:"30 sec between sides"},
+{name:"Plan A / Plan B Sets",duration:"30 min",desc:"2 short sets with committed plans.",setup:"Play 2 sets (4 games each).",how:["Commit aloud to Plan A and Plan B before each set.","Coach calls A or B at every changeover.","Score which plan won how many games."],reps:"2 sets × 4 games",target:"Identify what worked",rest:"Changeover only"},
+{name:"Neutral Ball Decision",duration:"15 min",desc:"Attack any 'neutral or better' ball.",setup:"Cross-court rally.",how:["On 'neutral or better' MUST attack.","Passive rallying = lose point.","Coach calls penalties."],reps:"4 sets × 4 min",target:"Win 50%+ by attacking",rest:"45 sec between sets"},
+{name:"Down 0-30 Patterns",duration:"15 min",desc:"Pressure point patterns.",setup:"Coach calls 'down 0-30 on serve/return.'",how:["Use pre-committed pattern for situation.","On serve: big 1st + FH attack on ball 3.","On return: aggressive return + FH inside-out.","12 points each side."],reps:"24 points",target:"Win 50%+",rest:"15 sec between"},
+{name:"Pattern of the Day",duration:"Throughout session",desc:"One pattern, every rally funnels into it.",setup:"Pick pattern at start.",how:["Examples: kick serve to BH → FH inside-out. Or: BH slice approach → high volley.","Every rally funnels into pattern.","Coach calls penalty for not executing."],reps:"Whole session",target:"Execute 80%+",rest:"N/A"}
 ],
 fit:[
-{name:"Spider Run Sets",duration:"10 min · 4×8",desc:"Touch center T + 5 court corners. Target: under 16 sec per set."},
-{name:"Ladder + Cone Combo",duration:"15 min",desc:"Speed ladder → 3-cone sprint → backpedal. Builds first-step explosion."},
-{name:"Recovery Steps",duration:"12 min",desc:"Hand-fed wide ball, hit, sprint back with 3 split-recovery steps. 6 reps each direction."},
-{name:"Match-Length Conditioning",duration:"20 min",desc:"Suicide runs every 90 sec × 10, 5 min rest, 5 more. 1×/wk max."},
-{name:"Mobility & Cool-Down",duration:"10 min daily",desc:"Hip openers, T-spine rotations, hamstring + calf, shoulder PNF. Non-negotiable."}
+{name:"Spider Run Sets",duration:"10 min",footwork:true,desc:"5-corner sprint drill. Counts as footwork.",setup:"Player at center T. 5 corners marked.",how:["Sprint touch each corner, back to T.","All 5 = one rep.","4 sets × 8 reps."],reps:"4 sets × 8",target:"Under 16 sec per set",rest:"60 sec between sets"},
+{name:"Ladder + Cone Combo",duration:"15 min",footwork:true,desc:"Speed ladder + sprint. Counts as footwork.",setup:"Speed ladder + 3 cones 5 ft apart.",how:["Each sequence: ladder → 3-cone sprint → backpedal.","Different ladder pattern each time."],reps:"6 sequences",target:"All clean",rest:"30 sec between"},
+{name:"Recovery Steps",duration:"12 min",footwork:true,desc:"Wide ball + recovery footwork. Counts as footwork.",setup:"Coach hand-feeds wide.",how:["Hit wide FH, sprint back with 3 split-recovery steps.","Next ball wide other side.","6 reps each direction."],reps:"12 reps",target:"Quality steps, not speed",rest:"15 sec between"},
+{name:"Match-Length Conditioning",duration:"15 min (1×/wk cap)",footwork:true,desc:"Match work:rest simulation. Counts as footwork.",setup:"Open baseline.",how:["Suicide runs every 90 sec for 10 reps.","5 min rest.","5 more."],reps:"15 suicides",target:"Under 25 sec each",rest:"5 min mid-set"},
+{name:"Mobility & Cool-Down",duration:"10 min daily",desc:"Post-session mobility flow.",setup:"Empty space.",how:["Hip openers 10 each side.","T-spine rotations 10 each.","Hamstring + calf stretch 30 sec each.","Shoulder PNF 10 each."],reps:"Full sequence",target:"Non-negotiable",rest:"N/A"}
 ],
 match:[
-{name:"Best-of-3 Tiebreak Sets",duration:"1.5–2 hr",desc:"Real scoring, no coaching during. Debrief Plan A first."},
-{name:"Pro Set with Constraints",duration:"45 min",desc:"8-game pro set with constraint each set: 'every 1st to T,' 'no BH DTL,' 'approach on short ball.'"},
-{name:"Returner Wins Tiebreak",duration:"30 min",desc:"First-to-7 but returner gets +1 every game. Forces 1st serves and offensive serve+1."},
-{name:"Pressure Tiebreak (3-6)",duration:"15 min",desc:"Start every tiebreak at 3-6. Builds comeback rep memory."},
-{name:"Charlie vs Robert Set",duration:"60 min",desc:"5.0 vs 9.67 — Robert plays best but Charlie can't drop below 6-2. Forces closing closer matches."}
+{name:"Best-of-3 Tiebreak Sets",duration:"1.5–2 hr",desc:"Real match. Replaces standard structure.",setup:"Real scoring + rituals.",how:["Full sets, ad scoring optional.","10-pt match TB in lieu of 3rd.","No coaching during.","Debrief AFTER: Plan A first."],reps:"1 match",target:"Execute Plan A",rest:"Standard"},
+{name:"Pro Set with Constraints",duration:"45 min",desc:"8-game pro set with one constraint.",setup:"Pro set.",how:["Constraint: 'every 1st to T' OR 'no BH down-line' OR 'must approach on short.'","Reveals defaults vs choices."],reps:"1 set",target:"Execute 80%+",rest:"Standard"},
+{name:"Returner Wins Tiebreak",duration:"30 min",desc:"Tiebreak with returner bonus.",setup:"First-to-7 TB.",how:["Returner +1 every point.","Forces 1st serves and offensive serve+1."],reps:"3–4 TBs",target:"Hold serve in 1",rest:"Standard"},
+{name:"Pressure Tiebreak (3-6)",duration:"15 min",desc:"Comeback simulation.",setup:"TB starts at 3-6 for Charlie.",how:["Plays out.","4–5 TBs in a row."],reps:"4–5 TBs",target:"Win 1",rest:"30 sec between"},
+{name:"Charlie vs Robert Set",duration:"60 min",desc:"5.0 vs 9.67 constrained.",setup:"Full set.",how:["Robert plays best.","Charlie can't drop below 6-2."],reps:"1 set",target:"6-2 or better",rest:"Standard"}
 ],
 net:[
-{name:"Block Volley — Stop Then Hit",duration:"15 min · 6×8",desc:"Stand at service line. Mid-pace feeds. Feet STOP before contact. No swing. Goal: 7/8 clean blocks deep cross."},
-{name:"Approach + 2 Volleys",duration:"20 min · 5×6",desc:"Short ball → approach DTL → close net (4 steps + split) → volley to open court → third-ball put-away."},
-{name:"Approach Decision Drill",duration:"15 min",desc:"Random ball types: high deep → STAY, neutral mid → DRIVE approach, short low → SLICE approach. Call out type before contact."},
-{name:"First Volley from No-Man's-Land",duration:"12 min · 5×6",desc:"Serve, return at feet from 3/4 court. Hit first volley from awkward position."},
-{name:"Touch Volley Targets",duration:"12 min · 4×5",desc:"From mid-court: angle drop, deep drive, lob volley. 1m² targets."},
-{name:"Live Point — Net Mandatory",duration:"20 min · 4 games",desc:"Live cross-court points. MUST close to net within 5 balls or lose point."},
-{name:"Swing Volley Read",duration:"10 min · 3×8",desc:"Waist-to-shoulder balls around service line — swing them. Compact, no extra wind-up."}
+{name:"Block Volley — Stop Then Hit",duration:"15 min",desc:"Fix missed volleys while moving.",setup:"Player at service line. Coach feeds mid-pace FH/BH.",how:["Feet STOP before contact.","No swing — block only.","Target deep cross."],reps:"6 sets × 8",target:"7/8 cleans per set",rest:"30 sec"},
+{name:"Approach + 2 Volleys",duration:"20 min",desc:"Full transition sequence.",setup:"Coach feeds short ball.",how:["Approach DTL.","Close net: 4 steps + split.","Volley to open court.","Third ball: put-away."],reps:"5 sets × 6",target:"Win 5/6 per set",rest:"45 sec"},
+{name:"Approach Decision Drill",duration:"15 min",desc:"Read ball type → execute approach.",setup:"Coach feeds random.",how:["High deep → STAY.","Neutral mid → DRIVE approach.","Short low → SLICE approach.","Call type BEFORE contact."],reps:"5 sets × 6",target:"6/6 correct calls",rest:"30 sec"},
+{name:"First Volley from No-Man's-Land",duration:"12 min",desc:"Awkward volley.",setup:"Player serves, return at feet from 3/4.",how:["Hit first volley from no-man's-land.","Knees bent, block technique.","Target deep cross."],reps:"5 sets × 6",target:"4/6 deep cross",rest:"30 sec"},
+{name:"Touch Volley Targets",duration:"12 min",desc:"Soft hands — winners.",setup:"Mid-court. 1m² target zones.",how:["Coach feeds mid-pace.","Pick target: angle drop, deep drive, lob volley.","4 sets × 5 each."],reps:"60 reps",target:"3/5 in zone",rest:"30 sec"},
+{name:"Live Point — Net Mandatory",duration:"20 min",desc:"Live rally with closing-net rule.",setup:"Cross-court rally.",how:["Live points.","Close to net within 5 balls or lose.","4 games."],reps:"4 games",target:"Win 2 of 4",rest:"Changeover"},
+{name:"Swing Volley Read",duration:"10 min",desc:"For sit-up balls.",setup:"Service line. Feed waist-to-shoulder.",how:["Full swing volley.","Compact, no extra wind-up.","Target open court."],reps:"3 sets × 8",target:"6/8 open court",rest:"30 sec"}
 ]
 };
 
-const PHASES = [
-{start:"2026-05-25",end:"2026-05-26",label:"Foundation",daily:{Mon:{type:"rest",title:"Rest day",detail:"Mobility flow only",venue:"Home"},Tue:{type:"train",focus:"FH Technique + Spot Serve",drills:["Inside-Out Forehand to Cone","Spot Serve Ladder","Spider Run Sets"],weights:true,venue:"Sycamore Park",partners:["Charlie","Ren","Robert"]}}},
-{start:"2026-05-27",end:"2026-05-27",label:"Foundation",daily:{_all:{type:"clinic",title:"Clinic 4:00–6:30 PM",detail:"30 min footwork AM. Clinic covers hitting. Ren + Robert at Sycamore.",venue:"Charlie: Clinic / Ren+Robert: Sycamore Park",partners:["Ren + Robert hit"]}}},
-{start:"2026-05-28",end:"2026-05-28",label:"Foundation",daily:{_all:{type:"clinic",title:"Clinic 5:00–6:30 + AM hit + weights",detail:"AM: 60 min serve + footwork. PM clinic. Weights AM or evening — upper + rotational.",venue:"AM: Sycamore Park / PM: Clinic",partners:["Charlie + Ren AM"],weights:true}}},
+const WARMUP_DYNAMIC={duration:"6–7 min",label:"Dynamic warmup (off-court, before practice clock)",steps:[
+"<b>1 min — Light jog</b> around the court perimeter.",
+"<b>1 min — Leg swings:</b> 10 front-back each leg, 10 side-to-side each leg.",
+"<b>1 min — Arm circles + shoulder rolls:</b> 10 forward + 10 back each arm.",
+"<b>1 min — Walking lunges with torso rotation</b> (10 steps) + <b>hip openers</b> (5 each side).",
+"<b>1 min — High knees</b> (30 sec) + <b>butt kicks</b> (30 sec).",
+"<b>1 min — Light skipping or jumping jacks</b> — heart rate up.",
+"<b>Optional 1 min — Wrist + ankle mobility:</b> 10 circles each direction."
+]};
+
+const WARMUP={duration:"20 min",label:"Hitting warmup (on-court)",steps:[
+"<b>5 min — Mini-tennis:</b> Service line to service line. Soft balls. Clean racquet face, focus on timing — zero power.",
+"<b>5 min — Half-court rally:</b> Back up to 3/4 court. Medium pace. FH and BH cross-court.",
+"<b>5 min — Full baseline rally:</b> Cross-court at 60–80%. Build rhythm. FH side, then BH side.",
+"<b>5 min — Serves + returns:</b> Gentle 1st serves to warm the motion. Returner at 50% — finding timing, not winning points."
+]};
+
+const COOLDOWN={duration:"10–15 min",label:"Cool-down (after practice clock)",steps:[
+"<b>2–3 min — Easy walk or light jog</b> around the court to bring heart rate down.",
+"<b>5 min — Static lower-body stretches</b> (30 sec each): hamstrings, calves, hip flexors, quads, glutes. Each side.",
+"<b>3 min — Upper body:</b> lats overhead reach (30 sec each), chest doorway stretch, cross-body shoulder.",
+"<b>2–4 min — Foam roll if available:</b> quads, IT band, calves, upper back. Deep breathing if no roller.",
+"<b>Hydrate + protein within 30 min</b> of finishing — recovery starts now."
+]};
+
+const DEFAULT_FOOTWORK={duration:"30 min",components:[
+"<b>10 min — Spider Run Sets:</b> 5-corner sprint. 4 sets × 8 reps.",
+"<b>10 min — Ladder + Cone Combo:</b> 6 sequences.",
+"<b>10 min — Recovery Steps:</b> 12 reps total."
+]};
+
+const PHASES=[
+{start:"2026-05-25",end:"2026-05-26",label:"Foundation",daily:{Mon:{type:"rest",title:"Rest day",detail:"Mobility only",venue:"Home"},Tue:{type:"train",focus:"FH Technique + Spot Serve",drills:["Inside-Out Forehand to Cone","Spot Serve Ladder","Spider Run Sets"],weights:true,venue:"Sycamore Park",partners:["Charlie","Ren","Robert"]}}},
+{start:"2026-05-27",end:"2026-05-27",label:"Foundation",daily:{_all:{type:"clinic",title:"Clinic 4:00–6:30 PM",detail:"30 min footwork AM. Ren + Robert at Sycamore.",venue:"Charlie: Clinic / Ren+Robert: Sycamore",partners:["Ren + Robert"]}}},
+{start:"2026-05-28",end:"2026-05-28",label:"Foundation",daily:{_all:{type:"clinic",title:"Clinic 5:00–6:30 + AM hit",detail:"AM: 60 min serve + footwork.",venue:"AM: Sycamore / PM: Clinic",partners:["Charlie + Ren AM"],weights:true}}},
 {start:"2026-05-29",end:"2026-05-29",label:"Foundation",daily:{_all:{type:"train",focus:"Run-around FH + Match",drills:["Run-Around FH Off Return","Best-of-3 Tiebreak Sets"],weights:false,venue:"Sycamore Park",partners:["Charlie","Ren","Robert"]}}},
-{start:"2026-05-30",end:"2026-05-30",label:"Foundation (Mill Pond #1)",daily:{_all:{type:"train",focus:"Clay introduction",drills:["FH-FH Cross-Court Battle","Neutral Ball Decision","Spot Serve Ladder"],weights:true,venue:"Mill Pond (clay)",partners:["Charlie","Ren","Robert"]}}},
-{start:"2026-05-31",end:"2026-05-31",label:"Foundation",daily:{_all:{type:"train",focus:"Serve + Pattern review",drills:["Toss Lock","Plan A / Plan B Sets"],weights:false,venue:"Sycamore Park",partners:["Charlie","Ren"]}}},
+{start:"2026-05-30",end:"2026-05-30",label:"Foundation (Mill Pond #1)",daily:{_all:{type:"train",focus:"Clay introduction",drills:["FH-FH Cross-Court Battle","Neutral Ball Decision","Spot Serve Ladder","Spider Run Sets"],weights:true,venue:"Mill Pond (clay)",partners:["Charlie","Ren","Robert"]}}},
+{start:"2026-05-31",end:"2026-05-31",label:"Foundation",daily:{_all:{type:"train",focus:"Serve + Pattern review",drills:["Toss Lock","Plan A / Plan B Sets","Spider Run Sets"],weights:false,venue:"Sycamore Park",partners:["Charlie","Ren"]}}},
 {start:"2026-06-01",end:"2026-06-01",label:"Foundation",daily:{_all:{type:"rest",title:"Rest day",detail:"Mobility only",venue:"Home"}}},
-{start:"2026-06-02",end:"2026-06-02",label:"Foundation",daily:{_all:{type:"train",focus:"Match intensity",drills:["3-Ball Pattern Drill","Pressure Tiebreak (3-6)"],weights:true,venue:"Sycamore Park",partners:["Charlie","Ren","Robert"]}}},
-{start:"2026-06-03",end:"2026-06-03",label:"T1 Taper",daily:{_all:{type:"clinic",title:"Clinic 4:00–6:30 (taper)",detail:"Taper mode, no max-effort sets. 30 min footwork AM.",venue:"Charlie: Clinic / Ren+Robert: Sycamore",partners:["Charlie at clinic"]}}},
-{start:"2026-06-04",end:"2026-06-04",label:"T1 Taper (Mill Pond #2)",daily:{_all:{type:"train",focus:"Final clay tune-up (90 min light)",drills:["Toss Lock","Spot Serve Ladder","FH-FH Cross-Court Battle"],weights:false,venue:"Mill Pond (clay)",partners:["Charlie","Robert"]}}},
-{start:"2026-06-05",end:"2026-06-07",label:"T1: Bloomfield",daily:{_all:{type:"tourn",title:"T1 — Bloomfield Boys 18 (L5)",detail:"Local. Drive daily. Sleep 9 hrs. Don't lose to anyone below 9.5.",venue:"Bloomfield Tennis Club (red clay)"}}},
-{start:"2026-06-08",end:"2026-06-08",label:"T1 Recovery",daily:{_all:{type:"rest",title:"Active recovery",detail:"Light bike or walk + mobility. No tennis.",venue:"Home"}}},
-{start:"2026-06-09",end:"2026-06-09",label:"Build-Babson",daily:{_all:{type:"train",focus:"Match Intensity restart",drills:["Best-of-3 Tiebreak Sets","Spider Run Sets"],weights:true,venue:"Sycamore Park",partners:["Charlie","Ren","Robert"]}}},
-{start:"2026-06-10",end:"2026-06-10",label:"Build-Babson",daily:{_all:{type:"clinic",title:"Clinic 4:00–6:30",detail:"30 min footwork AM. Ren + Robert hit 90 min.",venue:"Charlie: Clinic / Ren+Robert: Sycamore",partners:["Ren + Robert hit"]}}},
-{start:"2026-06-11",end:"2026-06-11",label:"Build-Babson",daily:{_all:{type:"clinic",title:"Clinic 5:00–6:30 + AM Match + weights",detail:"AM: 2 hr match play (Charlie vs Ren). PM clinic.",venue:"AM: Sycamore / PM: Clinic",partners:["Charlie vs Ren AM"],weights:true}}},
-{start:"2026-06-12",end:"2026-06-12",label:"Build-Babson",daily:{_all:{type:"train",focus:"Pressure Sets",drills:["Pressure Tiebreak (3-6)","Returner Wins Tiebreak"],weights:false,venue:"Sycamore Park",partners:["Charlie","Ren","Robert"]}}},
-{start:"2026-06-13",end:"2026-06-13",label:"Build-Babson",daily:{_all:{type:"train",focus:"Long session — match + heavy",drills:["FH-FH Cross-Court Battle","Pro Set with Constraints","Match-Length Conditioning"],weights:true,venue:"Sycamore Park",partners:["Charlie","Ren","Robert"]}}},
-{start:"2026-06-14",end:"2026-06-14",label:"Build-Babson",daily:{_all:{type:"train",focus:"Patterns + Live Sets",drills:["Plan A / Plan B Sets","Neutral Ball Decision"],weights:false,venue:"Sycamore Park",partners:["Charlie","Ren"]}}},
+{start:"2026-06-02",end:"2026-06-02",label:"Foundation",daily:{_all:{type:"train",focus:"Match intensity",drills:["3-Ball Pattern Drill","Pressure Tiebreak (3-6)","FH Recovery & Pursuit"],weights:true,venue:"Sycamore Park",partners:["Charlie","Ren","Robert"]}}},
+{start:"2026-06-03",end:"2026-06-03",label:"T1 Taper",daily:{_all:{type:"clinic",title:"Clinic 4:00–6:30 (taper)",detail:"Taper mode.",venue:"Charlie: Clinic / Ren+Robert: Sycamore",partners:["Charlie at clinic"]}}},
+{start:"2026-06-04",end:"2026-06-04",label:"T1 Taper (Mill Pond #2)",daily:{_all:{type:"train",focus:"Final clay tune-up",drills:["Toss Lock","Spot Serve Ladder","FH-FH Cross-Court Battle"],weights:false,venue:"Mill Pond (clay)",partners:["Charlie","Robert"]}}},
+{start:"2026-06-05",end:"2026-06-07",label:"T1: Bloomfield",daily:{_all:{type:"tourn",title:"T1 — Bloomfield B18 (L5)",detail:"Local. Sleep 9 hrs.",venue:"Bloomfield Tennis Club"}}},
+{start:"2026-06-08",end:"2026-06-08",label:"T1 Recovery",daily:{_all:{type:"rest",title:"Active recovery",detail:"No tennis.",venue:"Home"}}},
+{start:"2026-06-09",end:"2026-06-09",label:"Build-Babson",daily:{_all:{type:"train",focus:"Match Intensity",drills:["Best-of-3 Tiebreak Sets","Spider Run Sets"],weights:true,venue:"Sycamore Park",partners:["Charlie","Ren","Robert"]}}},
+{start:"2026-06-10",end:"2026-06-10",label:"Build-Babson",daily:{_all:{type:"clinic",title:"Clinic 4:00–6:30",detail:"30 min footwork AM.",venue:"Charlie: Clinic / Ren+Robert: Sycamore",partners:["Ren + Robert"]}}},
+{start:"2026-06-11",end:"2026-06-11",label:"Build-Babson",daily:{_all:{type:"clinic",title:"Clinic 5:00–6:30 + AM Match",detail:"AM: 2 hr match.",venue:"AM: Sycamore / PM: Clinic",partners:["Charlie vs Ren AM"],weights:true}}},
+{start:"2026-06-12",end:"2026-06-12",label:"Build-Babson",daily:{_all:{type:"train",focus:"Pressure Sets",drills:["Pressure Tiebreak (3-6)","Returner Wins Tiebreak","Spider Run Sets"],weights:false,venue:"Sycamore Park",partners:["Charlie","Ren","Robert"]}}},
+{start:"2026-06-13",end:"2026-06-13",label:"Build-Babson",daily:{_all:{type:"train",focus:"Long session",drills:["FH-FH Cross-Court Battle","Pro Set with Constraints","Match-Length Conditioning"],weights:true,venue:"Sycamore Park",partners:["Charlie","Ren","Robert"]}}},
+{start:"2026-06-14",end:"2026-06-14",label:"Build-Babson",daily:{_all:{type:"train",focus:"Patterns + Live Sets",drills:["Plan A / Plan B Sets","Neutral Ball Decision","Recovery Steps"],weights:false,venue:"Sycamore Park",partners:["Charlie","Ren"]}}},
 {start:"2026-06-15",end:"2026-06-15",label:"Build-Babson",daily:{_all:{type:"rest",title:"Rest day",detail:"Mobility + cold tub if hot",venue:"Home"}}},
 {start:"2026-06-16",end:"2026-06-16",label:"Build-Babson",daily:{_all:{type:"train",focus:"FH Weapon",drills:["Inside-Out Forehand to Cone","Run-Around FH Off Return","Ladder + Cone Combo"],weights:true,venue:"Sycamore Park",partners:["Charlie","Ren","Robert"]}}},
-{start:"2026-06-17",end:"2026-06-17",label:"School ends!",daily:{_all:{type:"train",focus:"Heavy match play (school's out)",drills:["Best-of-3 Tiebreak Sets","Pressure Tiebreak (3-6)"],weights:false,venue:"Sycamore Park",partners:["Charlie","Ren"]}}},
-{start:"2026-06-18",end:"2026-06-18",label:"Build-Babson",daily:{_all:{type:"train",focus:"Serve + Point Construction",drills:["Serve + 1 Pattern","3-Ball Pattern Drill"],weights:true,venue:"Sycamore Park",partners:["Charlie","Ren","Robert"]}}},
-{start:"2026-06-19",end:"2026-06-19",label:"T2 Travel",daily:{_all:{type:"train",focus:"Light hit (travel day)",drills:["Spot Serve Ladder","Toss Lock"],weights:false,venue:"Travel: Avon → Wellesley Hills",partners:["Charlie + Robert drive"]}}},
-{start:"2026-06-20",end:"2026-06-24",label:"T2: Babson Sectionals",daily:{_all:{type:"tourn",title:"T2 — Babson L3 Sectionals",detail:"Charlie + Robert in MA. Ren + Teresa drive to Maine SUN JUN 21.",venue:"Babson (multi-site MA)"}}},
-{start:"2026-06-25",end:"2026-06-25",label:"Babson→Maine",daily:{_all:{type:"tourn",title:"Drive Babson → Boothbay (~3.5 hrs)",detail:"Reunite with Ren + Teresa.",venue:"Travel: MA → Boothbay"}}},
-{start:"2026-06-26",end:"2026-06-26",label:"T3 Travel + Practice",daily:{_all:{type:"tourn",title:"Boothbay → Ithaca (~7 hr) + 4–8 PM practice",detail:"Long drive. Walk-on at Reis if energy allows.",venue:"Travel + Reis practice"}}},
-{start:"2026-06-27",end:"2026-06-29",label:"T3: Cornell",daily:{_all:{type:"tourn",title:"T3 — Cornell L2 Boys 16",detail:"Indoor hard rewards first-strike tennis.",venue:"Reis Tennis Center"}}},
-{start:"2026-06-30",end:"2026-06-30",label:"Clay Prep",daily:{_all:{type:"rest",title:"Recovery + drive home",detail:"Drive Ithaca → Avon (~4.5 hrs).",venue:"Travel home"}}},
+{start:"2026-06-17",end:"2026-06-17",label:"School ends!",daily:{_all:{type:"train",focus:"Heavy match play",drills:["Best-of-3 Tiebreak Sets","Pressure Tiebreak (3-6)"],weights:false,venue:"Sycamore Park",partners:["Charlie","Ren"]}}},
+{start:"2026-06-18",end:"2026-06-18",label:"Build-Babson",daily:{_all:{type:"train",focus:"Serve + PC",drills:["Serve + 1 Pattern","3-Ball Pattern Drill","FH Recovery & Pursuit"],weights:true,venue:"Sycamore Park",partners:["Charlie","Ren","Robert"]}}},
+{start:"2026-06-19",end:"2026-06-19",label:"T2 Travel",daily:{_all:{type:"train",focus:"Travel + light hit",drills:["Spot Serve Ladder","Toss Lock"],weights:false,venue:"Travel: Avon → Wellesley",partners:["Charlie + Robert"]}}},
+{start:"2026-06-20",end:"2026-06-24",label:"T2: Babson Sectionals",daily:{_all:{type:"tourn",title:"T2 — Babson L3",detail:"Charlie + Robert in MA. Ren + Teresa to Maine SUN JUN 21.",venue:"Babson (multi-site)"}}},
+{start:"2026-06-25",end:"2026-06-25",label:"Babson→Maine",daily:{_all:{type:"tourn",title:"Drive to Boothbay (~3.5 hrs)",detail:"Reunite.",venue:"Travel"}}},
+{start:"2026-06-26",end:"2026-06-26",label:"T3 Travel + Practice",daily:{_all:{type:"tourn",title:"Boothbay → Ithaca + practice",detail:"~7 hr drive.",venue:"Travel + Reis"}}},
+{start:"2026-06-27",end:"2026-06-29",label:"T3: Cornell",daily:{_all:{type:"tourn",title:"T3 — Cornell L2 B16",detail:"Indoor hard.",venue:"Reis Tennis Center"}}},
+{start:"2026-06-30",end:"2026-06-30",label:"Clay Prep",daily:{_all:{type:"rest",title:"Recovery + drive home",detail:"Ithaca → Avon ~4.5 hrs.",venue:"Travel home"}}},
 {start:"2026-07-01",end:"2026-07-01",label:"Clay Prep (Mill Pond #3)",daily:{_all:{type:"train",focus:"Clay sliding + patience",drills:["FH-FH Cross-Court Battle","Neutral Ball Decision","Spider Run Sets"],weights:false,venue:"Mill Pond (clay)",partners:["Charlie","Ren","Robert"]}}},
 {start:"2026-07-02",end:"2026-07-02",label:"Clay Prep (Mill Pond #4)",daily:{_all:{type:"train",focus:"Heavy topspin + depth",drills:["Inside-Out Forehand to Cone","Pattern of the Day","Recovery Steps"],weights:true,venue:"Mill Pond (clay)",partners:["Charlie","Ren"]}}},
 {start:"2026-07-03",end:"2026-07-03",label:"Clay Prep (Mill Pond #5)",daily:{_all:{type:"train",focus:"Match play on clay",drills:["Best-of-3 Tiebreak Sets","Pro Set with Constraints"],weights:false,venue:"Mill Pond (clay)",partners:["Charlie","Ren","Robert"]}}},
-{start:"2026-07-04",end:"2026-07-04",label:"T4 Travel",daily:{_all:{type:"tourn",title:"Fly Avon → Delray (BDL → PBI/FLL)",detail:"PM flight. Light hit at hotel if time.",venue:"Travel: CT → FL"}}},
-{start:"2026-07-05",end:"2026-07-12",label:"T4: Delray Clay",daily:{_all:{type:"tourn",title:"T4 — National Clay Courts (L1)",detail:"Match week. Between rounds: serve practice, hydration, 90-min nap. Heat management critical.",venue:"Delray + sites (clay)"}}},
-{start:"2026-07-13",end:"2026-07-15",label:"Rebuild Recovery",daily:{_all:{type:"rest",title:"3 days no tennis",detail:"Travel back. Mobility + massage. Sleep 9+ hrs.",venue:"Home"}}},
-{start:"2026-07-16",end:"2026-07-16",label:"Rebuild",daily:{_all:{type:"train",focus:"Easy return",drills:["Toss Lock","FH-FH Cross-Court Battle"],weights:false,venue:"Sycamore Park",partners:["Charlie","Ren"]}}},
+{start:"2026-07-04",end:"2026-07-04",label:"T4 Travel",daily:{_all:{type:"tourn",title:"Fly Avon → Delray",detail:"PM flight.",venue:"Travel: CT → FL"}}},
+{start:"2026-07-05",end:"2026-07-12",label:"T4: Delray Clay",daily:{_all:{type:"tourn",title:"T4 — National Clay Courts L1",detail:"Match week.",venue:"Delray + sites"}}},
+{start:"2026-07-13",end:"2026-07-15",label:"Rebuild Recovery",daily:{_all:{type:"rest",title:"3 days no tennis",detail:"Sleep 9+ hrs.",venue:"Home"}}},
+{start:"2026-07-16",end:"2026-07-16",label:"Rebuild",daily:{_all:{type:"train",focus:"Easy return",drills:["Toss Lock","FH-FH Cross-Court Battle","Spider Run Sets"],weights:false,venue:"Sycamore Park",partners:["Charlie","Ren"]}}},
 {start:"2026-07-17",end:"2026-07-17",label:"Rebuild",daily:{_all:{type:"train",focus:"Heavy FH + footwork",drills:["Run-Around FH Off Return","Spider Run Sets","Ladder + Cone Combo"],weights:false,venue:"Sycamore Park",partners:["Charlie","Ren","Robert"]}}},
-{start:"2026-07-18",end:"2026-07-18",label:"Rebuild",daily:{_all:{type:"train",focus:"Match play + weights",drills:["Best-of-3 Tiebreak Sets","Match-Length Conditioning"],weights:true,venue:"Sycamore Park",partners:["Charlie","Ren","Robert"]}}},
-{start:"2026-07-19",end:"2026-07-19",label:"Rebuild",daily:{_all:{type:"train",focus:"Serve + patterns",drills:["Spot Serve Ladder","Serve + 1 Pattern","Plan A / Plan B Sets"],weights:false,venue:"Sycamore Park",partners:["Charlie","Ren"]}}},
+{start:"2026-07-18",end:"2026-07-18",label:"Rebuild",daily:{_all:{type:"train",focus:"Match + weights",drills:["Best-of-3 Tiebreak Sets","Match-Length Conditioning"],weights:true,venue:"Sycamore Park",partners:["Charlie","Ren","Robert"]}}},
+{start:"2026-07-19",end:"2026-07-19",label:"Rebuild",daily:{_all:{type:"train",focus:"Serve + patterns",drills:["Spot Serve Ladder","Serve + 1 Pattern","Plan A / Plan B Sets","Spider Run Sets"],weights:false,venue:"Sycamore Park",partners:["Charlie","Ren"]}}},
 {start:"2026-07-20",end:"2026-07-20",label:"Rebuild",daily:{_all:{type:"rest",title:"Rest",detail:"Mobility only",venue:"Home"}}},
 {start:"2026-07-21",end:"2026-07-21",label:"Rebuild",daily:{_all:{type:"train",focus:"Power day",drills:["Inside-Out Forehand to Cone","Returner Wins Tiebreak","Spider Run Sets"],weights:true,venue:"Sycamore Park",partners:["Charlie","Ren","Robert"]}}},
 {start:"2026-07-22",end:"2026-07-22",label:"Rebuild",daily:{_all:{type:"train",focus:"Heavy match play",drills:["Best-of-3 Tiebreak Sets","Pressure Tiebreak (3-6)"],weights:false,venue:"Sycamore Park",partners:["Charlie","Ren"]}}},
-{start:"2026-07-23",end:"2026-07-23",label:"T5 Taper / Travel",daily:{_all:{type:"train",focus:"Travel day light hit",drills:["Toss Lock","Spot Serve Ladder"],weights:false,venue:"Travel: Avon → West Chester",partners:["Charlie + Robert drive"]}}},
-{start:"2026-07-24",end:"2026-07-26",label:"T5: PA Team Cup",daily:{_all:{type:"tourn",title:"T5 — NE National Team Cup (L2)",detail:"Each day: 1 singles + 1 doubles.",venue:"Westtown School, PA"}}},
+{start:"2026-07-23",end:"2026-07-23",label:"T5 Taper",daily:{_all:{type:"train",focus:"Travel + light hit",drills:["Toss Lock","Spot Serve Ladder"],weights:false,venue:"Travel: Avon → West Chester",partners:["Charlie + Robert"]}}},
+{start:"2026-07-24",end:"2026-07-26",label:"T5: PA Team Cup",daily:{_all:{type:"tourn",title:"T5 — NE National Team Cup",detail:"1 singles + 1 doubles per day.",venue:"Westtown School, PA"}}},
 {start:"2026-07-27",end:"2026-07-27",label:"Final Sharpen",daily:{_all:{type:"rest",title:"Drive home + recovery",detail:"Mobility only.",venue:"Travel home"}}},
-{start:"2026-07-28",end:"2026-07-28",label:"Final Sharpen",daily:{_all:{type:"train",focus:"Pattern review + serve",drills:["Serve + 1 Pattern","3-Ball Pattern Drill"],weights:true,venue:"Sycamore Park",partners:["Charlie","Ren","Robert"]}}},
+{start:"2026-07-28",end:"2026-07-28",label:"Final Sharpen",daily:{_all:{type:"train",focus:"Pattern review + serve",drills:["Serve + 1 Pattern","3-Ball Pattern Drill","Spider Run Sets"],weights:true,venue:"Sycamore Park",partners:["Charlie","Ren","Robert"]}}},
 {start:"2026-07-29",end:"2026-07-29",label:"Final Sharpen",daily:{_all:{type:"train",focus:"Sharpening sets",drills:["Pro Set with Constraints","Pressure Tiebreak (3-6)"],weights:false,venue:"Sycamore Park",partners:["Charlie","Ren"]}}},
 {start:"2026-07-30",end:"2026-07-30",label:"Final Sharpen",daily:{_all:{type:"train",focus:"Light hit + mental rehearsal",drills:["Spot Serve Ladder","Plan A / Plan B Sets"],weights:false,venue:"Sycamore Park",partners:["Charlie","Robert"]}}},
-{start:"2026-07-31",end:"2026-07-31",label:"Travel to Kalamazoo",daily:{_all:{type:"tourn",title:"Fly to Kalamazoo + team reg (4–6 PM)",detail:"Light walk-on Sorensen. Team practice/meeting.",venue:"Travel: CT → MI"}}},
-{start:"2026-08-01",end:"2026-08-05",label:"T6: Battle of Sections",daily:{_all:{type:"tourn",title:"T6 — Battle of Sections (L1 Team)",detail:"3 singles + 4 doubles. College coaches watching.",venue:"WMU — Sorensen Courts"}}},
-{start:"2026-08-06",end:"2026-08-06",label:"T6→T7 Rest",daily:{_all:{type:"rest",title:"Rest day in Kalamazoo",detail:"Mobility, massage. Pre-tournament dinner.",venue:"Kalamazoo (rest)"}}},
-{start:"2026-08-07",end:"2026-08-16",label:"T7: Kalamazoo Nationals",daily:{_all:{type:"tourn",title:"T7 — USTA Nationals",detail:"10-day event. Recovery is the limiter.",venue:"Kalamazoo College — Stowe Stadium"}}}
+{start:"2026-07-31",end:"2026-07-31",label:"Travel to Kalamazoo",daily:{_all:{type:"tourn",title:"Fly + team reg (4–6 PM)",detail:"Light walk-on.",venue:"Travel: CT → MI"}}},
+{start:"2026-08-01",end:"2026-08-05",label:"T6: Battle of Sections",daily:{_all:{type:"tourn",title:"T6 — Battle of Sections L1",detail:"College coaches.",venue:"WMU Sorensen"}}},
+{start:"2026-08-06",end:"2026-08-06",label:"T6→T7 Rest",daily:{_all:{type:"rest",title:"Rest day in Kalamazoo",detail:"Mobility, massage.",venue:"Kalamazoo"}}},
+{start:"2026-08-07",end:"2026-08-16",label:"T7: Kalamazoo Nationals",daily:{_all:{type:"tourn",title:"T7 — USTA Nationals",detail:"10-day event.",venue:"Stowe Stadium"}}}
 ];
 
-const PHASE_SUMMARY = {
-"Foundation":"Reset FH technique, hammer serve toss, install pattern library.",
-"Foundation (Mill Pond #1)":"First clay session. Long rallies, sliding intro.",
-"T1 Taper":"Pull back. Touch + serve only.",
-"T1 Taper (Mill Pond #2)":"Last hit before Bloomfield. 90 min light.",
-"T1: Bloomfield":"Compete. Don't lose to anyone below 9.5.",
-"T1 Recovery":"Mobility only.",
-"Build-Babson":"Highest training load of early summer.",
-"School ends!":"School's out — full training capacity. Heavy match play.",
-"T2 Travel":"Get to MA, walk on. Don't drill hard.",
-"T2: Babson Sectionals":"L3 closed. Beat the players you should, steal one above.",
-"Babson→Maine":"~3.5 hrs. Reunite with Ren + Teresa.",
-"T3 Travel + Practice":"Long drive from Maine. Use 4–8 PM practice window.",
-"T3: Cornell":"Indoor hard rewards first-strike tennis.",
-"Clay Prep":"Drive home + rest.",
-"Clay Prep (Mill Pond #3)":"Slower courts, longer rallies, sliding, patience.",
-"Clay Prep (Mill Pond #4)":"Heavy topspin day — shape and depth.",
-"Clay Prep (Mill Pond #5)":"Match play on clay — practice the patience.",
-"T4 Travel":"Fly to FL afternoon.",
-"T4: Delray Clay":"Long event. Recovery > practice. Sleep 9 hrs.",
-"Rebuild Recovery":"3 days fully off.",
-"Rebuild":"Heaviest training block. Next UTR jump comes from here.",
-"T5 Taper / Travel":"Drive PA, light hit on arrival.",
-"T5: PA Team Cup":"Team event — energy management across formats.",
-"Final Sharpen":"Last prep block. Pattern rehearsal.",
-"Travel to Kalamazoo":"Fly + team registration.",
-"T6: Battle of Sections":"L1. College coaches present. Visible effort matters.",
-"T6→T7 Rest":"Critical rest day.",
-"T7: Kalamazoo Nationals":"10 days. Pace yourself."
-};
+const PHASE_SUMMARY={"Foundation":"Reset FH, hammer serve toss, install patterns.","Foundation (Mill Pond #1)":"First clay session.","T1 Taper":"Pull back.","T1 Taper (Mill Pond #2)":"Last hit before Bloomfield.","T1: Bloomfield":"Don't lose to anyone below 9.5.","T1 Recovery":"Mobility only.","Build-Babson":"Highest training load.","School ends!":"Full training capacity.","T2 Travel":"Get to MA.","T2: Babson Sectionals":"Beat the players you should.","Babson→Maine":"~3.5 hrs.","T3 Travel + Practice":"Long drive.","T3: Cornell":"Indoor hard rewards first-strike.","Clay Prep":"Drive home + rest.","Clay Prep (Mill Pond #3)":"Patience patterns.","Clay Prep (Mill Pond #4)":"Heavy topspin.","Clay Prep (Mill Pond #5)":"Match play on clay.","T4 Travel":"Fly to FL.","T4: Delray Clay":"Recovery > practice.","Rebuild Recovery":"3 days off.","Rebuild":"Heaviest training block.","T5 Taper":"Drive PA.","T5: PA Team Cup":"Energy management.","Final Sharpen":"Last prep.","Travel to Kalamazoo":"Fly + reg.","T6: Battle of Sections":"L1. Coaches present.","T6→T7 Rest":"Critical rest.","T7: Kalamazoo Nationals":"10 days. Pace yourself."};
 
-const TRACKERS = [
-{key:"spot-serve",name:"Spot Serve Ladder",goal:"5 zones × 10 each × 2 sides = 100 max. Goal: improve total over weeks.",max:100,unit:"/100"},
-{key:"first-serve-pct",name:"First-Serve % Game",goal:"Average % across 4 service games. Goal: 65%+",max:100,unit:"%"},
-{key:"toss-lock",name:"Toss Lock",goal:"Tosses landing on the spot, out of 50. Goal: 45+",max:50,unit:"/50"}
+const TRACKERS=[
+{key:"spot-serve",name:"Spot Serve Ladder",goal:"Total makes out of 100.",max:100,unit:"/100",tags:["serve"]},
+{key:"first-serve-pct",name:"First-Serve % Game",goal:"Avg % across 4 games. Goal: 65%+",max:100,unit:"%",tags:["serve","games"]},
+{key:"toss-lock",name:"Toss Lock",goal:"Tosses on the spot. Goal: 45+/50",max:50,unit:"/50",tags:["serve"]},
+{key:"serve-plus-one",name:"Serve + One Win %",goal:"Points won when the serve and first ball follow the plan. Goal: 60%+.",max:100,unit:"%",tags:["serve","pc","games"]},
+{key:"fh-attack",name:"FH Attack Score",goal:"Winners/forced errors minus attacking errors. Goal: positive.",min:-20,max:40,unit:"",tags:["fh","pc"]},
+{key:"approach-calls",name:"Approach Decision Accuracy",goal:"Correct stay/approach calls out of 20. Ren target: 16+.",max:20,unit:"/20",tags:["net","pc","games"]},
+{key:"volley-clean",name:"Volley Clean Contact",goal:"Clean volleys out of 30. Ren target: 24+.",max:30,unit:"/30",tags:["net"]},
+{key:"game-points",name:"Competitive Game Points Won",goal:"Total points won across today's scored games.",max:60,unit:" pts",tags:["games"]},
+{key:"fatigue",name:"Fatigue / Soreness",goal:"0=fresh, 10=cooked. Adjust tomorrow if 7+.",max:10,unit:"/10",tags:["recovery","games"]}
 ];
 
-function parseDate(s){const [y,m,d]=s.split("-").map(Number);return new Date(y,m-1,d)}
+const UTR_WEIGHTS={hitting:0.015,clinic:0.015,weights:0.015,match:0.015,travel:0.015,sleep:0.005,rest:0};
+
+function parseDate(s){const[y,m,d]=s.split("-").map(Number);return new Date(y,m-1,d)}
 function fmtDate(d){return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0")}
 function fmtNice(d){return d.toLocaleDateString("en-US",{weekday:"long",month:"long",day:"numeric",year:"numeric"})}
 function fmtShort(d){return d.toLocaleDateString("en-US",{month:"short",day:"numeric"})}
 function daysBetween(a,b){return Math.round((b-a)/86400000)}
-function dow(d){return ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"][d.getDay()]}
-
-function phaseFor(date){const ds=fmtDate(date);for(const p of PHASES){if(ds>=p.start&&ds<=p.end)return p}return null}
-function blockForDate(date){
-  const p=phaseFor(date);
-  if(!p)return {type:"off",phase:"Off-season",detail:"No plan",venue:"—"};
-  let b;
-  if(p.daily._all)b=p.daily._all;else b=p.daily[dow(date)];
-  if(!b)b={type:"rest",title:"Open",detail:"",venue:"TBD"};
-  return Object.assign({},b,{phase:p.label});
-}
+function dow(d){return["Sun","Mon","Tue","Wed","Thu","Fri","Sat"][d.getDay()]}
+function phaseFor(date){const ds=fmtDate(date);for(const p of PHASES)if(ds>=p.start&&ds<=p.end)return p;return null}
+function blockForDate(date){const p=phaseFor(date);if(!p)return{type:"off",phase:"Off-season",detail:"",venue:"—"};let b;if(p.daily._all)b=p.daily._all;else b=p.daily[dow(date)];if(!b)b={type:"rest",title:"Open",detail:"",venue:"TBD"};return Object.assign({},b,{phase:p.label})}
 
 const TODAY=(function(){const t=new Date();const mn=parseDate("2026-05-25");const mx=parseDate("2026-08-16");if(t<mn)return mn;if(t>mx)return mx;return new Date(t.getFullYear(),t.getMonth(),t.getDate())})();
 let selectedDate=(function(){try{const s=localStorage.getItem("sot2026_selected");if(s&&s>="2026-05-25"&&s<="2026-08-16")return s}catch(e){}return fmtDate(TODAY)})();
-let completion=(function(){try{return JSON.parse(localStorage.getItem("sot2026_completion")||"{}")}catch(e){return {}}})();
-let tracking=(function(){try{return JSON.parse(localStorage.getItem("sot2026_tracking")||"{}")}catch(e){return {}}})();
+let completion=(function(){try{return JSON.parse(localStorage.getItem("sot2026_completion")||"{}")}catch(e){return{}}})();
+let tracking=(function(){try{return JSON.parse(localStorage.getItem("sot2026_tracking")||"{}")}catch(e){return{}}})();
 let weekOffset=0;
-const UTR_PER_UNIT=0.015;
 const KIDS={charlie:{name:"Charlie",start:9.67,goal:11.0},ren:{name:"Ren",start:8.47,goal:9.0}};
 
 function saveCompletion(){try{localStorage.setItem("sot2026_completion",JSON.stringify(completion))}catch(e){}}
 function saveSelected(){try{localStorage.setItem("sot2026_selected",selectedDate)}catch(e){}}
 function saveTracking(){try{localStorage.setItem("sot2026_tracking",JSON.stringify(tracking))}catch(e){}}
-function getCompletion(date,kid,item){return ((completion[date]||{})[kid]||{})[item]||false}
+function getCompletion(date,kid,item){return((completion[date]||{})[kid]||{})[item]||false}
 function setCompletion(date,kid,item,val){if(!completion[date])completion[date]={};if(!completion[date][kid])completion[date][kid]={};if(val)completion[date][kid][item]=true;else delete completion[date][kid][item];saveCompletion()}
-function getTracking(kid,key,date){return (((tracking[kid]||{})[key]||{})[date])}
+function getTracking(kid,key,date){return(((tracking[kid]||{})[key]||{})[date])}
 function setTracking(kid,key,date,val){if(!tracking[kid])tracking[kid]={};if(!tracking[kid][key])tracking[kid][key]={};if(val===null||val===undefined||val==="")delete tracking[kid][key][date];else tracking[kid][key][date]=Number(val);saveTracking()}
 function trackingHistory(kid,key,n){const d=(tracking[kid]||{})[key]||{};return Object.entries(d).sort((a,b)=>b[0].localeCompare(a[0])).slice(0,n)}
-
-function itemsForBlock(block,kid){
-  if(!block||block.type==="rest"||block.type==="off")return [];
-  const items=[];
-  if(block.type==="tourn"){
-    if(block.title&&/drive|fly|travel/i.test(block.title))items.push({key:"travel",label:"Travel day"});
-    else items.push({key:"match",label:"Match / event"});
-  } else if(block.type==="clinic"){
-    if(kid==="charlie")items.push({key:"clinic",label:"Clinic"});
-    else items.push({key:"hitting",label:"Hitting"});
-  } else if(block.type==="train"){
-    items.push({key:"hitting",label:"Hitting"});
-  }
-  if(block.weights)items.push({key:"weights",label:"Weights"});
-  return items;
-}
-
-function countUnits(kid){let n=0;Object.values(completion).forEach(b=>{const k=b[kid]||{};Object.values(k).forEach(v=>{if(v)n++})});return n}
-function projectedUTR(kid){return KIDS[kid].start+countUnits(kid)*UTR_PER_UNIT}
+function itemsForDay(block){const items=[{key:"hitting",label:"Hitting"},{key:"weights",label:"Weights"},{key:"sleep",label:"Bed by 10 PM"},{key:"rest",label:"Rest day"}];if(block&&block.type==="tourn")items.splice(1,0,{key:"match",label:"Match / event"});return items}
+function countUTR(kid){let t=0;Object.values(completion).forEach(b=>{const k=b[kid]||{};Object.keys(k).forEach(it=>{if(k[it]&&UTR_WEIGHTS[it])t+=UTR_WEIGHTS[it]})});return t}
+function projectedUTR(kid){return KIDS[kid].start+countUTR(kid)}
 function progressPct(kid){const k=KIDS[kid];const c=projectedUTR(kid);return Math.max(0,Math.min(105,((c-k.start)/(k.goal-k.start))*100))}
 function getWeekStart(date,off){off=off||0;const d=new Date(date);return new Date(d.getFullYear(),d.getMonth(),d.getDate()-d.getDay()+off*7)}
-function sessionsThisWeek(kid){const s=getWeekStart(TODAY);let n=0;for(let i=0;i<7;i++){const d=new Date(s);d.setDate(d.getDate()+i);const c=(completion[fmtDate(d)]||{})[kid]||{};Object.values(c).forEach(v=>{if(v)n++})}return n}
-function streakDays(kid){let s=0;let d=new Date(TODAY);const mn=parseDate("2026-05-25");while(d>=mn){const ds=fmtDate(d);const b=blockForDate(d);const c=(completion[ds]||{})[kid]||{};const any=Object.values(c).some(v=>v);if(b&&(b.type==="rest"||b.type==="tourn"))s++;else if(any)s++;else if(ds===fmtDate(TODAY)){}else break;d.setDate(d.getDate()-1)}return s}
+function sessionsThisWeek(kid){const s=getWeekStart(TODAY);let n=0;for(let i=0;i<7;i++){const d=new Date(s);d.setDate(d.getDate()+i);const c=(completion[fmtDate(d)]||{})[kid]||{};Object.keys(c).forEach(it=>{if(c[it]&&it!=="rest")n++})}return n}
+function streakDays(kid){let s=0;let d=new Date(TODAY);const mn=parseDate("2026-05-25");while(d>=mn){const ds=fmtDate(d);const c=(completion[ds]||{})[kid]||{};const a=Object.values(c).some(v=>v);if(a)s++;else if(ds===fmtDate(TODAY)){}else break;d.setDate(d.getDate()-1)}return s}
 
 function ballIcon(){return '<svg class="kid-icon" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8" fill="#dfe97a" stroke="#b8c356" stroke-width=".5"/><path d="M 2 10 Q 10 4 18 10" stroke="white" stroke-width="1.2" fill="none"/><path d="M 2 10 Q 10 16 18 10" stroke="white" stroke-width="1.2" fill="none"/></svg>'}
+
+function findDrill(name){let f=null;Object.values(DRILLS).forEach(arr=>{arr.forEach(d=>{if(d.name===name)f=d})});return f}
+
+function drillLink(name){return '<span class="drill-link" onclick="showDrillDetail(\''+name.replace(/'/g,"\\'")+'\')">'+name+'</span>'}
+function durationMinutes(text){const m=String(text||"").match(/(\d+)/);return m?Number(m[1]):0}
+function blockText(block){return ((block.focus||"")+" "+(block.title||"")+" "+(block.detail||"")+" "+(block.venue||"")+" "+(block.phase||"")+" "+((block.drills||[]).join(" "))).toLowerCase()}
+function trainingTagsForBlock(block){
+  const txt=blockText(block);
+  const tags=new Set(["games"]);
+  if(/serve|toss|return/.test(txt))tags.add("serve");
+  if(/fh|forehand|run-around|inside-out/.test(txt))tags.add("fh");
+  if(/pattern|neutral|decision|pressure|serve \+ 1|3-ball/.test(txt))tags.add("pc");
+  if(/match|tiebreak|pressure|pro set|best-of/.test(txt))tags.add("match");
+  if(/clay|mill pond|sliding|topspin|depth/.test(txt))tags.add("clay");
+  if(/net|volley|approach|transition/.test(txt))tags.add("net");
+  return tags;
+}
+function footworkCircuitForDay(block){
+  const drills=block.drills||[];
+  const scheduled=drills.map(name=>({name,drill:findDrill(name)})).filter(x=>x.drill&&x.drill.footwork);
+  const tags=trainingTagsForBlock(block);
+  let parts=scheduled.map(x=>({title:x.name,minutes:Math.min(durationMinutes(x.drill.duration)||10,15),detail:"Scheduled footwork station. Keep it sharp, then move on."}));
+  let total=parts.reduce((s,p)=>s+p.minutes,0);
+  const bank=[
+    {title:"Split-step reaction",minutes:6,detail:"Partner points left/right after each split. First step explodes, then recover to neutral."},
+    tags.has("serve")?{title:"Serve-return first step",minutes:6,detail:"Server lands balanced; returner split-steps on contact and takes one clean directional step."}:null,
+    tags.has("fh")?{title:"FH recovery shadow swings",minutes:7,detail:"Shadow wide FH, recover through crossover, finish with a balanced split at center."}:null,
+    tags.has("net")?{title:"Approach-close-split",minutes:7,detail:"Approach shadow, four closing steps, split, block-volley footwork. Ren leads; Charlie copies."}:null,
+    tags.has("clay")?{title:"Clay balance rehearsal",minutes:7,detail:"Slide or glide into the ball, hit from a quiet base, recover with small adjustment steps."}:null,
+    {title:"Mirror footwork game",minutes:6,detail:"One player leads for 20 sec, the other mirrors. Switch leaders every rep."},
+    {title:"Short-ball chase",minutes:7,detail:"Start at baseline, sprint in to touch a cone near service line, recover out, repeat both sides."},
+    {title:"Recovery-step finisher",minutes:6,detail:"Wide touch, crossover recover, split. Count clean recoveries, not just speed."}
+  ].filter(Boolean);
+  bank.forEach(item=>{
+    if(total>=30)return;
+    if(parts.some(p=>p.title===item.title))return;
+    const min=Math.min(item.minutes,30-total);
+    if(min>=4){parts.push({title:item.title,minutes:min,detail:item.detail});total+=min}
+  });
+  if(total<30){
+    const rem=30-total;
+    if(rem<4&&parts.length)parts[parts.length-1].minutes+=rem;
+    else parts.push({title:"Easy balance reps",minutes:rem,detail:"Quiet feet, clean split, no racing. Finish precise."});
+  }
+  return parts;
+}
+function gamesForDay(block){
+  const tags=trainingTagsForBlock(block);
+  const games=[];
+  if(tags.has("serve"))games.push({name:"Serve + one race to 7",detail:"Server must pre-call serve target and first-ball direction. Returner gets 2 points for a deep neutral return."});
+  if(tags.has("fh"))games.push({name:"FH direction game to 11",detail:"Charlie hunts the inside-out FH. Ren earns bonus points for redirecting Charlie's pace and changing height."});
+  if(tags.has("net"))games.push({name:"Transition gate game to 7",detail:"Any short neutral ball must be called stay or approach before contact. Wrong call loses the point."});
+  if(tags.has("pc"))games.push({name:"Pattern call game to 11",detail:"Each point starts with a called Plan A or Plan B. Point only counts if the first three balls match the plan."});
+  if(tags.has("match"))games.push({name:"Pressure tiebreak starts 3-6",detail:"Play at least two. Charlie practices score pressure; Ren practices calm first-ball choices."});
+  if(tags.has("clay"))games.push({name:"Eight-ball patience game",detail:"Point cannot be won until the rally reaches eight balls unless there is a true short-ball attack."});
+  if(!games.some(g=>g.name==="Transition gate game to 7"))games.push({name:"Transition gate game to 7",detail:"Short ball requires a loud stay/approach call. Ren leads the reads; Charlie builds all-court habits."});
+  if(!games.some(g=>g.name==="Baseline direction game to 11"))games.push({name:"Baseline direction game to 11",detail:"Cross-court first. A down-the-line change only counts after a heavy ball earns space."});
+  return games.slice(0,Math.max(2,Math.min(3,games.length)));
+}
+function dailyObjectives(block){
+  const tags=trainingTagsForBlock(block);
+  let charlie="Build toward 11.0 by turning his FH and serve into repeatable point starters, not highlight swings.";
+  let ren="Build toward 9.0 by using Charlie's pace for quality reps, clean transition reads, and calmer net finishes.";
+  if(tags.has("serve")){charlie="Own the first-strike pattern: 65%+ first serves, then a committed first ball.";ren="Return deep enough to make Charlie earn the plus-one, then look for the first transition chance."}
+  if(tags.has("fh")){charlie="Make the FH a weapon with shape: heavy cross, inside-out target, fast recovery.";ren="Use Charlie's FH pace as quality-ball training; redirect, defend deep, and take the short ball early."}
+  if(tags.has("pc")){charlie="Stop random rallying. Call the pattern, run it, and measure whether it wins points.";ren="Call stay/approach early and make the next ball simple: deep approach, clean first volley, reset if needed."}
+  if(tags.has("match")){charlie="Practice winning boring points under score pressure. Plan A first, bailout second.";ren="Treat the games like college points: neutralize first, then transition when the ball is earned."}
+  if(tags.has("clay")){charlie="Use height, depth, and patience before attacking. No panic winners from neutral.";ren="Use legs and shape to absorb pace, then transition only off a truly shorter ball."}
+  return {
+    shared:"Train together, score separately. They can do each other's drills, but Charlie scores weapon-building and Ren scores transition/read quality.",
+    charlie,
+    ren,
+    metrics:["Charlie: FH/serve intent","Ren: approach reads","Both: game points","Both: fatigue check"]
+  };
+}
+function trackersForDay(block){
+  const tags=trainingTagsForBlock(block);
+  const names=new Set(["game-points","fatigue"]);
+  const drills=block.drills||[];
+  if(tags.has("serve")){names.add("first-serve-pct");names.add("serve-plus-one")}
+  if(drills.includes("Spot Serve Ladder"))names.add("spot-serve");
+  if(drills.includes("Toss Lock"))names.add("toss-lock");
+  if(tags.has("fh"))names.add("fh-attack");
+  if(tags.has("pc")||tags.has("net"))names.add("approach-calls");
+  if(tags.has("net"))names.add("volley-clean");
+  return TRACKERS.filter(t=>names.has(t.key));
+}
+
+function showDrillDetail(name){const d=findDrill(name);if(!d)return;let h='<h3>'+d.name+'</h3><div class="modal-duration">⏱ '+d.duration+'</div>';if(d.footwork)h+='<div style="margin-bottom:10px"><span class="footwork-tag">footwork circuit station</span></div>';if(d.setup)h+='<h4>Setup</h4><p>'+d.setup+'</p>';if(d.how){h+='<h4>How to do it</h4><ol>';d.how.forEach(s=>{h+='<li>'+s+'</li>'});h+='</ol>'}if(d.reps)h+='<h4>Sets / Reps</h4><p>'+d.reps+'</p>';if(d.target)h+='<h4>Target</h4><p class="target">'+d.target+'</p>';if(d.rest)h+='<h4>Rest</h4><p>'+d.rest+'</p>';document.getElementById("drillModalBody").innerHTML=h;document.getElementById("drillModal").classList.add("active");document.body.style.overflow="hidden"}
+function hideDrillDetail(){document.getElementById("drillModal").classList.remove("active");document.body.style.overflow=""}
+document.addEventListener("keydown",function(e){if(e.key==="Escape")hideDrillDetail()});
 
 function renderCountdown(){
   const row=document.getElementById("countdownRow");
   const next=TOURNAMENTS.find(t=>fmtDate(TODAY)<=t.end);
   const nextReg=TOURNAMENTS.find(t=>!t.registered&&fmtDate(TODAY)<=t.regClose);
   let h="";
-  if(next){const d=daysBetween(TODAY,parseDate(next.start));h+='<div class="cd-card"><div class="label">Next tournament</div><div class="value">'+next.name.split(":")[0].split("—")[0].trim().slice(0,28)+'</div><div class="days">'+fmtShort(parseDate(next.start))+' · '+d+'d</div></div>'}
-  if(nextReg){const d=daysBetween(TODAY,parseDate(nextReg.regClose));h+='<div class="cd-card"><div class="label">Next reg deadline</div><div class="value">'+nextReg.name.split(":")[0].split("—")[0].trim().slice(0,26)+'</div><div class="days">'+fmtShort(parseDate(nextReg.regClose))+' · '+d+'d</div></div>'}
+  if(next){const d=daysBetween(TODAY,parseDate(next.start));h+='<div class="cd-card"><div class="label">Next tournament</div><div class="value">'+next.name.slice(0,28)+'</div><div class="days">'+fmtShort(parseDate(next.start))+' · '+d+'d</div></div>'}
+  if(nextReg){const d=daysBetween(TODAY,parseDate(nextReg.regClose));h+='<div class="cd-card"><div class="label">Next reg deadline</div><div class="value">'+nextReg.name.slice(0,26)+'</div><div class="days">'+fmtShort(parseDate(nextReg.regClose))+' · '+d+'d</div></div>'}
   const se=parseDate("2026-06-17");
   if(TODAY<=se)h+='<div class="cd-card"><div class="label">Last day of school</div><div class="value">Jun 17</div><div class="days">'+daysBetween(TODAY,se)+' days</div></div>';
   const left=TOURNAMENTS.filter(t=>fmtDate(TODAY)<=t.end).length;
@@ -533,12 +655,11 @@ function renderCountdown(){
 
 function renderMomentum(){
   const el=document.getElementById("momentumCard");
-  let h='<div class="mh"><span>Momentum</span><span class="sub">+0.015 projected UTR per session</span></div>';
+  let h='<div class="mh"><span>Training Momentum</span><span class="sub">consistency counter · verify progress with games</span></div>';
   ["charlie","ren"].forEach(kid=>{
     const k=KIDS[kid];const c=projectedUTR(kid);const p=progressPct(kid);const w=sessionsThisWeek(kid);const s=streakDays(kid);
-    const fc=kid==="ren"?"progress-fill ren":"progress-fill";
-    const sc=s>=5?"streak-pill hot":"streak-pill";
-    h+='<div class="momentum-row"><div class="momentum-header"><span class="momentum-name">'+ballIcon()+k.name+'</span><span class="momentum-stats"><b>'+c.toFixed(2)+'</b> projected · goal '+k.goal.toFixed(1)+' · '+w+' this wk <span class="'+sc+'">🔥 '+s+'d</span></span></div><div class="progress-track"><div class="'+fc+'" style="width:'+p+'%"></div></div><div class="progress-markers"><span>start '+k.start+'</span><span>+'+(c-k.start).toFixed(3)+'</span><span>goal '+k.goal+'</span></div></div>';
+    const fc=kid==="ren"?"progress-fill ren":"progress-fill";const sc=s>=5?"streak-pill hot":"streak-pill";
+    h+='<div class="momentum-row"><div class="momentum-header"><span class="momentum-name">'+ballIcon()+k.name+'</span><span class="momentum-stats"><b>'+c.toFixed(3)+'</b> projected · goal '+k.goal.toFixed(1)+' · '+w+' this wk <span class="'+sc+'">🔥 '+s+'d</span></span></div><div class="progress-track"><div class="'+fc+'" style="width:'+p+'%"></div></div><div class="progress-markers"><span>start '+k.start+'</span><span>+'+(c-k.start).toFixed(3)+'</span><span>goal '+k.goal+'</span></div></div>';
   });
   el.innerHTML=h;
 }
@@ -551,61 +672,102 @@ function renderToday(){
   document.getElementById("selectedIndicator").textContent=isToday?"Viewing today":(selectedDate<fmtDate(TODAY)?"Viewing past day":"Viewing future day");
 
   let bh="";
-  if(block.type==="rest")bh='<div class="tblock rest"><div class="ttitle">Rest day</div><div class="tcontent">'+(block.title||"Rest")+'<br><span class="muted">'+(block.detail||"")+'</span></div></div>';
-  else if(block.type==="tourn")bh='<div class="tblock tourn"><div class="ttitle">Tournament / travel</div><div class="tcontent"><b>'+(block.title||"")+'</b><br><span class="muted">'+(block.detail||"")+'</span></div></div>';
-  else if(block.type==="clinic")bh='<div class="tblock clinic"><div class="ttitle">Clinic day</div><div class="tcontent"><b>'+(block.title||"")+'</b><br><span class="muted">'+(block.detail||"")+'</span></div></div>';
-  else if(block.type==="train")bh='<div class="tblock"><div class="ttitle">Hitting focus</div><div class="tcontent"><b>'+block.focus+'</b><br><span class="muted">1.5–2 hr + 30 min footwork</span></div></div><div class="tblock"><div class="ttitle">Drills</div><div class="tcontent">'+(block.drills||[]).map(d=>"• "+d).join("<br>")+'</div></div><div class="tblock"><div class="ttitle">Weights?</div><div class="tcontent">'+(block.weights?"Yes — full session after hitting":"No")+'</div></div><div class="tblock"><div class="ttitle">Who\'s hitting</div><div class="tcontent">'+((block.partners||[]).join(" + ")||"—")+'</div></div>';
+  let totalNote="";
+  if(block.type==="rest"){
+    bh='<div class="pblock rest"><div class="ptitle"><span>Rest day (suggested)</span></div><div class="pcontent">'+(block.title||"Rest")+'<br><span class="muted">'+(block.detail||"")+'</span></div></div>';
+  } else if(block.type==="tourn"){
+    bh='<div class="pblock tourn"><div class="ptitle"><span>Tournament / travel</span></div><div class="pcontent"><b>'+(block.title||"")+'</b><br><span class="muted">'+(block.detail||"")+'</span></div></div>';
+  } else if(block.type==="clinic"){
+    bh='<div class="pblock clinic"><div class="ptitle"><span>Clinic day</span></div><div class="pcontent"><b>'+(block.title||"")+'</b><br><span class="muted">'+(block.detail||"")+'</span></div></div>';
+  } else if(block.type==="train"){
+    const objectives=dailyObjectives(block);
+    const games=gamesForDay(block);
+    totalNote='<div class="practice-total"><b>2-hour practice:</b> 20 min hitting warmup · 30 min footwork circuit · ~45–50 min hitting drills · 20–25 min competitive games.<br><span class="muted">Bookends (NOT counted in the 2 hrs): 6–7 min dynamic warmup before · 10–15 min cool-down after.</span></div>';
 
-  let ch="";
-  const ci=itemsForBlock(block,"charlie");
-  const ri=itemsForBlock(block,"ren");
-  if(ci.length||ri.length){
-    ch='<div class="checkin-section"><h3>Check-in (saves automatically)</h3>';
-    ["charlie","ren"].forEach(kid=>{
-      const items=itemsForBlock(block,kid);
-      if(!items.length)return;
-      ch+='<div class="checkin-row"><div class="checkin-name">'+KIDS[kid].name+'</div><div class="checkin-items">';
-      items.forEach(it=>{
-        const checked=getCompletion(selectedDate,kid,it.key);
-        ch+='<label class="checkin-pill '+(checked?"checked":"")+'"><input type="checkbox" data-checkin data-date="'+selectedDate+'" data-kid="'+kid+'" data-item="'+it.key+'"'+(checked?" checked":"")+'>'+it.label+'<span class="utr-bump">+0.015</span></label>';
-      });
-      ch+='</div></div>';
-    });
-    ch+='</div>';
+    // Dynamic warmup (pre-practice, off-clock)
+    let dynHtml='<div class="pblock dynamic"><div class="ptitle"><span>⓪ '+WARMUP_DYNAMIC.label+'</span><span class="ptime">'+WARMUP_DYNAMIC.duration+'</span></div><div class="pcontent"><ul>';
+    WARMUP_DYNAMIC.steps.forEach(s=>{dynHtml+='<li>'+s+'</li>'});
+    dynHtml+='</ul></div></div>';
+
+    // Hitting warmup (first 20 min of 2-hr practice)
+    let warmupHtml='<div class="pblock warmup"><div class="ptitle"><span>① '+WARMUP.label+'</span><span class="ptime">20 min</span></div><div class="pcontent"><ul>';
+    WARMUP.steps.forEach(s=>{warmupHtml+='<li>'+s+'</li>'});
+    warmupHtml+='</ul></div></div>';
+
+    // Daily goals
+    let goalsHtml='<div class="pblock objectives"><div class="ptitle"><span>② Daily training goals</span><span class="ptime">Shared court, separate scorecards</span></div><div class="pcontent"><p>'+objectives.shared+'</p><div class="training-grid"><div class="training-card"><h4>Charlie</h4><p>'+objectives.charlie+'</p></div><div class="training-card"><h4>Ren</h4><p>'+objectives.ren+'</p></div></div><div style="margin-top:8px">';
+    objectives.metrics.forEach(m=>{goalsHtml+='<span class="metric-tag">'+m+'</span>'});
+    goalsHtml+='</div></div></div>';
+
+    // Footwork
+    const drills=block.drills||[];
+    const footworkParts=footworkCircuitForDay(block);
+    let footworkHtml='<div class="pblock footwork"><div class="ptitle"><span>③ Footwork circuit</span><span class="ptime">30 min</span></div><div class="pcontent"><b>Rotate stations. No single drill gets the whole block.</b><ul>';
+    footworkParts.forEach(p=>{const linked=findDrill(p.title)?drillLink(p.title):p.title;footworkHtml+='<li><b>'+p.minutes+' min — '+linked+':</b> '+p.detail+'</li>'});
+    footworkHtml+='</ul>';
+    footworkHtml+='</div></div>';
+
+    // Hitting drills
+    const drillLinks=drills.map(d=>{const dd=findDrill(d);const tag=dd&&dd.footwork?' <span class="footwork-tag">footwork station</span>':'';return '<li>'+drillLink(d)+tag+(dd?' <span class="muted">('+dd.duration+')</span>':'')+'</li>'}).join("");
+    let hittingHtml='<div class="pblock hitting"><div class="ptitle"><span>④ Hitting drills — focus: '+block.focus+'</span><span class="ptime">~45–50 min</span></div><div class="pcontent">Shared reps are fine; each player uses the daily goal above as the filter.<ul style="margin-top:6px">'+drillLinks+'</ul></div></div>';
+
+    // Competitive games
+    let gamesHtml='<div class="pblock games"><div class="ptitle"><span>⑤ Competitive games</span><span class="ptime">20–25 min</span></div><div class="pcontent"><b>Play at least two. Keep score so the training has teeth.</b><ol>';
+    games.forEach(g=>{gamesHtml+='<li><b>'+g.name+':</b> '+g.detail+'</li>'});
+    gamesHtml+='</ol><div class="game-note">Charlie and Ren can play the same game with different bonuses so both goals stay alive.</div></div></div>';
+
+    // Cool-down (post-practice, off-clock)
+    let coolHtml='<div class="pblock cooldown"><div class="ptitle"><span>⑥ '+COOLDOWN.label+'</span><span class="ptime">'+COOLDOWN.duration+'</span></div><div class="pcontent"><ul>';
+    COOLDOWN.steps.forEach(s=>{coolHtml+='<li>'+s+'</li>'});
+    coolHtml+='</ul></div></div>';
+
+    // Weights + partners
+    let metaHtml='<div class="pblock weights"><div class="ptitle"><span>Weights?</span></div><div class="pcontent">'+(block.weights?"<b>Suggested today.</b> Tue/Thu/Sat — 48 hr gaps. Check Weights whichever day you actually lift.":"<b>Not today.</b>")+'</div></div>';
+    metaHtml+='<div class="pblock misc"><div class="ptitle"><span>Who\'s hitting</span></div><div class="pcontent">'+((block.partners||[]).join(" + ")||"—")+'</div></div>';
+
+    bh=dynHtml+warmupHtml+goalsHtml+footworkHtml+hittingHtml+gamesHtml+coolHtml+metaHtml;
   }
 
+  // Check-in
+  let ch='<div class="checkin-section"><h3>Check-in (flexible — saves automatically)</h3><div class="helper">Whatever you actually did. Sleep by 10 PM = +0.005. Rest day = streak-safe.</div>';
+  ["charlie","ren"].forEach(kid=>{
+    const items=itemsForDay(block);
+    ch+='<div class="checkin-row"><div class="checkin-name">'+KIDS[kid].name+'</div><div class="checkin-items">';
+    items.forEach(it=>{
+      const checked=getCompletion(selectedDate,kid,it.key);
+      const wt=UTR_WEIGHTS[it.key]||0;
+      const wtLabel=wt>0?'+'+wt:'safe';
+      ch+='<label class="checkin-pill '+(checked?"checked "+it.key:"")+'"><input type="checkbox" data-checkin data-date="'+selectedDate+'" data-kid="'+kid+'" data-item="'+it.key+'"'+(checked?" checked":"")+'>'+it.label+'<span class="utr-bump">'+wtLabel+'</span></label>';
+    });
+    ch+='</div></div>';
+  });
+  ch+='</div>';
+
+  // Trackers
   let th="";
   if(block.type==="train"||block.type==="clinic"){
     th='<div class="trackers-section"><h3>📊 Trackers (log your numbers)</h3>';
-    TRACKERS.forEach(t=>{
-      function histTxt(hist,unit){
-        if(!hist.length)return '<span class="muted">no entries yet</span>';
-        const v=hist.map(h=>h[1]);
-        let tr="";
-        if(v.length>=2){if(v[0]>v[1])tr='<span class="tracker-trend up">↑</span>';else if(v[0]<v[1])tr='<span class="tracker-trend down">↓</span>'}
-        return 'Recent: <b>'+v.map(x=>x+unit).join(" · ")+'</b>'+tr;
-      }
-      const ch_h=trackingHistory("charlie",t.key,3);
-      const re_h=trackingHistory("ren",t.key,3);
-      const ch_t=getTracking("charlie",t.key,selectedDate);
-      const re_t=getTracking("ren",t.key,selectedDate);
+    const dayTrackers=block.type==="train"?trackersForDay(block):TRACKERS.filter(t=>["first-serve-pct","toss-lock","game-points","fatigue"].includes(t.key));
+    dayTrackers.forEach(t=>{
+      function histTxt(hist,unit){if(!hist.length)return '<span class="muted">no entries yet</span>';const v=hist.map(h=>h[1]);let tr="";if(v.length>=2){if(v[0]>v[1])tr='<span class="tracker-trend up">↑</span>';else if(v[0]<v[1])tr='<span class="tracker-trend down">↓</span>'}return 'Recent: <b>'+v.map(x=>x+unit).join(" · ")+'</b>'+tr}
       th+='<div class="tracker-card"><div class="tracker-name">'+t.name+'</div><div class="tracker-goal">'+t.goal+'</div>';
       ["charlie","ren"].forEach(kid=>{
-        const cur=kid==="charlie"?ch_t:re_t;
-        const hist=kid==="charlie"?ch_h:re_h;
-        th+='<div class="tracker-row"><span class="tracker-label">'+KIDS[kid].name+'</span><input class="tracker-input" type="number" min="0" max="'+t.max+'" placeholder="—" value="'+(cur!==undefined?cur:"")+'" data-track-kid="'+kid+'" data-track-drill="'+t.key+'"><button class="tracker-save" data-track-save data-track-kid="'+kid+'" data-track-drill="'+t.key+'">Save</button><span class="tracker-history">'+histTxt(hist,t.unit)+'</span></div>';
+        const cur=getTracking(kid,t.key,selectedDate);
+        const hist=trackingHistory(kid,t.key,3);
+        th+='<div class="tracker-row"><span class="tracker-label">'+KIDS[kid].name+'</span><input class="tracker-input" type="number" min="'+(t.min!==undefined?t.min:0)+'" max="'+t.max+'" placeholder="—" value="'+(cur!==undefined?cur:"")+'" data-track-kid="'+kid+'" data-track-drill="'+t.key+'"><button class="tracker-save" data-track-save data-track-kid="'+kid+'" data-track-drill="'+t.key+'">Save</button><span class="tracker-history">'+histTxt(hist,t.unit||"")+'</span></div>';
       });
       th+='</div>';
     });
     th+='</div>';
   }
 
-  el.innerHTML='<div class="today-header"><div class="today-date">'+fmtNice(date)+'</div><div class="today-phase">'+(block.phase||"")+'</div></div><div class="today-venue"><b>Venue:</b> '+(block.venue||"—")+'</div><div class="today-blocks">'+bh+'</div>'+ch+th;
+  el.innerHTML='<div class="today-header"><div class="today-date">'+fmtNice(date)+'</div><div class="today-phase">'+(block.phase||"")+'</div></div><div class="today-venue"><b>Venue:</b> '+(block.venue||"—")+'</div>'+totalNote+'<div class="today-blocks">'+bh+'</div>'+ch+th;
 
   const next=TOURNAMENTS.find(t=>fmtDate(date)<=t.end);
   let ctx="";
-  if(next){const d=daysBetween(date,parseDate(next.start));if(d>=0)ctx='<p><b>Next tournament:</b> '+next.name+' on '+fmtShort(parseDate(next.start))+' — <b>'+d+' day'+(d===1?"":"s")+' away</b>. '+(d<=3?"Taper mode.":d<=7?"Sharpening week.":"Build phase.")+'</p>'}
+  if(next){const d=daysBetween(date,parseDate(next.start));if(d>=0)ctx='<p><b>Next tournament:</b> '+next.name+' on '+fmtShort(parseDate(next.start))+' — <b>'+d+'d away</b>. '+(d<=3?"Taper.":d<=7?"Sharpen.":"Build.")+'</p>'}
   ctx+='<p><b>This phase:</b> '+(block.phase||"")+'. '+(PHASE_SUMMARY[block.phase]||"Stay on plan.")+'</p>';
+  if(block.type==="train"){const objectives=dailyObjectives(block);ctx+='<p><b>Why it is not random:</b> '+objectives.shared+' The footwork block is a full circuit, and the session ends with scored games so the drill work has to survive pressure.</p>'}
   document.getElementById("todayContext").innerHTML=ctx;
 }
 
@@ -622,9 +784,9 @@ function renderWeek(){
     const cls="day "+(block.type||"off")+(isToday?" today":"")+(sel?" selected":"");
     const di=(completion[ds]||{});
     let c=0,a=0;
-    ["charlie","ren"].forEach(kid=>{const its=itemsForBlock(block,kid);a+=its.length;its.forEach(it=>{if(((di[kid]||{})[it.key]))c++})});
+    ["charlie","ren"].forEach(kid=>{const its=itemsForDay(block);a+=its.length;its.forEach(it=>{if(((di[kid]||{})[it.key]))c++})});
     let dot="";
-    if(a>0){if(c===0)dot='<span class="complete-dot empty"></span>';else if(c>=a)dot='<span class="complete-dot full">✓</span>';else dot='<span class="complete-dot partial">'+c+'</span>'}
+    if(a>0){if(c===0)dot='<span class="complete-dot empty"></span>';else if(c>=a*0.75)dot='<span class="complete-dot full">✓</span>';else dot='<span class="complete-dot partial">'+c+'</span>'}
     let inner='<div class="dow"><span>'+dow(d)+'</span>'+dot+'</div><div class="date">'+d.getDate()+'</div>';
     if(block.type==="rest")inner+='<div class="focus">REST</div><div class="detail">'+(block.detail||"").slice(0,60)+'</div>';
     else if(block.type==="tourn")inner+='<div class="focus">'+(block.title||"Tournament").slice(0,40)+'</div><div class="detail">'+(block.detail||"").slice(0,60)+'</div>';
@@ -665,7 +827,7 @@ function renderTournaments(){
   }).join("");
   const u=TOURNAMENTS.find(t=>{if(t.registered)return false;const d=daysBetween(TODAY,parseDate(t.regClose));return d>=0&&d<=5});
   const ue=document.getElementById("urgentReg");
-  if(u){const d=daysBetween(TODAY,parseDate(u.regClose));ue.innerHTML='<b>⚠ Registration deadline soon:</b> '+u.name+' closes <b>'+fmtShort(parseDate(u.regClose))+'</b> — '+(d===0?"TODAY":"in "+d+" day"+(d===1?"":"s"))+'.';ue.style.display="block"} else ue.style.display="none";
+  if(u){const d=daysBetween(TODAY,parseDate(u.regClose));ue.innerHTML='<b>⚠ Registration deadline soon:</b> '+u.name+' closes <b>'+fmtShort(parseDate(u.regClose))+'</b> — '+(d===0?"TODAY":"in "+d+"d")+'.';ue.style.display="block"}else ue.style.display="none";
 }
 
 function renderVenues(){
@@ -678,58 +840,22 @@ function renderDrills(){
   ["fh","serve","pc","fit","match","net"].forEach(k=>{
     const el=document.getElementById("drills"+k.charAt(0).toUpperCase()+k.slice(1));
     if(!el)return;
-    el.innerHTML=DRILLS[k].map(d=>'<div class="drill"><div class="drill-cat '+k+'">'+L[k]+'</div><h3>'+d.name+'</h3><p>'+d.desc+'</p><div class="duration">'+d.duration+'</div></div>').join("");
+    el.innerHTML=DRILLS[k].map(d=>{const tag=d.footwork?' <span class="footwork-tag">footwork</span>':'';return '<div class="drill" onclick="showDrillDetail(\''+d.name.replace(/'/g,"\\'")+'\')"><div class="drill-cat '+k+'">'+L[k]+'</div><h3>'+d.name+tag+'</h3><p>'+d.desc+'</p><div class="duration">'+d.duration+'</div></div>'}).join("");
   });
 }
 
-document.querySelectorAll(".tab").forEach(btn=>{
-  btn.addEventListener("click",()=>{
-    document.querySelectorAll(".tab").forEach(b=>b.classList.remove("active"));
-    document.querySelectorAll(".panel").forEach(p=>p.classList.remove("active"));
-    btn.classList.add("active");
-    document.getElementById("panel-"+btn.dataset.tab).classList.add("active");
-    try{localStorage.setItem("sot2026_tab",btn.dataset.tab)}catch(e){}
-  });
-});
+document.querySelectorAll(".tab").forEach(btn=>{btn.addEventListener("click",()=>{document.querySelectorAll(".tab").forEach(b=>b.classList.remove("active"));document.querySelectorAll(".panel").forEach(p=>p.classList.remove("active"));btn.classList.add("active");document.getElementById("panel-"+btn.dataset.tab).classList.add("active");try{localStorage.setItem("sot2026_tab",btn.dataset.tab)}catch(e){}})});
 
-document.addEventListener("change",function(e){
-  if(e.target&&e.target.matches&&e.target.matches("input[type=checkbox][data-checkin]")){
-    const ds=e.target.dataset;
-    setCompletion(ds.date,ds.kid,ds.item,e.target.checked);
-    renderMomentum();renderToday();renderWeek();
-  }
-});
+document.addEventListener("change",function(e){if(e.target&&e.target.matches&&e.target.matches("input[type=checkbox][data-checkin]")){const ds=e.target.dataset;setCompletion(ds.date,ds.kid,ds.item,e.target.checked);renderMomentum();renderToday();renderWeek()}});
 
-document.addEventListener("click",function(e){
-  if(e.target&&e.target.matches&&e.target.matches("[data-track-save]")){
-    const btn=e.target;
-    const kid=btn.dataset.trackKid;
-    const drill=btn.dataset.trackDrill;
-    const inp=document.querySelector('input.tracker-input[data-track-kid="'+kid+'"][data-track-drill="'+drill+'"]');
-    if(!inp)return;
-    const raw=inp.value.trim();
-    if(raw==="")setTracking(kid,drill,selectedDate,null);
-    else {const v=Number(raw);if(isNaN(v))return;setTracking(kid,drill,selectedDate,v)}
-    btn.textContent="Saved ✓";
-    btn.classList.add("saved");
-    setTimeout(()=>{renderToday()},600);
-  }
-});
+document.addEventListener("click",function(e){if(e.target&&e.target.matches&&e.target.matches("[data-track-save]")){const btn=e.target;const kid=btn.dataset.trackKid;const drill=btn.dataset.trackDrill;const inp=document.querySelector('input.tracker-input[data-track-kid="'+kid+'"][data-track-drill="'+drill+'"]');if(!inp)return;const raw=inp.value.trim();if(raw==="")setTracking(kid,drill,selectedDate,null);else{const v=Number(raw);if(isNaN(v))return;setTracking(kid,drill,selectedDate,v)}btn.textContent="Saved ✓";btn.classList.add("saved");setTimeout(()=>{renderToday()},600)}});
 
 function forceReload(){const u=new URL(window.location.href);u.searchParams.set("_t",Date.now());window.location.replace(u.toString())}
-
 (function(){try{const la=Date.now();document.addEventListener("visibilitychange",()=>{if(document.visibilityState==="visible"){const oh=(Date.now()-la)/3600000;if(oh>12){const u=new URL(window.location.href);if(!u.searchParams.has("_t")){u.searchParams.set("_t",Date.now());window.location.replace(u.toString())}}}})}catch(e){}})();
-
 try{const s=localStorage.getItem("sot2026_tab");if(s){const b=document.querySelector('.tab[data-tab="'+s+'"]');if(b)b.click()}}catch(e){}
 
-renderCountdown();
-renderMomentum();
-renderToday();
-renderWeek();
-renderTournaments();
-renderVenues();
-renderDrills();
+renderCountdown();renderMomentum();renderToday();renderWeek();renderTournaments();renderVenues();renderDrills();
 </script>
 </body>
 </html>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
